@@ -3,7 +3,6 @@
 import datetime as dt
 import os
 
-
 def format_num(n, places=3):
     n = str(n)
     s = ""
