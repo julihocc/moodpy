@@ -3,6 +3,7 @@
 import datetime as dt
 import os
 
+
 def format_num(n, places=3):
     n = str(n)
     s = ""
@@ -49,7 +50,6 @@ class Cloze:
         self.path = os.getcwd()
         self.label = None
         self.mi_cabecera = " "
-        self.make_label()
         self.data = None
         self.tex = None
         self.answers = None
@@ -57,10 +57,33 @@ class Cloze:
         self.ejercicio = None
         self.retroalimentacion = None
 
-    def get_exercise(self, text):
+    def set_label(self, materia="",
+                   clave="",
+                   tema="",
+                   subtema=None,
+                   instituto="",
+                   semestre=""):
+        label = "{}_{}_{}".format(instituto.upper(), semestre, clave)
+        # label = "{} {} {}".format("www", clave, tema.title())
+        mi_cabecera = "<h1> {} </h1> \n <h2> {} </h2>".format(materia.title(), tema.title())
+        if subtema is not None:
+            mi_cabecera = mi_cabecera + f'\n <h3> {subtema} </h3>'
+        self.label = label
+        self.mi_cabecera = mi_cabecera
+
+    def get_header(self):
+        print(self.label)
+        print(self.mi_cabecera)
+
+    def set_exercise(self, text):
         self.ejercicio = self.mi_cabecera + text.format(d=self.data, t=self.tex, a=self.answers, f=self.feedback_text)
 
-    def get_feedback(self, text):
+    def get_exercise(self):
+        print(self.ejercicio)
+        if self.retroalimentacion:
+            print(self.retroalimentacion)
+
+    def set_feedback(self, text):
         self.retroalimentacion = text.format(d=self.data, t=self.tex, a=self.answers, f=self.feedback_text)
 
     def pretty(self):
@@ -78,35 +101,6 @@ class Cloze:
             """.format(s1, s2)
         return pretty_text
 
-    def testing(self, n, generador, impr=True, for_print=None):
-        if for_print is None:
-            for_print = []
-        for k in range(n):
-            lista_dictionaries = generador().items()
-            print_args(lista_dictionaries, impr=impr, for_print=for_print)
-            self.counter += 1
-
-    def make_label(self, materia="",
-                   clave="",
-                   tema="",
-                   subtema=None,
-                   instituto="",
-                   semestre=""):
-        label = "{}_{}_{}".format(instituto.upper(), semestre, clave)
-        # label = "{} {} {}".format("www", clave, tema.title())
-        mi_cabecera = "<h1> {} </h1> \n <h2> {} </h2>".format(materia.title(), tema.title())
-        if subtema is not None:
-            mi_cabecera = mi_cabecera + f'\n <h3> {subtema} </h3>'
-        self.label = label
-        self.mi_cabecera = mi_cabecera
-
-    def test(self):
-        output = """
-        Ubicación: \n\t {}
-        Fecha/Hora: \n\t {}
-        """.format(self.path, dt.datetime.now())
-        print(output)
-
     def generador(self):
         if self.feedback_text is None:
             self.feedback_text = {}
@@ -118,6 +112,21 @@ class Cloze:
             self.data = {}
 
         return self.pretty()
+
+    def testing(self, n, impr=True, for_print=None):
+        if for_print is None:
+            for_print = []
+        for k in range(n):
+            lista_dictionaries = self.generador().items()
+            print_args(lista_dictionaries, impr=impr, for_print=for_print)
+            self.counter += 1
+
+    def get_info(self):
+        output = """
+        Ubicación: \n\t {}
+        Fecha/Hora: \n\t {}
+        """.format(self.path, dt.datetime.now())
+        print(output)
 
     def exe_to_moodle(self, foldername, mihtml, penalizacion=0.5):
         k = len(mihtml)
