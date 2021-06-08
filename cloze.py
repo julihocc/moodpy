@@ -15,7 +15,7 @@ def format_num(n, places=3):
 
 class Cloze:
     def __init__(self):
-        self.counter = 0
+        self.counter = 1
         self.num_question = 1
         self.penalty = 0.5
         self.impr = False
@@ -23,7 +23,11 @@ class Cloze:
         self.path = os.getcwd()
         self.label = None
         self.header = " "
-        self.generator = Generator(self.header)
+        self.generator = Generator()
+
+    def set_generator(self, gen):
+        gen.header = self.header
+        self.generator = gen
 
     def set_label(self, materia="",
                   clave="",
@@ -46,10 +50,10 @@ class Cloze:
     def testing(self, n):
         for k in range(n):
             self.generator.set_counter(self.counter)
-            self.generator.print_args()
-            self.generator.get_exercise()
+            args_text = self.generator.print_args()
+            exe_text = self.generator.get_exercise()
+            print(args_text + exe_text)
             self.counter += 1
-        self.counter = 0
 
     def get_info(self):
         output = """
@@ -59,8 +63,8 @@ class Cloze:
         print(output)
 
     def to_moodle_xml(self, mihtml):
-        k = len(mihtml)
-        assert k != 0
+        N = len(mihtml)
+        assert N != 0
         tiempo = str(dt.datetime.now()).replace(":", "").replace(".", "").replace('-', '')
         filename = (self.foldername + " " + tiempo + ".xml").replace(" ", "_").lower()
 
@@ -73,7 +77,7 @@ class Cloze:
 
         arx.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")
         arx.write("<quiz>\n")
-        for k in range(k):
+        for k in range(N):
             exercise_text = mihtml[k]
             ahora = str(dt.datetime.now())
             num = format_num(self.num_question)
