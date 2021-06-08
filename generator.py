@@ -14,12 +14,17 @@ class Generator:
     def __init__(self, counter=0):
         self.counter = counter
         self.header = ""
+        self.lambdas = {}
         self.parameters = {}
         self.data = {}
         self.exercise_text = ""
         self.feedback_text = None
         self.print = False
         self.requirements = [True]
+
+    def reload_parameters(self):
+        for k, f in self.lambdas.items():
+            self.parameters[k] = f(k)
 
     def test_parameters(self, max_steps=10000, debug = False):
         step = 0
@@ -37,9 +42,6 @@ class Generator:
         if step == max_steps:
             self.parameters = None
             print("requierements not satisfied")
-
-    def set_parameter(self, key, value):
-        self.parameters[key] = value
 
     def set_exercise(self, text):
         self.exercise_text = """
@@ -87,3 +89,4 @@ class Generator:
             args_text += newline
 
         return args_text
+

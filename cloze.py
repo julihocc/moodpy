@@ -4,83 +4,82 @@ import datetime as dt
 import os
 from generator import Generator
 
-
-def format_num(n, places=3):
-    n = str(n)
-    s = ""
-    for _ in range(places - len(n)):
-        s += "0"
-    return s + n
-
-
 class Cloze:
     def __init__(self):
         self.counter = 1
         self.num_question = 1
         self.penalty = 0.5
         self.impr = False
-        self.foldername = None
+        self.foldername= None
         self.path = os.getcwd()
         self.label = None
         self.header = " "
         self.generator = Generator()
+        self.tiempo = str(dt.datetime.now()).replace(":", "").replace(".", "").replace('-', '')
+        self.filename = None
+        self.path = None
+        self.xml = []
 
     def set_generator(self, gen):
         gen.header = self.header
         self.generator = gen
 
-    def set_label(self, materia="",
+    def set_info(self, materia="",
                   clave="",
-                  tema="",
-                  subtema=None,
-                  instituto="",
-                  semestre=""):
-        label = "{}_{}_{}".format(instituto.upper(), semestre, clave)
-        # label = "{} {} {}".format("www", clave, tema.title())
-        header = "<h1> {} </h1> \n <h2> {} </h2>".format(materia.title(), tema.title())
-        if subtema is not None:
-            header = header + f'\n <h3> {subtema} </h3>'
-        self.label = label
-        self.header = header
-
-    def get_header(self):
-        print(self.label)
-        print(self.header)
-
-    def testing(self, n):
-        for k in range(n):
-            self.generator.set_counter(self.counter)
-            args_text = self.generator.print_args()
-            exe_text = self.generator.get_exercise()
-            print(args_text + exe_text)
-            self.counter += 1
-
-    def get_info(self):
-        output = """
-        Ubicación: \n\t {}
-        Fecha/Hora: \n\t {}
-        """.format(self.path, dt.datetime.now())
-        print(output)
-
-    def to_moodle_xml(self, mihtml):
-        N = len(mihtml)
-        assert N != 0
-        tiempo = str(dt.datetime.now()).replace(":", "").replace(".", "").replace('-', '')
-        filename = (self.foldername + " " + tiempo + ".xml").replace(" ", "_").lower()
-
+                  tema=""):
+        #self.label = "{}_{}_{}".format(instituto.upper(), semestre, clave)
+        self.header = "<h1> {} </h1> \n <h2> {} </h2>".format(materia.title(), tema.title())
+        self.label = """
+        {}
+        Actividad {}
+        {}
+        """.format(materia.upper(), clave, tema.casefold())
+        self.foldername = "{}_{}_{}".format(materia.upper(), clave, tema.casefold())
+        self.foldername = "{}_{}_{}".format(materia.upper(), clave, tema.casefold())
+        self.filename = (self.foldername + " " + self.tiempo + ".xml").replace(" ", "_").lower()
         if not os.path.isdir(self.foldername):
             os.makedirs(self.foldername)
-        filename = os.path.join(self.foldername, filename)
-        print('filename: ', filename)
-        # arx = open(filename, "w")
-        arx = open(filename, "w", encoding="utf-8")
+        self.path = os.path.join(self.foldername, self.filename)
 
+    def get_info(self):
+        #print("LABEL: ", self.label)
+        #print("HEADER: ", self.header)
+        print("DATETIME: ", self.tiempo)
+        print("FOLDERNAME: ", self.foldername)
+        print("FILENAME: ", self.filename)
+
+    def format_num(self, places=3):
+        n = str(self.num_question)
+        s = ""
+        for _ in range(places - len(n)):
+            s += "0"
+        return s + n
+
+    def testing(self, n):
+        temp = os.path.join(self.foldername, "TESTING-"+self.filename.replace(".xml", ".txt"))
+        arx = open(temp, "w", encoding="utf-8")
+        for k in range(n):
+            self.generator.set_counter(self.counter)
+            self.generator.reload_parameters()
+            print(self.generator.parameters)
+            args_text = self.generator.print_args()
+            exe_text = self.generator.get_exercise()
+            #print(args_text + exe_text)
+            arx.write(args_text)
+            arx.write(exe_text)
+            self.counter += 1
+        arx.close()
+
+    def to_moodle_xml(self):
+        N = len(self.xml)
+        assert N != 0
+        # arx = open(self.filename, "w")
+        arx = open(self.path, "w", encoding="utf-8")
         arx.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n")
         arx.write("<quiz>\n")
         for k in range(N):
-            exercise_text = mihtml[k]
-            ahora = str(dt.datetime.now())
-            num = format_num(self.num_question)
+            exercise_text = self.xml[k]
+            num = self.format_num()
             # cambiar el número de pregunta
             # arx.write("<!-- question: 0000000  -->" + "\n")
             arx.write("<!-- question: {}  --> \n".format(num))
@@ -89,7 +88,7 @@ class Cloze:
             # arx.write("<text>" + leyenda + "-" + ahora + "</text>" + "\n")
             pregunta = "<text>Pregunta {} {} {}</text>\n".format(num,
                                                                  self.foldername,
-                                                                 ahora)
+                                                                 self.tiempo)
             pregunta_utf = pregunta  # .encode()
             arx.write(pregunta_utf)
             arx.write("</name>\n")
@@ -103,18 +102,18 @@ class Cloze:
         arx.close()
 
         print(32 * "-*")
-        print("Finalizado: {}".format(dt.datetime.now()))
+        print("Ending: {}".format(dt.datetime.now()))
         print("Folder: {}".format(self.foldername))
-        print("Filename: {}".format(filename))
-        print("#exes: {}".format(k))
+        print("Filename: {}".format(self.filename))
+        print("Number of exercises: {}".format(N))
 
     def get_exercises(self, cuantos):
         assert cuantos > 0
-        mihtml = []
         for k in range(cuantos):
+            self.generator.reload_parameters()
             exercise_text = self.generator.statement()
-            mihtml.append(exercise_text)
-        self.to_moodle_xml(mihtml)
+            self.xml.append(exercise_text)
+        self.to_moodle_xml()
 
     # def quick(self, cuantos=0, xml=None):
     #     if xml:
