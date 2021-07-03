@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="13150985-58c5-4d39-b671-0339ef659e47" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/cloze.py" beforeDir="false" afterPath="$PROJECT_DIR$/cloze.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/moodpy/graphics.py" beforeDir="false" afterPath="$PROJECT_DIR$/moodpy/graphics.py" afterDir="false" />
-    </list>
+    <list default="true" id="13150985-58c5-4d39-b671-0339ef659e47" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -119,7 +114,7 @@
       <option name="presentableId" value="Default" />
       <updated>1623109548605</updated>
       <workItem from="1623109554721" duration="8574000" />
-      <workItem from="1623170329507" duration="8368000" />
+      <workItem from="1623170329507" duration="8370000" />
     </task>
     <servers />
   </component>
