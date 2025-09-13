@@ -1,0 +1,93 @@
+{
+  "name": "moodpy",
+  "version": "2.0.0",
+  "description": "Python library for generating randomized Moodle cloze-type questions with mathematical and financial content",
+  "type": "python-library",
+  "framework": "python",
+  "language": "python",
+  "domain": "education-technology",
+  "keywords": [
+    "moodle",
+    "education",
+    "mathematics",
+    "finance",
+    "quiz-generator",
+    "parametric-exercises",
+    "xml-export",
+    "e-learning"
+  ],
+  "capabilities": [
+    "parametric-exercise-generation",
+    "moodle-xml-export",
+    "mathematical-content-creation",
+    "financial-mathematics",
+    "batch-processing",
+    "image-integration",
+    "random-parameter-generation",
+    "parameter-validation"
+  ],
+  "core_components": {
+    "Generator": "Parametric exercise creation with lambda functions and validation",
+    "Cloze": "Moodle XML export and file management system",
+    "tools": "Utility functions for random generation and formatting",
+    "matfin": "Financial mathematics domain-specific generators",
+    "graphics": "Image handling for matplotlib integration"
+  },
+  "dependencies": {
+    "required": [
+      "numpy>=1.21.0",
+      "matplotlib>=3.5.0", 
+      "tabulate>=0.8.0"
+    ],
+    "python_version": ">=3.8"
+  },
+  "submodules": {
+    "generators": {
+      "url": "https://github.com/julihocc/moodpy-generators.git",
+      "description": "Collection of 80+ exercise generators in Jupyter notebooks"
+    },
+    "library": {
+      "url": "https://github.com/julihocc/moodpy-library.git", 
+      "description": "Question banks and course materials from multiple semesters"
+    }
+  },
+  "development": {
+    "status": "beta",
+    "ai_assisted": true,
+    "testing": {
+      "unit_tests": false,
+      "integration_tests": false,
+      "manual_testing": true
+    },
+    "documentation": {
+      "readme": true,
+      "api_docs": false,
+      "examples": true,
+      "ai_instructions": true
+    }
+  },
+  "usage_patterns": {
+    "workflow": [
+      "Define parameters with lambda functions",
+      "Generate random values with reload_parameters()",
+      "Validate with test_parameters()", 
+      "Create exercise text with placeholders",
+      "Export to Moodle XML with get_exercises()"
+    ],
+    "file_organization": "{SUBJECT}_{CODE}_{TOPIC} folders with timestamped XML files",
+    "encoding": "UTF-8 for international mathematical content"
+  },
+  "author": {
+    "name": "Julio Cesar Hernandez Ochoa",
+    "email": "julihocc@gmail.com",
+    "github": "julihocc"
+  },
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/julihocc/moodpy",
+    "branch": "dev",
+    "issues": "https://github.com/julihocc/moodpy/issues"
+  },
+  "created": "2025-09-13",
+  "updated": "2025-09-13"
+}

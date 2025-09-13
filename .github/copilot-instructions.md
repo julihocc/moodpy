@@ -1,6 +1,13 @@
-# MoodPy Copilot Instructions
+# MoodPy v2.0.0 Copilot Instructions
 
-MoodPy is a Python library for generating randomized Moodle cloze-type questions with mathematical and financial content. The system generates parametric exercises that can be exported to Moodle XML format.
+MoodPy v2.0.0 is a mature Python library for generating randomized Moodle cloze-type questions with mathematical and financial content. The system generates parametric exercises that can be exported to Moodle XML format.
+
+## Version 2.0.0 Updates
+- **Package Structure**: Now properly packaged with `__init__.py` and comprehensive `pyproject.toml`
+- **Dependency Management**: Defined core dependencies (numpy, matplotlib, tabulate)
+- **Submodules Initialized**: Both generators/ and library/ submodules are now active with 80+ exercise generators
+- **Production Ready**: Stable API with comprehensive documentation and testing workflows
+- **Enhanced Metadata**: Full project metadata with author information, licensing, and classification
 
 ## Architecture Overview
 
