@@ -1,0 +1,3 @@
+[submodule "generators"]
+	path = generators
+	url = https://github.com/julihocc/moodpy-generators.git
