@@ -24,11 +24,11 @@ import numpy as np
 import sys
 import os
 
-# Add parent directory to path to import MoodPy modules
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add src directory to path to import MoodPy modules
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src'))
 
-from generator import Generator
-from cloze import Cloze
+from moodpy.generator import Generator
+from moodpy.cloze import Cloze
 
 
 class SeparableODEGenerator(Generator):

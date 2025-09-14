@@ -25,11 +25,12 @@ from tabulate import tabulate
 import sys
 import os
 
-# Add parent directory to path to import MoodPy modules
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Add src directory to path to import MoodPy as a package
+src_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src')
+sys.path.insert(0, src_path)
 
-from generator import Generator
-from cloze import Cloze
+from moodpy.generator import Generator
+from moodpy.cloze import Cloze
 
 
 class EquilibriumPointGenerator(Generator):
@@ -190,13 +191,16 @@ def main():
     print(f"- Equilibrium quantity: {gen.parameters['u_eq']} units")
     print(f"- Supply slope: {gen.parameters['p_s']:.3f}")
     print(f"- Demand slope: {gen.parameters['p_d']:.3f}")
+    
+    # Calculate derived parameters
+    gen.calculate_derived_parameters()
     print(f"- Equilibrium price: ${gen.parameters['p_eq']:.2f}")
     
     # Generate exercise
     gen.set_exercise()
     print("\nGenerate exercise successful!")
     print("Preview (first 200 characters):")
-    print(gen.exercise[:200] + "..." if len(gen.exercise) > 200 else gen.exercise)
+    print(gen.exercise_text[:200] + "..." if len(gen.exercise_text) > 200 else gen.exercise_text)
     
     # Optional: Create XML export
     print("\n" + "="*60)
