@@ -144,29 +144,33 @@
 
 ### Phase 7: Legacy Module Integration
 **Status**: IN PROGRESS  
-**Completion**: 58/136 generators migrated (42.6%)  
+**Completion**: 70/136 generators migrated (51.5%)  
 **Last Batch**: Advanced Statistical Analysis (8 generators)  
 
 **Achievements So Far**:
 - ✅ Cataloged 136 legacy generators in GENERATORS_CATALOG.md
 - ✅ Built migration framework (migrate_generator.py) 
 - ✅ Reorganized from src/moodpy/subjects/ to examples/ structure
-- ✅ Migrated 67 total generators across 7 subject areas:
+- ✅ Migrated 70 total generators across 8 subject areas:
   - **Economics**: 7 generators (price equilibrium, supply/demand, market analysis, profit maximization)
   - **Finance**: 9 generators (TIR, NPV, amortization tables, debt payments, annual returns)
   - **Mathematics**: 26 generators (linear functions, differential equations, partial fractions, trigonometric integrals)
   - **Business**: 4 generators (direct proportions, Cramer's rule 2x2/3x3, business mathematics)
   - **Statistics**: 9 generators (correlation analysis, hypothesis testing, probability distributions, p-value interpretation)
   - **Engineering**: 6 generators (transforms, complex analysis, numerical methods, vector calculus, signal processing, system analysis)
+  - **Data Science**: 3 generators (linear regression, curve fitting, optimization methods)
   - **Physics**: 1 generator (placeholder for future expansion)
 
-**Latest Batch - Engineering Mathematics (September 14)**:
-- ✅ `inverse_laplace_transform.py` - Advanced Laplace transform analysis with exponential-sinusoidal functions
-- ✅ `complex_number_analysis.py` - Comprehensive complex number operations and polar conversions
-- ✅ `numerical_methods.py` - Multi-method numerical analysis (Newton-Raphson, bisection, trapezoidal)
-- ✅ `vector_calculus.py` - Vector operations, line integrals, and gradient analysis with engineering contexts
-- ✅ `fourier_analysis.py` - Fourier series, transforms, and frequency domain analysis for signal processing
-- ✅ `differential_equations.py` - ODE solutions, system analysis, and Laplace transform applications
+**Latest Batch - Data Science and Optimization (September 14)**:
+- ✅ `linear_regression_analysis.py` - Comprehensive least squares regression with parameter estimation and model evaluation
+- ✅ `curve_fitting_analysis.py` - Learning curves, logistic growth modeling, and statistical model comparison
+- ✅ `optimization_methods.py` - Gradient descent, Newton's method, and multivariable optimization analysis
+
+**New Subject Area Milestone**: Data Science generators introduce advanced machine learning concepts:
+- Mathematical optimization theory (gradient descent, Newton's method, learning rates)
+- Statistical modeling (regression analysis, curve fitting, model selection criteria)
+- Machine learning metrics (R², RMSE, AIC, correlation coefficients, prediction intervals)
+- Educational scaffolding for complex algorithms with step-by-step mathematical derivations
 
 **Previous Batch - Advanced Statistical Analysis (September 14)**:
 - ✅ `discrete_correlation_pep201.py` - Joint probability distributions and discrete correlation analysis
