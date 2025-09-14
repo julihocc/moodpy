@@ -1,9 +1,22 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-import numpy as np
+# Required dependencies with graceful error handling
+try:
+    import numpy as np
+    _HAS_NUMPY = True
+except ImportError:
+    np = None
+    _HAS_NUMPY = False
+
+try:
+    from tabulate import tabulate
+    _HAS_TABULATE = True
+except ImportError:
+    tabulate = None
+    _HAS_TABULATE = False
+
 from . import tools
-from tabulate import tabulate
 
 frec = {1:"anualmente", 2:"semestralmente", 3:"cuatrimestral", 4:"trimestralmente",
         6:"bimestralmente", 12: "mensualmente"}
@@ -104,6 +117,7 @@ def TIR(F):
         if np.abs(v0)<1e-3:
             output["TIR"] = float(r0-1)
             #return r0-1
-    except:
+    except Exception as e:
+        # Handle any errors in TIR calculation
         output["TIR"] = None
     return output
