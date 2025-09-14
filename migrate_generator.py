@@ -81,6 +81,23 @@ class GeneratorMigrator:
         # Replace cell separators with proper function/class structure
         cleaned_content = re.sub(r'# %%[^\n]*\n', '\n\n', cleaned_content)
         
+        # Fix common Sage syntax issues
+        # Replace function definitions like f(x) = expression with proper Python
+        cleaned_content = re.sub(r'(\w+)\(([^)]+)\)\s*=\s*([^=\n]+)', r'\1 = lambda \2: \3', cleaned_content)
+        
+        # Replace var() declarations
+        cleaned_content = re.sub(r'(\w+(?:,\s*\w+)*)\s*=\s*var\(["\']([^"\']+)["\']\)', r'# Variables: \2\n# Note: Convert to proper symbolic math as needed', cleaned_content)
+        
+        # Comment out problematic Sage-specific lines
+        lines = cleaned_content.split('\n')
+        for i, line in enumerate(lines):
+            if 'html(' in line and not line.strip().startswith('#'):
+                lines[i] = '# ' + line + '  # TODO: Convert HTML output for MoodPy'
+            elif 'sage.' in line and not line.strip().startswith('#'):
+                lines[i] = '# ' + line + '  # TODO: Replace Sage functionality'
+        
+        cleaned_content = '\n'.join(lines)
+        
         # Add proper module header
         module_name = re.sub(r'[^\w]', '_', info['title']).lower()
         # Clean up multiple underscores and remove leading/trailing ones
@@ -142,10 +159,25 @@ except ImportError:
         """Migrate the highest priority generators first."""
         
         high_priority = [
+            # Already migrated in first batch
             ("generators/MOODPY MAN 101 PRECIO DE EQUILIBRIO.py", "economics"),
             ("generators/Mate Financiera 104 Plazo de Inversión-checkpoint.py", "finance"),
             ("generators/P301_fp_lin_nr.py", "mathematics"),
             ("generators/PEP201_corr_discreta.py", "statistics"),
+            
+            # Second batch - high educational value
+            ("generators/P101_edo_separable-checkpoint.py", "mathematics"),
+            ("generators/P203_edo2_homo-checkpoint.py", "mathematics"),
+            ("generators/Mate Financiera 105 Rendimiento Anual Efectivo-checkpoint.py", "finance"),
+            ("generators/303-1 Transformada Inversa I-checkpoint.py", "mathematics"),
+            ("generators/P302_fp_lin_r.py", "mathematics"),
+            ("generators/P205_edo2_ekx.py", "mathematics"),
+            
+            # Third batch - additional valuable content
+            ("generators/P104_curva_logistica-checkpoint.py", "mathematics"),
+            ("generators/P103_curva_aprendizaje-checkpoint.py", "business"),
+            ("generators/TEST MAN 102 MAXIMIZAR GANANCIA-checkpoint.py", "economics"),
+            ("generators/Mate Financiera 203 Anualidades-checkpoint.py", "finance"),
         ]
         
         results = []
