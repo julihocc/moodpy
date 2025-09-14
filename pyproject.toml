@@ -1,19 +1,18 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "moodpy"
-version = "2.0.0"
-description = "Python library for generating randomized Moodle cloze-type questions with mathematical and financial content"
+version = "3.0.0"
+description = "Python library for generating parametric Moodle cloze questions with mathematical and financial content"
 readme = "README.md"
 requires-python = ">=3.8"
-dependencies = [
-    "numpy>=1.21.0",
-    "matplotlib>=3.5.0",
-    "tabulate>=0.8.0"
-]
+license = {text = "MIT"}
 authors = [
     {name = "Julio Cesar Hernandez Ochoa", email = "julihocc@gmail.com"}
 ]
-license = {text = "MIT"}
-keywords = ["moodle", "education", "mathematics", "finance", "quiz", "generator"]
+keywords = ["moodle", "education", "mathematics", "finance", "quiz-generator", "parametric-exercises"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Education",
@@ -25,10 +24,89 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Topic :: Education",
-    "Topic :: Scientific/Engineering :: Mathematics"
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Software Development :: Libraries :: Python Modules"
+]
+dependencies = [
+    "numpy>=1.21.0",
+    "matplotlib>=3.5.0",
+    "tabulate>=0.8.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+    "black>=22.0",
+    "flake8>=5.0",
+    "pre-commit>=2.20"
+]
+docs = [
+    "sphinx>=5.0",
+    "sphinx-rtd-theme>=1.0",
+    "jupyter>=1.0",
+    "nbsphinx>=0.8"
+]
+examples = [
+    "jupyter>=1.0",
+    "ipykernel>=6.0"
 ]
 
 [project.urls]
 Homepage = "https://github.com/julihocc/moodpy"
 Repository = "https://github.com/julihocc/moodpy.git"
 Issues = "https://github.com/julihocc/moodpy/issues"
+Documentation = "https://moodpy.readthedocs.io"
+Examples = "https://github.com/julihocc/moodpy/tree/main/examples"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+moodpy = ["py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--strict-markers",
+    "--strict-config",
+    "--cov=moodpy",
+    "--cov-report=term-missing",
+    "--cov-report=html",
+    "--cov-report=xml"
+]
+
+[tool.black]
+line-length = 88
+target-version = ["py38", "py39", "py310", "py311", "py312"]
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    ".eggs",
+    "*.egg-info",
+    ".venv",
+    ".tox"
+]
