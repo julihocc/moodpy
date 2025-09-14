@@ -146,5 +146,14 @@ def NM(x, entero=False, percent=False, error=0.001, round_zero=False):
         else:
             return "{1:NM:=" + sx + ":" + stol + "}"
 
-
+def STxt(text):
+    """
+    Format text answer for Moodle cloze questions.
     
+    Args:
+        text (str): Text answer
+        
+    Returns:
+        str: Formatted Moodle text answer
+    """
+    return f"{{1:SHORTANSWER:={text}}}"

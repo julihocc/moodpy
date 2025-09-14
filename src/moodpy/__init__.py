@@ -30,7 +30,9 @@ from .generator import Generator
 from .cloze import Cloze
 from . import tools
 from . import matfin
-from . import subjects
+
+# Import commonly used functions
+from .tools import NM, STxt
 
 __version__ = "3.0.0"
 __author__ = "Julio Cesar Hernandez Ochoa"
@@ -61,9 +63,12 @@ __all__ = [
     'tools',
     'matfin',
     'graphics',
-    'subjects',
     '__version__',
-    'VERSION'
+    'VERSION',
+    'pretty',
+    'quick',
+    'NM',
+    'STxt'
 ]
 
 def get_version():
@@ -73,3 +78,41 @@ def get_version():
 def has_graphics():
     """Check if graphics module is available."""
     return _HAS_GRAPHICS
+
+def pretty(arg1, arg2=""):
+    """
+    Format exercise and feedback as Moodle question components.
+    
+    Args:
+        arg1 (str): Exercise text
+        arg2 (str): Feedback text (optional)
+    
+    Returns:
+        str: Formatted question text and feedback
+    """
+    from .generator import questiontext, feedback, cdata
+    s1 = questiontext(cdata(arg1))
+    s2 = feedback(cdata(arg2)) if arg2 else ""
+    return f"{s1}\n{s2}"
+
+def quick(generador, donde, ready, impr=0, cabecera=""):
+    """
+    Quick test function for generators.
+    
+    Args:
+        generador: Generator function
+        donde: Output location (not used in test mode)
+        ready: Number of questions to generate
+        impr: Print mode (0 for silent, 1 for verbose)
+        cabecera: Header text
+    
+    Returns:
+        None: Prints output directly
+    """
+    if ready:
+        for k in range(ready):
+            ejercicio = generador(impr, cabecera)
+            if impr:
+                print(ejercicio)
+    else:
+        print(generador(impr, cabecera))
