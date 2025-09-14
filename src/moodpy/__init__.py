@@ -30,6 +30,7 @@ from .generator import Generator
 from .cloze import Cloze
 from . import tools
 from . import matfin
+from . import subjects
 
 __version__ = "3.0.0"
 __author__ = "Julio Cesar Hernandez Ochoa"
@@ -60,6 +61,7 @@ __all__ = [
     'tools',
     'matfin',
     'graphics',
+    'subjects',
     '__version__',
     'VERSION'
 ]
