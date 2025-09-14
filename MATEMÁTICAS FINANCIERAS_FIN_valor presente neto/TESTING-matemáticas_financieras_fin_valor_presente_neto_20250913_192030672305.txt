@@ -1,0 +1,226 @@
+
+        ----------------------------------------------------------------
+----------------------------------------------------------------
+ Exercise 1
+        ----
+ 	 key:	 investment 
+ 	 value: 	 -915000----
+ 	 key:	 annual_rate 
+ 	 value: 	 12.12----
+ 	 key:	 frequency 
+ 	 value: 	 12----
+ 	 key:	 n_periods 
+ 	 value: 	 11----
+ 	 key:	 cf_base 
+ 	 value: 	 26000----
+ 	 key:	 cf_variation 
+ 	 value: 	 0.990177673984925
+
+        
+        
+        <h1>Matemáticas Financieras</h1>
+        <h2>Valor Presente Neto (VPN)</h2>
+        
+        <p>
+        Calcule el valor presente neto del siguiente flujo de caja:
+        </p>
+        
+        <table>
+<tbody>
+<tr><td>Inversión  </td><td>$-986,000</td></tr>
+<tr><td>Semestre 1 </td><td>$79,000  </td></tr>
+<tr><td>Semestre 2 </td><td>$73,000  </td></tr>
+<tr><td>Semestre 3 </td><td>$53,000  </td></tr>
+<tr><td>Semestre 4 </td><td>$55,000  </td></tr>
+<tr><td>Semestre 5 </td><td>$75,000  </td></tr>
+<tr><td>Semestre 6 </td><td>$49,000  </td></tr>
+<tr><td>Semestre 7 </td><td>$60,000  </td></tr>
+<tr><td>Semestre 8 </td><td>$53,000  </td></tr>
+<tr><td>Semestre 9 </td><td>$64,000  </td></tr>
+<tr><td>Semestre 10</td><td>$80,000  </td></tr>
+<tr><td>Semestre 11</td><td>$62,000  </td></tr>
+<tr><td>Semestre 12</td><td>$68,000  </td></tr>
+</tbody>
+</table>
+        
+        <p>
+        con un costo de capital de <strong>18.11%</strong> anual, 
+        compuesto <strong>semestralmente</strong>.
+        </p>
+        
+        <p>
+        <strong>Valor Presente Neto:</strong> ${1:NM:=-524599.88:5246.00}
+        </p>
+        
+        <h3>Interpretación</h3>
+        <p>
+        <strong>Proyecto NO VIABLE:</strong> El VPN es negativo, lo que indica que el proyecto destruye valor.
+        </p>
+        
+        <h3>Fórmula utilizada</h3>
+        <p>
+        $$VPN = I_0 + \sum_{t=1}^{n} \frac{FC_t}{(1+r)^t}$$
+        </p>
+        <p>
+        donde:
+        </p>
+        <ul>
+        <li>\(I_0\) = Inversión inicial = $-986,000</li>
+        <li>\(FC_t\) = Flujo de caja en el período \(t\)</li>
+        <li>\(r\) = Tasa de descuento por período = 0.0905</li>
+        <li>\(n\) = Número de períodos = 12</li>
+        </ul>
+        
+        
+        
+        
+        ----------------------------------------------------------------
+----------------------------------------------------------------
+ Exercise 2
+        ----
+ 	 key:	 investment 
+ 	 value: 	 -1014000----
+ 	 key:	 annual_rate 
+ 	 value: 	 12.73----
+ 	 key:	 frequency 
+ 	 value: 	 12----
+ 	 key:	 n_periods 
+ 	 value: 	 8----
+ 	 key:	 cf_base 
+ 	 value: 	 84000----
+ 	 key:	 cf_variation 
+ 	 value: 	 1.4125129356276855
+
+        
+        
+        <h1>Matemáticas Financieras</h1>
+        <h2>Valor Presente Neto (VPN)</h2>
+        
+        <p>
+        Calcule el valor presente neto del siguiente flujo de caja:
+        </p>
+        
+        <table>
+<tbody>
+<tr><td>Inversión  </td><td>$-986,000</td></tr>
+<tr><td>Semestre 1 </td><td>$79,000  </td></tr>
+<tr><td>Semestre 2 </td><td>$73,000  </td></tr>
+<tr><td>Semestre 3 </td><td>$53,000  </td></tr>
+<tr><td>Semestre 4 </td><td>$55,000  </td></tr>
+<tr><td>Semestre 5 </td><td>$75,000  </td></tr>
+<tr><td>Semestre 6 </td><td>$49,000  </td></tr>
+<tr><td>Semestre 7 </td><td>$60,000  </td></tr>
+<tr><td>Semestre 8 </td><td>$53,000  </td></tr>
+<tr><td>Semestre 9 </td><td>$64,000  </td></tr>
+<tr><td>Semestre 10</td><td>$80,000  </td></tr>
+<tr><td>Semestre 11</td><td>$62,000  </td></tr>
+<tr><td>Semestre 12</td><td>$68,000  </td></tr>
+</tbody>
+</table>
+        
+        <p>
+        con un costo de capital de <strong>18.11%</strong> anual, 
+        compuesto <strong>semestralmente</strong>.
+        </p>
+        
+        <p>
+        <strong>Valor Presente Neto:</strong> ${1:NM:=-524599.88:5246.00}
+        </p>
+        
+        <h3>Interpretación</h3>
+        <p>
+        <strong>Proyecto NO VIABLE:</strong> El VPN es negativo, lo que indica que el proyecto destruye valor.
+        </p>
+        
+        <h3>Fórmula utilizada</h3>
+        <p>
+        $$VPN = I_0 + \sum_{t=1}^{n} \frac{FC_t}{(1+r)^t}$$
+        </p>
+        <p>
+        donde:
+        </p>
+        <ul>
+        <li>\(I_0\) = Inversión inicial = $-986,000</li>
+        <li>\(FC_t\) = Flujo de caja en el período \(t\)</li>
+        <li>\(r\) = Tasa de descuento por período = 0.0905</li>
+        <li>\(n\) = Número de períodos = 12</li>
+        </ul>
+        
+        
+        
+        
+        ----------------------------------------------------------------
+----------------------------------------------------------------
+ Exercise 3
+        ----
+ 	 key:	 investment 
+ 	 value: 	 -1059000----
+ 	 key:	 annual_rate 
+ 	 value: 	 21.26----
+ 	 key:	 frequency 
+ 	 value: 	 3----
+ 	 key:	 n_periods 
+ 	 value: 	 10----
+ 	 key:	 cf_base 
+ 	 value: 	 46000----
+ 	 key:	 cf_variation 
+ 	 value: 	 1.6729320000774373
+
+        
+        
+        <h1>Matemáticas Financieras</h1>
+        <h2>Valor Presente Neto (VPN)</h2>
+        
+        <p>
+        Calcule el valor presente neto del siguiente flujo de caja:
+        </p>
+        
+        <table>
+<tbody>
+<tr><td>Inversión  </td><td>$-986,000</td></tr>
+<tr><td>Semestre 1 </td><td>$79,000  </td></tr>
+<tr><td>Semestre 2 </td><td>$73,000  </td></tr>
+<tr><td>Semestre 3 </td><td>$53,000  </td></tr>
+<tr><td>Semestre 4 </td><td>$55,000  </td></tr>
+<tr><td>Semestre 5 </td><td>$75,000  </td></tr>
+<tr><td>Semestre 6 </td><td>$49,000  </td></tr>
+<tr><td>Semestre 7 </td><td>$60,000  </td></tr>
+<tr><td>Semestre 8 </td><td>$53,000  </td></tr>
+<tr><td>Semestre 9 </td><td>$64,000  </td></tr>
+<tr><td>Semestre 10</td><td>$80,000  </td></tr>
+<tr><td>Semestre 11</td><td>$62,000  </td></tr>
+<tr><td>Semestre 12</td><td>$68,000  </td></tr>
+</tbody>
+</table>
+        
+        <p>
+        con un costo de capital de <strong>18.11%</strong> anual, 
+        compuesto <strong>semestralmente</strong>.
+        </p>
+        
+        <p>
+        <strong>Valor Presente Neto:</strong> ${1:NM:=-524599.88:5246.00}
+        </p>
+        
+        <h3>Interpretación</h3>
+        <p>
+        <strong>Proyecto NO VIABLE:</strong> El VPN es negativo, lo que indica que el proyecto destruye valor.
+        </p>
+        
+        <h3>Fórmula utilizada</h3>
+        <p>
+        $$VPN = I_0 + \sum_{t=1}^{n} \frac{FC_t}{(1+r)^t}$$
+        </p>
+        <p>
+        donde:
+        </p>
+        <ul>
+        <li>\(I_0\) = Inversión inicial = $-986,000</li>
+        <li>\(FC_t\) = Flujo de caja en el período \(t\)</li>
+        <li>\(r\) = Tasa de descuento por período = 0.0905</li>
+        <li>\(n\) = Número de períodos = 12</li>
+        </ul>
+        
+        
+        
+        

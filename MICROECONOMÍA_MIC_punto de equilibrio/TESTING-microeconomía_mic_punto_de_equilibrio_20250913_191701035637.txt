@@ -1,0 +1,292 @@
+
+        ----------------------------------------------------------------
+----------------------------------------------------------------
+ Exercise 1
+        ----
+ 	 key:	 u_eq 
+ 	 value: 	 95----
+ 	 key:	 p_s 
+ 	 value: 	 4.351634473278674----
+ 	 key:	 p_d 
+ 	 value: 	 -4.648155818431454----
+ 	 key:	 u1 
+ 	 value: 	 72----
+ 	 key:	 u2 
+ 	 value: 	 84----
+ 	 key:	 u3 
+ 	 value: 	 147----
+ 	 key:	 u4 
+ 	 value: 	 94----
+ 	 key:	 u5 
+ 	 value: 	 65----
+ 	 key:	 p_eq 
+ 	 value: 	 835.3368375181316----
+ 	 key:	 s_u1 
+ 	 value: 	 658.6309680431423----
+ 	 key:	 d_u1 
+ 	 value: 	 1033.358095083992----
+ 	 key:	 s_u2 
+ 	 value: 	 1004.010622016985----
+ 	 key:	 d_u2 
+ 	 value: 	 646.3165462052646----
+ 	 key:	 s_u3 
+ 	 value: 	 690.7593079476858----
+ 	 key:	 d_u3 
+ 	 value: 	 997.3542300720176----
+ 	 key:	 s_u4 
+ 	 value: 	 1124.4918966590233----
+ 	 key:	 d_u4 
+ 	 value: 	 511.30205241035964----
+ 	 key:	 s_u5 
+ 	 value: 	 522.0855234488323----
+ 	 key:	 d_u5 
+ 	 value: 	 1186.3745213848845
+
+        
+        
+        <h1>Microeconomía</h1>
+        <h2>Punto de Equilibrio</h2>
+        
+        <p>
+        Una empresa ha determinado que las funciones de oferta y demanda para su producto son:
+        </p>
+        
+        <ul>
+        <li><strong>Función de Oferta:</strong> \(S(u) = 8.03 \cdot u\)</li>
+        <li><strong>Función de Demanda:</strong> \(D(u) = 835.34 + -9.00 \cdot (u - 104)\)</li>
+        </ul>
+        
+        <p>
+        donde \(u\) representa la cantidad y los precios están en pesos mexicanos.
+        </p>
+        
+        <h3>Pregunta</h3>
+        <p>
+        Determine el punto de equilibrio (cantidad y precio) donde la oferta iguala a la demanda.
+        </p>
+        
+        <p>
+        <strong>Cantidad de equilibrio:</strong> {1:NM:=104:1.04} unidades<br>
+        <strong>Precio de equilibrio:</strong> ${1:NM:=835.34:8.35}
+        </p>
+        
+        <h3>Verificación</h3>
+        <p>
+        Compruebe su respuesta evaluando las funciones en los siguientes puntos:
+        </p>
+        
+        <table>
+<thead>
+<tr><th style="text-align: right;">  Cantidad (u)</th><th>Oferta S(u)  </th><th>Demanda D(u)  </th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">            82</td><td>$658.63      </td><td>$1033.36      </td></tr>
+<tr><td style="text-align: right;">           125</td><td>$1004.01     </td><td>$646.32       </td></tr>
+<tr><td style="text-align: right;">            86</td><td>$690.76      </td><td>$997.35       </td></tr>
+<tr><td style="text-align: right;">           140</td><td>$1124.49     </td><td>$511.30       </td></tr>
+<tr><td style="text-align: right;">            65</td><td>$522.09      </td><td>$1186.37      </td></tr>
+</tbody>
+</table>
+        
+        <p>
+        <em>Nota: En el equilibrio, S(u) = D(u). Las diferencias en otros puntos muestran 
+        el exceso de oferta o demanda.</em>
+        </p>
+        
+        
+        
+        
+        ----------------------------------------------------------------
+----------------------------------------------------------------
+ Exercise 2
+        ----
+ 	 key:	 u_eq 
+ 	 value: 	 97----
+ 	 key:	 p_s 
+ 	 value: 	 4.566721189809189----
+ 	 key:	 p_d 
+ 	 value: 	 -6.5569530003183----
+ 	 key:	 u1 
+ 	 value: 	 51----
+ 	 key:	 u2 
+ 	 value: 	 119----
+ 	 key:	 u3 
+ 	 value: 	 96----
+ 	 key:	 u4 
+ 	 value: 	 121----
+ 	 key:	 u5 
+ 	 value: 	 140----
+ 	 key:	 p_eq 
+ 	 value: 	 835.3368375181316----
+ 	 key:	 s_u1 
+ 	 value: 	 658.6309680431423----
+ 	 key:	 d_u1 
+ 	 value: 	 1033.358095083992----
+ 	 key:	 s_u2 
+ 	 value: 	 1004.010622016985----
+ 	 key:	 d_u2 
+ 	 value: 	 646.3165462052646----
+ 	 key:	 s_u3 
+ 	 value: 	 690.7593079476858----
+ 	 key:	 d_u3 
+ 	 value: 	 997.3542300720176----
+ 	 key:	 s_u4 
+ 	 value: 	 1124.4918966590233----
+ 	 key:	 d_u4 
+ 	 value: 	 511.30205241035964----
+ 	 key:	 s_u5 
+ 	 value: 	 522.0855234488323----
+ 	 key:	 d_u5 
+ 	 value: 	 1186.3745213848845
+
+        
+        
+        <h1>Microeconomía</h1>
+        <h2>Punto de Equilibrio</h2>
+        
+        <p>
+        Una empresa ha determinado que las funciones de oferta y demanda para su producto son:
+        </p>
+        
+        <ul>
+        <li><strong>Función de Oferta:</strong> \(S(u) = 8.03 \cdot u\)</li>
+        <li><strong>Función de Demanda:</strong> \(D(u) = 835.34 + -9.00 \cdot (u - 104)\)</li>
+        </ul>
+        
+        <p>
+        donde \(u\) representa la cantidad y los precios están en pesos mexicanos.
+        </p>
+        
+        <h3>Pregunta</h3>
+        <p>
+        Determine el punto de equilibrio (cantidad y precio) donde la oferta iguala a la demanda.
+        </p>
+        
+        <p>
+        <strong>Cantidad de equilibrio:</strong> {1:NM:=104:1.04} unidades<br>
+        <strong>Precio de equilibrio:</strong> ${1:NM:=835.34:8.35}
+        </p>
+        
+        <h3>Verificación</h3>
+        <p>
+        Compruebe su respuesta evaluando las funciones en los siguientes puntos:
+        </p>
+        
+        <table>
+<thead>
+<tr><th style="text-align: right;">  Cantidad (u)</th><th>Oferta S(u)  </th><th>Demanda D(u)  </th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">            82</td><td>$658.63      </td><td>$1033.36      </td></tr>
+<tr><td style="text-align: right;">           125</td><td>$1004.01     </td><td>$646.32       </td></tr>
+<tr><td style="text-align: right;">            86</td><td>$690.76      </td><td>$997.35       </td></tr>
+<tr><td style="text-align: right;">           140</td><td>$1124.49     </td><td>$511.30       </td></tr>
+<tr><td style="text-align: right;">            65</td><td>$522.09      </td><td>$1186.37      </td></tr>
+</tbody>
+</table>
+        
+        <p>
+        <em>Nota: En el equilibrio, S(u) = D(u). Las diferencias en otros puntos muestran 
+        el exceso de oferta o demanda.</em>
+        </p>
+        
+        
+        
+        
+        ----------------------------------------------------------------
+----------------------------------------------------------------
+ Exercise 3
+        ----
+ 	 key:	 u_eq 
+ 	 value: 	 107----
+ 	 key:	 p_s 
+ 	 value: 	 4.429552587687677----
+ 	 key:	 p_d 
+ 	 value: 	 -8.511382201747246----
+ 	 key:	 u1 
+ 	 value: 	 129----
+ 	 key:	 u2 
+ 	 value: 	 101----
+ 	 key:	 u3 
+ 	 value: 	 132----
+ 	 key:	 u4 
+ 	 value: 	 137----
+ 	 key:	 u5 
+ 	 value: 	 119----
+ 	 key:	 p_eq 
+ 	 value: 	 835.3368375181316----
+ 	 key:	 s_u1 
+ 	 value: 	 658.6309680431423----
+ 	 key:	 d_u1 
+ 	 value: 	 1033.358095083992----
+ 	 key:	 s_u2 
+ 	 value: 	 1004.010622016985----
+ 	 key:	 d_u2 
+ 	 value: 	 646.3165462052646----
+ 	 key:	 s_u3 
+ 	 value: 	 690.7593079476858----
+ 	 key:	 d_u3 
+ 	 value: 	 997.3542300720176----
+ 	 key:	 s_u4 
+ 	 value: 	 1124.4918966590233----
+ 	 key:	 d_u4 
+ 	 value: 	 511.30205241035964----
+ 	 key:	 s_u5 
+ 	 value: 	 522.0855234488323----
+ 	 key:	 d_u5 
+ 	 value: 	 1186.3745213848845
+
+        
+        
+        <h1>Microeconomía</h1>
+        <h2>Punto de Equilibrio</h2>
+        
+        <p>
+        Una empresa ha determinado que las funciones de oferta y demanda para su producto son:
+        </p>
+        
+        <ul>
+        <li><strong>Función de Oferta:</strong> \(S(u) = 8.03 \cdot u\)</li>
+        <li><strong>Función de Demanda:</strong> \(D(u) = 835.34 + -9.00 \cdot (u - 104)\)</li>
+        </ul>
+        
+        <p>
+        donde \(u\) representa la cantidad y los precios están en pesos mexicanos.
+        </p>
+        
+        <h3>Pregunta</h3>
+        <p>
+        Determine el punto de equilibrio (cantidad y precio) donde la oferta iguala a la demanda.
+        </p>
+        
+        <p>
+        <strong>Cantidad de equilibrio:</strong> {1:NM:=104:1.04} unidades<br>
+        <strong>Precio de equilibrio:</strong> ${1:NM:=835.34:8.35}
+        </p>
+        
+        <h3>Verificación</h3>
+        <p>
+        Compruebe su respuesta evaluando las funciones en los siguientes puntos:
+        </p>
+        
+        <table>
+<thead>
+<tr><th style="text-align: right;">  Cantidad (u)</th><th>Oferta S(u)  </th><th>Demanda D(u)  </th></tr>
+</thead>
+<tbody>
+<tr><td style="text-align: right;">            82</td><td>$658.63      </td><td>$1033.36      </td></tr>
+<tr><td style="text-align: right;">           125</td><td>$1004.01     </td><td>$646.32       </td></tr>
+<tr><td style="text-align: right;">            86</td><td>$690.76      </td><td>$997.35       </td></tr>
+<tr><td style="text-align: right;">           140</td><td>$1124.49     </td><td>$511.30       </td></tr>
+<tr><td style="text-align: right;">            65</td><td>$522.09      </td><td>$1186.37      </td></tr>
+</tbody>
+</table>
+        
+        <p>
+        <em>Nota: En el equilibrio, S(u) = D(u). Las diferencias en otros puntos muestran 
+        el exceso de oferta o demanda.</em>
+        </p>
+        
+        
+        
+        
