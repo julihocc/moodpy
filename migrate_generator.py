@@ -20,7 +20,7 @@ from pathlib import Path
 
 class GeneratorMigrator:
     def __init__(self):
-        self.subjects_dir = Path("src/moodpy/subjects")
+        self.subjects_dir = Path("examples")
         self.generators_dir = Path("generators")
         
     def analyze_generator(self, filepath):
