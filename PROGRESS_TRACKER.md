@@ -2,7 +2,7 @@
 
 **Last Updated**: September 14, 2025  
 **Current Phase**: Phase 7 (Legacy Module Integration) - In Progress  
-**Overall Progress**: 7.5/10 Major Phases Complete (75%)
+**Overall Progress**: 7.7/10 Major Phases Complete (77%)
 
 ## ✅ Completed Phases
 
@@ -144,22 +144,32 @@
 
 ### Phase 7: Legacy Module Integration
 **Status**: IN PROGRESS  
-**Completion**: 50/136 generators migrated (36.8%)  
-**Last Batch**: Management/Economics Applications (12 generators)  
+**Completion**: 58/136 generators migrated (42.6%)  
+**Last Batch**: Advanced Statistical Analysis (8 generators)  
 
 **Achievements So Far**:
 - ✅ Cataloged 136 legacy generators in GENERATORS_CATALOG.md
 - ✅ Built migration framework (migrate_generator.py) 
 - ✅ Reorganized from src/moodpy/subjects/ to examples/ structure
-- ✅ Migrated 50 total generators across 6 subject areas:
+- ✅ Migrated 58 total generators across 6 subject areas:
   - **Economics**: 7 generators (price equilibrium, supply/demand, market analysis, profit maximization)
   - **Finance**: 9 generators (TIR, NPV, amortization tables, debt payments, annual returns)
   - **Mathematics**: 26 generators (linear functions, differential equations, partial fractions, trigonometric integrals)
   - **Business**: 4 generators (direct proportions, Cramer's rule 2x2/3x3, business mathematics)
-  - **Statistics**: 1 generator (basic statistics)  
+  - **Statistics**: 9 generators (correlation analysis, hypothesis testing, probability distributions, p-value interpretation)  
   - **Physics**: 1 generator (placeholder for future expansion)
 
-**Latest Batch - Management/Economics Applications (September 14)**:
+**Latest Batch - Advanced Statistical Analysis (September 14)**:
+- ✅ `discrete_correlation_pep201.py` - Joint probability distributions and discrete correlation analysis
+- ✅ `correlation_matrix_analysis.py` - Multivariate correlation matrices and statistical significance
+- ✅ `right_tailed_hypothesis_test.py` - Right-tailed z-tests with statistical inference
+- ✅ `left_tailed_hypothesis_test.py` - Left-tailed z-tests with critical region analysis
+- ✅ `chi_square_independence_test.py` - Contingency table analysis and categorical data testing
+- ✅ `two_tailed_hypothesis_test.py` - Bilateral hypothesis testing with dual critical regions
+- ✅ `p_value_analysis.py` - Comprehensive p-value calculation and interpretation
+- ✅ `probability_distributions.py` - Normal, binomial, and Poisson distribution analysis
+
+**Previous Batch - Management/Economics Applications (September 14)**:
 - ✅ `price_equilibrium_man_101.py` - Supply and demand equilibrium analysis
 - ✅ `direct_proportions_man_101.py` - Business proportions and recipe scaling
 - ✅ `profit_maximization_man_102.py` - Linear programming optimization problems
@@ -194,9 +204,9 @@
 - Subject-based organization implemented
 
 **Next Target Batches**:
-1. **Advanced Statistical Analysis** - 15+ generators (probability, hypothesis testing, regression)
-2. **Engineering Mathematics** - 12+ generators (transforms, complex analysis, numerical methods)  
-3. **Data Science Applications** - 10+ generators (machine learning, data analysis, visualization)
+1. **Engineering Mathematics** - 12+ generators (transforms, complex analysis, numerical methods)  
+2. **Data Science Applications** - 10+ generators (machine learning, data analysis, visualization)
+3. **Advanced Mathematics Applications** - 15+ generators (optimization, linear algebra, calculus applications)
 
 ## �📋 Upcoming Phases
 
