@@ -1,0 +1,1 @@
+"""\nEconomics generators for MoodPy v3.0.0\n"""\n\n
