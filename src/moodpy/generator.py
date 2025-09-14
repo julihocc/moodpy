@@ -15,6 +15,7 @@ class Generator:
         self.counter = counter
         self.header = ""
         self.lambdas = {}
+        self.derived = {}  # For derived parameter calculations
         self.parameters = {}
         self.data = {}
         self.exercise_text = ""
@@ -25,6 +26,11 @@ class Generator:
     def reload_parameters(self):
         for k, f in self.lambdas.items():
             self.parameters[k] = f(k)
+    
+    def calculate_derived(self):
+        """Calculate derived parameters based on current parameters."""
+        for k, f in self.derived.items():
+            self.parameters[k] = f(self.parameters)
 
     def test_parameters(self, max_steps=10000, debug = False):
         step = 0
@@ -44,13 +50,29 @@ class Generator:
             print("requierements not satisfied")
 
     def set_exercise(self, text):
+        # Update data dictionary to include parameters for compatibility
+        self.data = self.parameters.copy()
+        
+        # Try to format with data, fallback to raw text if formatting not needed
+        try:
+            formatted_text = text.format(d=self.data)
+        except (KeyError, IndexError):
+            formatted_text = text
+            
         self.exercise_text = """
         {0}
         {1}
-        """.format(self.header,text.format(d=self.data))
+        """.format(self.header, formatted_text)
 
     def set_feedback(self, text):
-        self.feedback_text = text.format(d=self.data)
+        # Update data dictionary to include parameters for compatibility
+        self.data = self.parameters.copy()
+        
+        # Try to format with data, fallback to raw text if formatting not needed
+        try:
+            self.feedback_text = text.format(d=self.data)
+        except (KeyError, IndexError):
+            self.feedback_text = text
 
     def set_counter(self, counter):
         self.counter = counter
