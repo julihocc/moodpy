@@ -25,7 +25,8 @@ import sys
 import os
 
 # Add src directory to path to import MoodPy modules
-sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src'))
+src_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'src')
+sys.path.insert(0, src_path)
 
 from moodpy.generator import Generator
 from moodpy.cloze import Cloze
@@ -222,7 +223,7 @@ def main():
     gen.set_exercise()
     print("\nGenerate exercise successful!")
     print("Preview (first 300 characters):")
-    print(gen.exercise[:300] + "..." if len(gen.exercise) > 300 else gen.exercise)
+    print(gen.exercise_text[:300] + "..." if len(gen.exercise_text) > 300 else gen.exercise_text)
     
     # Optional: Create XML export
     print("\n" + "="*60)

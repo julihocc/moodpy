@@ -242,7 +242,7 @@ def main():
     gen.set_exercise()
     print("\nGenerate exercise successful!")
     print("Preview (first 300 characters):")
-    print(gen.exercise[:300] + "..." if len(gen.exercise) > 300 else gen.exercise)
+    print(gen.exercise_text[:300] + "..." if len(gen.exercise_text) > 300 else gen.exercise_text)
     
     # Optional: Create XML export
     print("\n" + "="*60)
