@@ -12,15 +12,37 @@ examples/
 ├── basic/                # Basic examples for beginners
 │   ├── __init__.py
 │   └── arithmetic.py     # Simple arithmetic operations
-├── mathematics/          # Mathematical problem generators
+├── business/             # Business mathematics applications
+│   └── separable_differential_equations.py
+├── economics/            # Economic modeling and analysis
+│   ├── supply_demand_equilibrium.py      # Market equilibrium
+│   ├── profit_maximization.py            # Business optimization
+│   └── market_equilibrium_point.py       # Reconstructed equilibrium
+├── finance/              # Financial mathematics and calculations
 │   ├── __init__.py
-│   ├── linear_equations.py    # Algebra: ax + b = c
-│   └── statistics.py           # Statistics and probability
-├── finance/              # Financial mathematics examples
+│   ├── compound_interest.py              # Compound interest calculations
+│   ├── net_present_value_calculator.py   # NPV analysis (reconstructed)
+│   ├── investment_term_template.py       # Investment period template  
+│   ├── annual_effective_return_template.py # Annual return template
+│   ├── annuities_template.py             # Annuities template
+│   └── empty_template.py                 # Blank finance template
+├── mathematics/          # Pure mathematics (EDOs, transforms, functions)
 │   ├── __init__.py
-│   └── compound_interest.py   # Compound interest calculations
-└── reconstructed/        # Examples reconstructed from library XML
-    └── __init__.py
+│   ├── linear_equations.py               # Algebra: ax + b = c
+│   ├── statistics.py                     # Statistics and probability
+│   ├── separable_differential_equations.py # First-order separable EDOs
+│   ├── separable_ode_reconstructed.py    # Reconstructed separable ODE
+│   ├── logistic_growth_curve.py          # Population growth modeling
+│   ├── second_order_homogeneous_edo.py   # Homogeneous 2nd order EDOs
+│   ├── second_order_edo_exponential_kernel.py # 2nd order EDOs with e^(kx)
+│   ├── linear_function_non_rational.py   # Linear functions (non-rational)
+│   ├── linear_function_rational.py       # Linear functions (rational)
+│   └── inverse_laplace_transform.py      # Laplace transform inversions
+├── physics/              # Physics problems (future expansion)
+│   ├── __init__.py
+│   └── README.md         # Physics content planning
+└── statistics/           # Statistical analysis and probability
+    └── discrete_correlation.py           # Discrete correlation analysis
 ```
 
 ## Getting Started
@@ -38,6 +60,9 @@ python examples/basic/arithmetic.py
 python examples/mathematics/linear_equations.py
 python examples/finance/compound_interest.py
 python examples/mathematics/statistics.py
+python examples/economics/market_equilibrium_point.py
+python examples/finance/net_present_value_calculator.py
+python examples/mathematics/separable_ode_reconstructed.py
 ```
 
 ## Example Categories
