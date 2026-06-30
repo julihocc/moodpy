@@ -33,37 +33,67 @@ cd moodpy
 pip install numpy matplotlib tabulate
 ```
 
-### Basic Example
+### Basic Example — Pattern A (string template)
 
 ```python
-from cloze import Cloze
-from generator import Generator
+from moodpy import Generator, Cloze
 import numpy as np
 
-# Create a Cloze instance for organizing output
-cloze = Cloze()
-cloze.set_info(
-    materia="Mathematics",      # Subject name
-    clave="ALG101",              # Course code
-    tema="Factoring"             # Topic
-)
-
-# Create a generator with random parameters
 gen = Generator()
 gen.lambdas = {
     "a": lambda k: np.random.randint(1, 10),
     "b": lambda k: np.random.randint(2, 8),
 }
+gen.derived = {
+    "answer": lambda d: int(d["a"] + d["b"]),
+}
+# Requirements must be lambda functions (not strings)
+gen.requirements = [
+    lambda: gen.parameters["a"] != gen.parameters["b"],
+]
 
-# Set the exercise template
-gen.set_exercise("Factor: {d[a]}x² + {d[b]}x")
+# Initial reload so set_exercise() can render a preview
+gen.reload_parameters()
+gen.calculate_derived()
 
-# Generate 10 unique exercises and save to XML
+# Template is re-substituted fresh for each question in get_exercises()
+gen.set_exercise("<p>Calculate: {d[a]} + {d[b]} = ?</p><p>Answer: {d[answer]}</p>")
+
+cloze = Cloze()
+cloze.set_info("MATHEMATICS", "ALG101", "addition")
 cloze.set_generator(gen)
-cloze.get_exercises(cuantos=10)
+cloze.get_exercises(cuantos=10)  # 10 unique questions → XML file
 ```
 
-This creates a folder `MATHEMATICS_ALG101_FACTORING/` with an XML file ready to import into Moodle.
+This creates `MATHEMATICS_ALG101_addition/` with an XML file ready to import into Moodle.
+
+### When answers need formatting — Pattern B (exercise_fn)
+
+Use `exercise_fn` when the answer must be formatted with `NM()` (Moodle numerical
+answer syntax). The function is called each iteration with freshly generated parameters.
+
+```python
+from moodpy import Generator, Cloze
+from moodpy.tools import NM
+import numpy as np
+
+gen = Generator()
+gen.lambdas = {
+    "a": lambda k: np.random.randint(2, 13),
+    "b": lambda k: np.random.randint(2, 13),
+}
+gen.requirements = [lambda: gen.parameters["a"] != gen.parameters["b"]]
+
+def build_exercise(gen):
+    a, b = gen.parameters["a"], gen.parameters["b"]
+    gen.set_exercise(f"<p>Calculate: {a} × {b} = {NM(a * b, entero=True)}</p>")
+    gen.set_feedback(f"<p>{a} × {b} = {a * b}</p>")
+
+cloze = Cloze()
+cloze.set_info("MATH", "102", "multiplication")
+cloze.set_generator(gen)
+cloze.get_exercises(cuantos=10, exercise_fn=build_exercise)
+```
 
 ## Core Concepts
 
@@ -116,19 +146,21 @@ MATH_CALC_DERIVATIVES/
 Use `tools.NM()` to format numerical answers with tolerance for Moodle:
 
 ```python
-from tools import NM
+from moodpy.tools import NM
 
-answer = NM(42.5, error=0.001)      # Value ±0.1% tolerance
-answer = NM(100, entero=True)       # Integer answer
-# Returns Moodle format: {1:NM:=42.5:0.0425}
+answer = NM(42.5, error=0.001)      # Value ±0.1% tolerance → {1:NM:=42.5:0.0425}
+answer = NM(100, entero=True)       # Integer answer        → {1:NM:=100}
 ```
+
+> Use `NM()` inside an `exercise_fn`, not directly in a template string —
+> Moodle's `{1:NM:=...}` syntax conflicts with Python's `.format()` placeholders.
 
 ## Financial Mathematics
 
 MoodPy includes specialized generators for financial math problems:
 
 ```python
-from matfin import get_frec, gen_rates, gen_flux, VPN, tab_flux_vertical, TIR
+from moodpy.matfin import get_frec, gen_rates, gen_flux, VPN, tab_flux_vertical, TIR
 
 # Generate frequency (annual, semi-annual, quarterly, etc.)
 frec = get_frec()  # Returns: {'f': 2, 'frecuencia': 'semestralmente', ...}
@@ -193,7 +225,7 @@ cloze.testing(n=5)  # Creates TESTING-*.txt with parameters
 Define complex parameter distributions:
 
 ```python
-from tools import round_normal, int_normal
+from moodpy.tools import round_normal, int_normal
 
 gen.lambdas = {
     # Integer from bounded normal distribution
@@ -219,10 +251,8 @@ xml = gen.statement()  # Includes feedback section
 
 ## Limitations & Known Issues
 
-- **graphics.py** is incomplete and missing imports
-- No automated CI/CD yet (workflows defined in `.github/prompts/`)
-- Not packaged on PyPI (install from source)
-- Parameter validation timeout: 10,000 iterations max
+- Parameter validation timeout: 10,000 iterations max (increase with `max_steps=`)
+- `exercise_fn` is required when `NM()` answers appear in exercise text (see Pattern B above)
 
 ## Importing into Moodle
 
@@ -246,17 +276,18 @@ pip install numpy matplotlib tabulate
 
 ```
 moodpy/
-├── generator.py          # Core Generator class
-├── cloze.py              # Moodle XML export
-├── tools.py              # Utilities
-├── matfin.py             # Financial math
-├── graphics.py           # Image handling
-├── generators/           # Submodule: specific generators
-├── library/              # Submodule: shared components
-├── .github/
-│   ├── copilot-instructions.md
-│   └── prompts/          # Automation workflows
-└── README.md             # This file
+├── pyproject.toml             # Package metadata
+├── src/moodpy/                # Core package
+│   ├── generator.py           # Generator class
+│   ├── cloze.py               # Moodle XML export
+│   ├── tools.py               # Utilities (NM, round_normal, txt2arr, …)
+│   ├── matfin.py              # Financial math
+│   └── graphics.py            # fig2str, tagImg, encodePlot
+├── examples/                  # 60+ working examples by domain
+├── tests/                     # pytest suite (78 tests)
+├── generators/                # Submodule: exercise generator library
+├── library/                   # Submodule: question bank archive
+└── .github/workflows/         # Automated PyPI publishing
 ```
 
 ## Contributing

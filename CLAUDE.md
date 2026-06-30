@@ -50,8 +50,11 @@
 - ✅ v3.0.0: Production release with derived parameters
 - ✅ GitHub Actions: Automated PyPI publishing
 - ✅ 60+ Examples: All major domains covered
-- ✅ Test Suite: 6 test modules, integration tests
+- ✅ Test Suite: 6 test modules, 78/78 tests passing
 - ✅ Package Structure: Proper src/moodpy layout
+- ✅ Batch generation fixed: each question is unique (exercise_template + exercise_fn)
+- ✅ NumPy 1.24+ compatibility (np.int removed, txt2arr rewritten)
+- ✅ graphics.fig2str() added for matplotlib → base64 data URLs
 
 ---
 
@@ -246,6 +249,11 @@ if gen.parameters is None:
     print("Failed to find valid parameters")
 ```
 
+> **Important**: requirements must be **lambda functions** (or other callables).
+> String requirements like `["d['x'] > 0"]` look valid but are always truthy —
+> non-empty strings evaluate to `True` in Python and are never executed.
+> `test_parameters()` calls `r()` for callables and `bool(r)` for plain booleans.
+
 ---
 
 ### 2. Cloze Class (145 lines, `src/moodpy/cloze.py`)
@@ -276,13 +284,22 @@ cloze.set_info(materia, clave, tema)
 cloze.set_generator(generator)
 
 # Generation
-cloze.get_exercises(cuantos=10)   # Generate N questions + export XML
-cloze.testing(n=5)                # Test mode: generate TESTING-*.txt
+cloze.get_exercises(cuantos=10)                  # Generate N questions + export XML
+cloze.get_exercises(cuantos=10, exercise_fn=fn)  # Use callable for each question
+cloze.testing(n=5)                               # Test mode: generate TESTING-*.txt
+cloze.testing(n=5, exercise_fn=fn)               # Same, with exercise_fn
 
 # Output
 cloze.to_moodle_xml()             # Write XML file
+cloze.save()                      # Alias for to_moodle_xml()
+cloze.create_question()           # Return XML string for current question (no file)
 cloze.get_info()                  # Print folder/file info
 ```
+
+The `exercise_fn` parameter is a `callable(gen: Generator) -> None` that calls
+`gen.set_exercise()` (and optionally `gen.set_feedback()`) with freshly computed
+values. Use it whenever the answer text contains `NM()` output, since Moodle answer
+syntax `{1:NM:=...}` collides with Python's `.format()` placeholder syntax.
 
 #### File Organization
 
@@ -321,7 +338,9 @@ STxt(text)
 
 # Array conversion
 txt2arr(temp, array=True)
-  # Convert space-separated string to numpy array
+  # Convert to numpy array. Supports Python expressions:
+  #   "[1, 2, 3]", "np.arange(0, 10, 2)", "list(range(5))"
+  # Also supports legacy space-separated numbers: "1 2 3 4 5"
 ```
 
 #### Numerical Answer Format
@@ -392,14 +411,33 @@ exercise = f"Cash flows:\n{table['tab']}\nCalculate NPV at {rates['r_pct']}%"
 #### Key Functions
 
 ```python
+fig2str(fig, fmt='png')
+  # Convert a matplotlib Figure to a base64 data URL.
+  # Returns: 'data:image/png;base64,...' for use in <img src="...">
+
 tagImg(nom_graf, alt="imagen", width="600", height="400")
-  # Generate HTML <img> tag with PLUGINFILE reference
+  # Generate HTML <img> tag with PLUGINFILE reference (server-side image)
 
 fileImg(nom_graf, cod_graf)
   # Generate XML <file> element for base64-encoded image
 
-encodePlot(*args)           # Encode matplotlib plot
-encodeGraf(graf)            # Encode Sage/graphics
+encodePlot(*args)           # Encode matplotlib plot to file + base64
+encodeGraf(graf)            # Encode Sage/graphics object to file + base64
+```
+
+#### Embedding a plot in an exercise
+
+```python
+from moodpy.graphics import fig2str
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots()
+ax.plot([1, 2, 3], [1, 4, 9])
+ax.set_title("y = x²")
+img_data = fig2str(fig)
+plt.close(fig)
+
+gen.set_exercise(f'<p>Analyze the graph:</p><img src="{img_data}" /><p>Answer: ...</p>')
 ```
 
 ---
@@ -588,39 +626,94 @@ Follow Semantic Versioning (MAJOR.MINOR.PATCH):
 
 ## Common Patterns
 
-### Basic Exercise Generator
+There are two supported patterns for batch exercise generation. Choose based on
+whether your exercise text contains NM()-formatted answers.
+
+### Pattern A — String template (`{d[key]}` placeholders)
+
+Use when the exercise text only substitutes display values. The template is stored
+at `set_exercise()` time and re-rendered each iteration by `get_exercises()`.
+
+> **Constraint**: Do not embed `NM()` output inside the template string.
+> `{1:NM:=42.5:0.04}` will conflict with Python's `.format()` syntax.
+> Use Pattern B instead.
 
 ```python
-from moodpy import Generator, Cloze, tools
+from moodpy import Generator, Cloze
 import numpy as np
 
-# Create generator
 gen = Generator()
 gen.lambdas = {
-    "a": lambda k: np.random.randint(1, 20),
-    "b": lambda k: np.random.randint(1, 20),
+    "a": lambda k: np.random.randint(1, 50),
+    "b": lambda k: np.random.randint(1, 50),
+}
+gen.derived = {
+    "answer": lambda d: int(d["a"] + d["b"]),
 }
 gen.requirements = [
-    lambda: gen.parameters["a"] + gen.parameters["b"] < 50
+    lambda: gen.parameters["a"] != gen.parameters["b"],
 ]
 
-# Generate
+# One initial reload so set_exercise() has values to render a preview
 gen.reload_parameters()
-gen.test_parameters()
+gen.calculate_derived()
 
-# Set exercise
-a, b = gen.parameters["a"], gen.parameters["b"]
-answer = a + b
-gen.set_exercise(f"Calculate: {a} + {b} = {tools.NM(answer)}")
+# Template uses {d[key]} — re-substituted fresh for each of the 20 questions
+gen.set_exercise(
+    "<p>Calculate: <strong>{d[a]} + {d[b]} = ?</strong></p>"
+    "<p>Answer: {d[answer]}</p>"
+)
 
-# Export
 cloze = Cloze()
 cloze.set_info("MATH", "101", "addition")
 cloze.set_generator(gen)
-cloze.get_exercises(cuantos=20)
+cloze.get_exercises(cuantos=20)   # 20 different questions
 ```
 
-### Advanced: Derived Parameters
+### Pattern B — `exercise_fn` callback
+
+Use whenever the exercise text contains `NM()` calls or other values that require
+computation from the current parameters. The function receives the Generator after
+each `reload_parameters()` + `calculate_derived()` call.
+
+```python
+from moodpy import Generator, Cloze
+from moodpy.tools import NM
+import numpy as np
+
+def make_generator():
+    gen = Generator()
+    gen.lambdas = {
+        "a": lambda k: np.random.choice([i for i in range(-10, 11) if i != 0]),
+        "b": lambda k: np.random.randint(-20, 21),
+        "x": lambda k: np.random.randint(-10, 11),
+    }
+    gen.derived = {
+        "c": lambda d: int(d["a"] * d["x"] + d["b"]),
+    }
+    gen.requirements = [
+        lambda: gen.parameters["x"] != 0,
+        lambda: gen.parameters["c"] != gen.parameters["b"],
+    ]
+    return gen
+
+def build_exercise(gen):
+    """Called each iteration with fresh parameters."""
+    a, b, c, x = gen.parameters["a"], gen.parameters["b"], gen.parameters["c"], gen.parameters["x"]
+    gen.set_exercise(
+        f"<p>Solve for x: <strong>{a}x + {b} = {c}</strong></p>"
+        f"<p>Answer: {NM(x)}</p>"
+    )
+    gen.set_feedback(f"<p>x = {x}</p>")
+
+gen = make_generator()
+cloze = Cloze()
+cloze.set_info("MATHEMATICS", "ALG101", "linear_equations")
+cloze.set_generator(gen)
+cloze.get_exercises(cuantos=20, exercise_fn=build_exercise)
+```
+
+### Derived Parameters
 
 ```python
 gen.lambdas = {
@@ -640,24 +733,17 @@ gen.calculate_derived()
 # Now all 5 values available: principal, rate, years, amount, interest
 ```
 
-### Conditional Logic
+### Testing / Previewing
 
 ```python
-def set_exercise(gen):
-    operation_type = gen.parameters.get("type", "add")
-    
-    if operation_type == "add":
-        answer = gen.parameters["a"] + gen.parameters["b"]
-        op_symbol = "+"
-    else:
-        answer = gen.parameters["a"] - gen.parameters["b"]
-        op_symbol = "-"
-    
-    exercise = f"{gen.parameters['a']} {op_symbol} {gen.parameters['b']} = ?"
-    feedback = f"Answer: {tools.NM(answer)}"
-    
-    gen.set_exercise(exercise)
-    gen.set_feedback(feedback)
+# Preview 3 questions as plain text before committing to XML
+cloze.testing(n=3, exercise_fn=build_exercise)  # writes TESTING-*.txt
+
+# Inspect a single question as XML string (no file written)
+gen.reload_parameters()
+gen.calculate_derived()
+build_exercise(gen)
+print(cloze.create_question())
 ```
 
 ---
@@ -711,16 +797,23 @@ def set_exercise(gen):
 | Create generator | `gen = Generator()` |
 | Add parameters | `gen.lambdas = {...}` |
 | Add derived | `gen.derived = {...}` |
+| Add requirements | `gen.requirements = [lambda: gen.parameters["x"] > 0]` |
 | Generate values | `gen.reload_parameters()` |
 | Compute derived | `gen.calculate_derived()` |
-| Validate | `gen.test_parameters()` |
-| Set exercise | `gen.set_exercise(text)` |
+| Validate constraints | `gen.test_parameters()` |
+| Set exercise (template) | `gen.set_exercise("<p>{d[a]} + {d[b]} = ?</p>")` |
+| Set exercise (fn) | `def fn(gen): gen.set_exercise(...)` |
 | Set feedback | `gen.set_feedback(text)` |
-| Get XML | `gen.statement()` |
+| Get XML string | `gen.statement()` |
 | Create cloze | `cloze = Cloze()` |
 | Configure cloze | `cloze.set_info(...); cloze.set_generator(...)` |
-| Export batch | `cloze.get_exercises(cuantos=20)` |
-| Format answer | `NM(value, error=0.001)` |
+| Export batch (template) | `cloze.get_exercises(cuantos=20)` |
+| Export batch (fn) | `cloze.get_exercises(cuantos=20, exercise_fn=fn)` |
+| Preview text mode | `cloze.testing(n=5, exercise_fn=fn)` |
+| Inspect one question | `cloze.create_question()` |
+| Write XML file | `cloze.save()` |
+| Format numeric answer | `NM(value, error=0.001)` |
+| Embed plot in exercise | `fig2str(fig)` → `<img src="data:image/png;base64,...">` |
 
 ---
 
@@ -735,4 +828,4 @@ def set_exercise(gen):
 
 ---
 
-**Last Updated**: June 2026 | **Version**: 3.0.0 | **License**: MIT
+**Last Updated**: June 2026 | **Version**: 3.0.0 (post-release fixes) | **License**: MIT

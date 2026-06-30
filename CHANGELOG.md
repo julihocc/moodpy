@@ -5,6 +5,65 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased] — Post-3.0.0 Bug Fixes (2026-06-30)
+
+### Fixed
+
+#### Core Engine (`generator.py`, `cloze.py`)
+
+- **Batch generation produced identical questions**: `Cloze.get_exercises()` called
+  `reload_parameters()` each iteration but then used the already-rendered static
+  `exercise_text`. Fixed by storing a raw `exercise_template` in `Generator` and
+  re-rendering it on every iteration.
+- **`test_parameters()` was a no-op**: The retry loop never re-sampled; it just
+  re-assigned each parameter to itself. Fixed to call `reload_parameters()` (and
+  `calculate_derived()` when needed) at the start of each attempt.
+- **String requirements silently ignored**: `all(["d['x'] > 0"])` is always `True`
+  because non-empty strings are truthy. Requirements are now evaluated with
+  `r() if callable(r) else bool(r)`. Requirements **must be lambda functions**.
+- **Moodle answer syntax collided with Python format strings**: `{1:NM:=42.5:0.04}`
+  in a template caused `IndexError` in `.format()`, silently skipping `{d[key]}`
+  substitution. Fixed with regex-based escape/restore (`<<MOODLE:...>>`) around
+  `.format()`.
+
+#### Utility Modules
+
+- **`matfin.gen_flux()` broke on NumPy ≥ 1.24**: `np.int()` was removed; replaced
+  with `int()`. Also fixed wrong keyword argument `n=` → `size=` in `int_normal` call.
+- **`tools.txt2arr()` rejected Python expressions**: The space-to-comma replacement
+  corrupted comma-separated expressions (`[1, 2, 3]` → `[1,,2,,3]`). Rewritten to
+  use `exec` with a NumPy namespace; space-separated numbers still work as fallback.
+- **`graphics.fig2str()` missing**: Added `fig2str(fig, fmt='png')` which converts
+  a matplotlib `Figure` to a base64 data URL (`data:image/png;base64,...`).
+
+#### Tests (`tests/`)
+
+- Rewrote `test_matfin.py` to match actual API (integer-keyed dicts, correct
+  `gen_flux` signature).
+- Fixed `test_tools.py`: wrong assertion for `cdata()` output format, wrong tolerance
+  assertion for `NM()`, infinite-loop bug in `round_normal` tests (positional arg
+  order confusion where `a > b`).
+- Fixed `test_cloze.py` and `test_integration.py`: string requirements replaced with
+  lambda functions; `"MATHEMATICS"` header assertion corrected to `"Mathematics"`.
+
+### Added
+
+- `Cloze.create_question()` — returns the XML string for the current question without
+  writing to a file. Useful for inspection and testing.
+- `Cloze.save()` — alias for `to_moodle_xml()` for a simpler call site.
+- `Cloze.get_exercises(cuantos, exercise_fn=None)` — new `exercise_fn` parameter
+  accepts a `callable(gen)` for complex exercises where NM() answers must be
+  computed fresh each iteration.
+- `Cloze.testing(n, exercise_fn=None)` — same `exercise_fn` support as above.
+
+### Examples
+
+- `examples/basic/arithmetic.py`: demonstrates both patterns side-by-side.
+- `examples/mathematics/linear_equations.py`: canonical Pattern B showcase.
+- `examples/finance/compound_interest.py`: derived parameters + `exercise_fn`.
+
+---
+
 ## [3.0.0] - 2025-09-14
 
 ### 🎉 Major Release - Complete Package Refactor
