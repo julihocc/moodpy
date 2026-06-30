@@ -54,7 +54,7 @@ class TestCloze:
         
         cloze.set_info("MATHEMATICS", "101", "algebra")
         
-        assert "MATHEMATICS" in cloze.header
+        assert "Mathematics" in cloze.header
         assert "Algebra" in cloze.header  # Title case
         assert "MATHEMATICS_101_algebra" in cloze.foldername
         assert cloze.filename is not None

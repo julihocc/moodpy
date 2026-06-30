@@ -56,17 +56,20 @@ class TestGenerator:
         assert gen.parameters["b"] == 10
     
     def test_parameter_validation_success(self):
-        """Test successful parameter validation."""
+        """Test successful parameter validation with callable requirements."""
         gen = Generator()
-        
+
         gen.lambdas = {
             "x": lambda k: np.random.randint(1, 10)
         }
-        gen.requirements = ["d['x'] > 0", "d['x'] < 10"]
-        
-        gen.reload_parameters()
+        # Requirements must be lambdas, not strings
+        gen.requirements = [
+            lambda: gen.parameters["x"] > 0,
+            lambda: gen.parameters["x"] < 10,
+        ]
+
         gen.test_parameters()
-        
+
         assert gen.parameters is not None
         assert 0 < gen.parameters["x"] < 10
     

@@ -94,22 +94,19 @@ class TestMoodPyIntegration:
                 os.chdir(original_cwd)
     
     def test_parametric_generation_with_requirements(self):
-        """Test parametric generation with requirements validation."""
+        """Test parametric generation with callable requirements validation."""
         gen = Generator()
-        
-        # Set up parameters with requirements
+
         gen.lambdas = {
             "a": lambda k: numpy.random.randint(1, 100),
             "b": lambda k: numpy.random.randint(1, 100)
         }
-        
-        # Add requirement that a > b
-        gen.requirements = ["d['a'] > d['b']"]
-        
-        # Test parameters (should find valid combination)
+
+        # Requirements must be lambda functions (not strings)
+        gen.requirements = [lambda: gen.parameters["a"] > gen.parameters["b"]]
+
         gen.test_parameters()
-        
-        # Verify parameters meet requirements
+
         assert gen.parameters is not None
         assert gen.parameters["a"] > gen.parameters["b"]
     
@@ -217,23 +214,19 @@ class TestMoodPyIntegration:
         assert f"${gen.parameters['P']:.2f}" in gen.exercise_text
     
     def test_error_handling_workflow(self):
-        """Test error handling in complete workflow."""
+        """Test that impossible requirements cause parameters to be set to None."""
         gen = Generator()
-        
-        # Set up impossible requirements
+
         gen.lambdas = {
             "a": lambda k: numpy.random.randint(1, 5),
-            "b": lambda k: numpy.random.randint(1, 5)
         }
-        
-        # Impossible requirement
-        gen.requirements = ["d['a'] > 10"]  # a is always <= 5
-        
-        # This should fail to find valid parameters
-        gen.test_parameters()
-        
-        # Should handle failure gracefully
-        assert gen.parameters is None  # or some other expected behavior
+
+        # Impossible lambda requirement: a is always 1-4, never > 100
+        gen.requirements = [lambda: gen.parameters["a"] > 100]
+
+        gen.test_parameters(max_steps=20)
+
+        assert gen.parameters is None
     
     def test_multiple_question_types_workflow(self):
         """Test generating different types of questions in sequence."""
