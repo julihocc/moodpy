@@ -55,20 +55,45 @@ class Cloze:
             s += "0"
         return s + n
 
-    def testing(self, n):
-        temp = os.path.join(self.foldername, "TESTING-"+self.filename.replace(".xml", ".txt"))
+    def testing(self, n, exercise_fn=None):
+        temp = "TESTING-" + self.filename.replace(".xml", ".txt")
         arx = open(temp, "w", encoding="utf-8")
         for k in range(n):
             self.generator.set_counter(self.counter)
             self.generator.reload_parameters()
+            if self.generator.derived:
+                self.generator.calculate_derived()
+            if exercise_fn:
+                exercise_fn(self.generator)
+            elif self.generator.exercise_template:
+                self.generator.set_exercise(self.generator.exercise_template)
             print(self.generator.parameters)
             args_text = self.generator.print_args()
             exe_text = self.generator.get_exercise()
-            #print(args_text + exe_text)
             arx.write(args_text)
             arx.write(exe_text)
             self.counter += 1
         arx.close()
+
+    def create_question(self):
+        """Return the XML string for the current question (does not write to file)."""
+        num = self.format_num()
+        gen = self.generator
+        lines = []
+        lines.append(f'<!-- question: {num}  -->')
+        lines.append('<question type="cloze">')
+        lines.append('<name>')
+        lines.append(f'<text>Pregunta {num} {self.foldername} {self.tiempo}</text>')
+        lines.append('</name>')
+        lines.append(gen.statement())
+        lines.append(f'<penalty>{self.penalty}</penalty>')
+        lines.append('<hidden>0</hidden>')
+        lines.append('</question>')
+        return '\n'.join(lines)
+
+    def save(self):
+        """Write accumulated XML questions to file (alias for to_moodle_xml)."""
+        self.to_moodle_xml()
 
     def to_moodle_xml(self):
         N = len(self.xml)
@@ -107,10 +132,24 @@ class Cloze:
         print("Filename: {}".format(self.filename))
         print("Number of exercises: {}".format(N))
 
-    def get_exercises(self, cuantos):
+    def get_exercises(self, cuantos, exercise_fn=None):
+        """Generate cuantos unique parametric exercises and export to Moodle XML.
+
+        Args:
+            cuantos: Number of exercises to generate.
+            exercise_fn: Optional callable(gen) that sets gen.exercise_text each iteration.
+                         Use this for complex exercises where NM() answers depend on
+                         computed values. If omitted, re-renders the stored template.
+        """
         assert cuantos > 0
         for k in range(cuantos):
             self.generator.reload_parameters()
+            if self.generator.derived:
+                self.generator.calculate_derived()
+            if exercise_fn:
+                exercise_fn(self.generator)
+            elif self.generator.exercise_template:
+                self.generator.set_exercise(self.generator.exercise_template)
             exercise_text = self.generator.statement()
             self.xml.append(exercise_text)
         self.to_moodle_xml()
