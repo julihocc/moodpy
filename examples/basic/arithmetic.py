@@ -3,137 +3,110 @@
 """
 Basic Arithmetic Example
 
-A simple example demonstrating basic arithmetic question generation.
-This example shows the fundamental MoodPy workflow:
-1. Create a Generator
-2. Define parameters with lambda functions  
-3. Generate random values
-4. Create exercise text
-5. Export to Moodle XML
+Demonstrates both template patterns for batch exercise generation:
 
-Educational Objective:
-    Practice basic arithmetic operations with randomly generated numbers.
+Pattern A (string template): use {d[key]} placeholders — good for display-only values.
+Pattern B (exercise_fn): pass a function to get_exercises() — required when NM() answers
+depend on computed values (avoids Python format/Moodle brace collision).
 """
 
 import numpy as np
-from moodpy import Generator, Cloze, tools
+from moodpy import Generator, Cloze
+from moodpy.tools import NM
 
 
-def create_addition_generator():
-    """
-    Create a generator for simple addition problems.
-    
-    Returns:
-        Generator: Configured generator for addition exercises
-    """
+# ---------------------------------------------------------------------------
+# Pattern A: String template (simple display, no NM() in template string)
+# ---------------------------------------------------------------------------
+
+def make_addition_generator():
     gen = Generator()
-    
-    # Define random parameters
     gen.lambdas = {
         "a": lambda k: np.random.randint(1, 50),
-        "b": lambda k: np.random.randint(1, 50)
+        "b": lambda k: np.random.randint(1, 50),
     }
-    
-    # Generate values
-    gen.reload_parameters()
-    gen.test_parameters()
-    
-    # Calculate answer
-    answer = gen.parameters['a'] + gen.parameters['b']
-    
-    # Create exercise text with Moodle numerical answer format
-    exercise_text = f"""
-    <p>Calculate the following sum:</p>
-    <p><strong>{gen.parameters['a']} + {gen.parameters['b']} = </strong> {{1:NM:={answer}:0.1}}</p>
-    """
-    
-    gen.set_exercise(exercise_text)
-    
-    # Optional feedback
-    feedback_text = f"""
-    <p><strong>Solution:</strong></p>
-    <p>{gen.parameters['a']} + {gen.parameters['b']} = {answer}</p>
-    """
-    gen.set_feedback(feedback_text)
-    
+    gen.derived = {
+        "answer": lambda d: int(d["a"] + d["b"]),
+    }
+    # Requirements are lambda functions — strings don't work
+    gen.requirements = [
+        lambda: gen.parameters["a"] != gen.parameters["b"],
+    ]
     return gen
 
 
-def create_multiplication_generator():
-    """
-    Create a generator for multiplication problems.
-    
-    Returns:
-        Generator: Configured generator for multiplication exercises
-    """
+def demo_addition_template():
+    """Pattern A: set_exercise() once with {d[key]} placeholders."""
+    print("--- Pattern A: String template (addition) ---")
+
+    gen = make_addition_generator()
+    # One initial reload so set_exercise() has values to render the preview
+    gen.reload_parameters()
+    gen.calculate_derived()
+
+    # Template uses {d[key]} — re-substituted each question in get_exercises()
+    # NOTE: do NOT embed NM() calls in the template string; use Pattern B for that
+    gen.set_exercise(
+        "<p>Calculate: <strong>{d[a]} + {d[b]} = ?</strong></p>"
+        "<p>Answer: {d[answer]}</p>"
+    )
+
+    cloze = Cloze()
+    cloze.set_info("MATH", "101", "addition")
+    cloze.set_generator(gen)
+    cloze.get_exercises(cuantos=5)  # produces 5 DIFFERENT questions
+    print(f"Saved: {cloze.path}\n")
+
+
+# ---------------------------------------------------------------------------
+# Pattern B: exercise_fn (required when NM() answers are in the exercise)
+# ---------------------------------------------------------------------------
+
+def make_multiplication_generator():
     gen = Generator()
-    
-    # Define random parameters with constraints
     gen.lambdas = {
-        "a": lambda k: np.random.randint(2, 12),  # Multiplication tables 2-12
-        "b": lambda k: np.random.randint(2, 12)
+        "a": lambda k: np.random.randint(2, 13),
+        "b": lambda k: np.random.randint(2, 13),
     }
-    
-    # Add requirement that numbers are different
-    gen.requirements = ["d['a'] != d['b']"]
-    
-    # Generate values
-    gen.reload_parameters()
-    gen.test_parameters()
-    
-    # Calculate answer
-    answer = gen.parameters['a'] * gen.parameters['b']
-    
-    # Create exercise text
-    exercise_text = f"""
-    <p>Calculate the following product:</p>
-    <p><strong>{gen.parameters['a']} × {gen.parameters['b']} = </strong> {{1:NM:={answer}:0}}</p>
-    """
-    
-    gen.set_exercise(exercise_text)
-    
+    gen.requirements = [
+        lambda: gen.parameters["a"] != gen.parameters["b"],
+    ]
     return gen
 
 
-def demo_basic_arithmetic():
-    """
-    Demonstrate basic arithmetic question generation.
-    
-    This function shows how to:
-    - Create generators for different operations
-    - Use Cloze to export multiple questions
-    - Organize output files
-    """
-    print("=== MoodPy Basic Arithmetic Demo ===\n")
-    
-    # Create addition questions
-    print("Generating addition questions...")
-    cloze_add = Cloze()
-    cloze_add.set_info("MATH", "101", "addition")
-    
-    for i in range(3):
-        gen = create_addition_generator()
-        cloze_add.generator = gen
-        print(f"Addition {i+1}: {gen.parameters['a']} + {gen.parameters['b']} = {gen.parameters['a'] + gen.parameters['b']}")
-    
-    # Generate XML for addition
-    cloze_add.get_exercises(cuantos=5)
-    print(f"Addition XML saved to: {cloze_add.path}\n")
-    
-    # Create multiplication questions  
-    print("Generating multiplication questions...")
-    cloze_mult = Cloze()
-    cloze_mult.set_info("MATH", "102", "multiplication")
-    
-    for i in range(3):
-        gen = create_multiplication_generator()
-        cloze_mult.generator = gen
-        print(f"Multiplication {i+1}: {gen.parameters['a']} × {gen.parameters['b']} = {gen.parameters['a'] * gen.parameters['b']}")
-    
-    # Generate XML for multiplication
-    cloze_mult.get_exercises(cuantos=5)
-    print(f"Multiplication XML saved to: {cloze_mult.path}")
+def build_multiplication_exercise(gen):
+    """Called by get_exercises() after each reload — builds a fresh unique question."""
+    a = gen.parameters["a"]
+    b = gen.parameters["b"]
+    answer = a * b
+    gen.set_exercise(
+        f"<p>Calculate: <strong>{a} × {b} = </strong>{NM(answer, entero=True)}</p>"
+    )
+    gen.set_feedback(
+        f"<p><strong>Solution:</strong> {a} × {b} = {answer}</p>"
+    )
 
+
+def demo_multiplication_fn():
+    """Pattern B: exercise_fn passed to get_exercises()."""
+    print("--- Pattern B: exercise_fn (multiplication with NM answers) ---")
+
+    gen = make_multiplication_generator()
+
+    cloze = Cloze()
+    cloze.set_info("MATH", "102", "multiplication")
+    cloze.set_generator(gen)
+    # exercise_fn is called each iteration with freshly reloaded parameters
+    cloze.get_exercises(cuantos=5, exercise_fn=build_multiplication_exercise)
+    print(f"Saved: {cloze.path}\n")
+
+
+# ---------------------------------------------------------------------------
+# Main
+# ---------------------------------------------------------------------------
 
 if __name__ == "__main__":
-    demo_basic_arithmetic()
+    print("=== MoodPy Basic Arithmetic Demo ===\n")
+    demo_addition_template()
+    demo_multiplication_fn()
+    print("Done. Open the XML files in the generated folders and verify each question differs.")
