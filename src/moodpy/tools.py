@@ -37,26 +37,33 @@ counter = 0
 def txt2arr(temp, array=True):
     """
     Convert text string to array using exec().
-    
+
+    Supports Python expressions (e.g. "[1, 2, 3]", "np.arange(0, 10, 2)",
+    "list(range(5))") as well as legacy space-separated numbers ("1 2 3 4 5").
+
     Args:
-        temp (str): Text representation of array/list
-        array (bool): Return numpy array if True, list if False
-        
+        temp (str): Text representation of array/list or space-separated numbers.
+        array (bool): Return numpy array if True, list if False.
+
     Returns:
-        numpy.array or list: Converted data
-        
+        numpy.array or list: Converted data.
+
     Raises:
-        ImportError: If numpy is required but not available
+        ImportError: If numpy is required but not available.
     """
-    arr = ' '.join(temp.split()).replace(" ",",")
+    if array and not _HAS_NUMPY:
+        raise ImportError("numpy is required for array=True. Install with: pip install numpy")
+    stripped = temp.strip()
+    ns = {"np": np, "numpy": np} if _HAS_NUMPY else {}
     x = {}
-    exec("x[None] = {}".format(arr))    
-    if array:
-        if not _HAS_NUMPY:
-            raise ImportError("numpy is required for array=True. Install with: pip install numpy")
-        return np.array(x[None])
-    else: 
-        return x[None]
+    ns["x"] = x
+    try:
+        exec(f"x[None] = {stripped}", ns)
+    except SyntaxError:
+        # Legacy: space-separated numbers like "1 2 3 4"
+        nums = ','.join(stripped.split())
+        exec(f"x[None] = [{nums}]", ns)
+    return np.array(x[None]) if array else x[None]
 
 def round_normal(m=0, s=1, size=1, a=None, b=None, d=0):
     """

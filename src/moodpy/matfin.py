@@ -56,10 +56,10 @@ def gen_flux(f, N_mean, j, scale = 0.5, lower=-np.inf, upper=np.inf, sim="normal
     while True:
         X.update(gen_T(f, N_mean))
         X["F0"] = -np.random.poisson(1000)*1000
-        X["N"] = np.int(f*X["T"])
+        X["N"] = int(f*X["T"])
         R = -X["F0"]/alpha(j, X["N"])//1000
         if sim=="normal":
-            future =  1000*tools.int_normal(m=R, s=scale*R, n=X["N"], a = lower, b=upper)
+            future =  1000*tools.int_normal(m=R, s=scale*R, size=X["N"], a=lower, b=upper)
         elif sim=="poisson":
             future = 1000*np.random.poisson(R, size=X["N"])
         X["F"] = np.concatenate([[X["F0"]],future])

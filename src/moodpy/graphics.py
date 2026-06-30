@@ -89,6 +89,22 @@ def encodeGraf(graf):
     return filename, encoded
 
 
+def fig2str(fig, fmt='png'):
+    """Convert a matplotlib Figure to a base64 data URL.
+
+    Returns a string like 'data:image/png;base64,...' suitable for embedding
+    in HTML <img src="..."> attributes.
+    """
+    if not _HAS_MATPLOTLIB:
+        raise ImportError("matplotlib is required for fig2str. Install with: pip install matplotlib")
+    import io
+    buf = io.BytesIO()
+    fig.savefig(buf, format=fmt, bbox_inches='tight')
+    buf.seek(0)
+    encoded = base64.b64encode(buf.read()).decode('utf-8')
+    return f'data:image/{fmt};base64,{encoded}'
+
+
 def has_matplotlib():
     """Check if matplotlib is available."""
     return _HAS_MATPLOTLIB
