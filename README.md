@@ -1,207 +1,281 @@
-# MoodPy v2.0.0
+# MoodPy - Parametric Exercise Generator for Moodle
 
-> Python library for generating randomized Moodle cloze-type questions with mathematical and financial content
+Generate randomized mathematical and financial exercises for Moodle LMS with parametric variables and automatic XML export.
 
-[![Python Version](https://img.shields.io/badge/python-3.8%2B-blue.svg)](https://python.org)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Development Status](https://img.shields.io/badge/status-beta-orange.svg)](https://github.com/julihocc/moodpy)
+## What is MoodPy?
 
-## Overview
+MoodPy is a Python library that helps educators create **personalized, randomized quizzes** for Moodle. Instead of manually writing hundreds of similar questions, you define a question template with variable parameters, and MoodPy generates unlimited unique versions automatically.
 
-MoodPy is a powerful Python library designed for educators and instructional designers who need to create dynamic, parametric exercises for Moodle learning management systems. The library specializes in generating randomized cloze-type questions with mathematical and financial content that can be directly exported to Moodle XML format.
+### Example Use Case
+
+**Without MoodPy:** Write 20 different compound interest problems manually
+**With MoodPy:** Define one template with variables (principal, rate, time), generate 20 unique problems in seconds
 
 ## Features
 
-### ✨ Core Capabilities
-- **Parametric Exercise Generation**: Create exercises with randomized values using lambda functions
-- **Moodle XML Export**: Direct export to Moodle-compatible XML format
-- **Mathematical Content**: Built-in support for mathematical notation and calculations
-- **Financial Mathematics**: Specialized generators for financial calculations (NPV, IRR, cash flows)
-- **Batch Processing**: Generate multiple question variations automatically
-- **Image Integration**: Support for matplotlib plots with base64 encoding
-
-### 🎯 Key Components
-- **`Generator`**: Core class for parametric exercise creation with validation
-- **`Cloze`**: Moodle XML export and file management system
-- **`tools`**: Utility functions for random generation and formatting
-- **`matfin`**: Financial mathematics domain-specific generators
-- **`graphics`**: Image handling for matplotlib integration
-
-## Installation
-
-```bash
-# Install from source
-git clone https://github.com/julihocc/moodpy.git
-cd moodpy
-pip install -e .
-
-# Or install dependencies manually
-pip install numpy matplotlib tabulate
-```
+✅ **Parametric Exercise Generation** - Define variables with random number generators  
+✅ **Parameter Validation** - Set mathematical constraints (e.g., "interest rate > 5%")  
+✅ **Moodle XML Export** - Direct import into Moodle cloze questions  
+✅ **Financial Math Support** - Pre-built generators for NPV, IRR, cash flows  
+✅ **Batch Processing** - Generate hundreds of questions in one operation  
+✅ **Spanish Language Support** - Full UTF-8 support for Spanish mathematical content  
 
 ## Quick Start
 
-```python
-import moodpy
-from moodpy import Generator, Cloze, tools
+### Installation
 
-# Create a parametric exercise generator
-gen = Generator()
+```bash
+# Clone the repository
+git clone https://github.com/julihocc/moodpy.git
+cd moodpy
 
-# Define random parameters using lambda functions
-gen.lambdas = {
-    "a": lambda k: np.random.randint(1, 10),
-    "b": lambda k: np.random.randint(1, 10)
-}
-
-# Generate random values and validate
-gen.reload_parameters()
-gen.test_parameters()
-
-# Create the exercise text with placeholders
-gen.set_exercise("Calculate: {d[a]} + {d[b]} = {1:NM:=" + 
-                str(gen.parameters['a'] + gen.parameters['b']) + ":0.1}")
-
-# Export to Moodle XML
-cloze = Cloze()
-cloze.generator = gen
-cloze.set_info("MATH_101", "addition")
-cloze.get_exercises(cuantos=10)  # Generate 10 variations
+# Install dependencies
+pip install numpy matplotlib tabulate
 ```
 
-## Architecture
+### Basic Example
 
-### Parameter Generation Workflow
-1. **Define Parameters**: Use `generator.lambdas` with lambda functions
-2. **Generate Values**: Call `reload_parameters()` to create random values
-3. **Validate**: Use `test_parameters()` to ensure requirements are met
-4. **Create Exercise**: Set exercise text with `{d[key]}` placeholders
-5. **Export**: Generate Moodle XML with `cloze.get_exercises()`
+```python
+from cloze import Cloze
+from generator import Generator
+import numpy as np
 
-### File Organization
-- **Folders**: `{SUBJECT}_{CODE}_{TOPIC}` format
-- **Files**: `{foldername}_{timestamp}.xml` with automatic timestamping
-- **Encoding**: UTF-8 support for international mathematical content
+# Create a Cloze instance for organizing output
+cloze = Cloze()
+cloze.set_info(
+    materia="Mathematics",      # Subject name
+    clave="ALG101",              # Course code
+    tema="Factoring"             # Topic
+)
+
+# Create a generator with random parameters
+gen = Generator()
+gen.lambdas = {
+    "a": lambda k: np.random.randint(1, 10),
+    "b": lambda k: np.random.randint(2, 8),
+}
+
+# Set the exercise template
+gen.set_exercise("Factor: {d[a]}x² + {d[b]}x")
+
+# Generate 10 unique exercises and save to XML
+cloze.set_generator(gen)
+cloze.get_exercises(cuantos=10)
+```
+
+This creates a folder `MATHEMATICS_ALG101_FACTORING/` with an XML file ready to import into Moodle.
+
+## Core Concepts
+
+### 1. Generators
+
+A **Generator** defines how to create a single exercise with randomized parameters.
+
+```python
+gen = Generator()
+gen.lambdas = {
+    "x": lambda k: np.random.randint(1, 100),      # Random integer 1-99
+    "y": lambda k: np.random.choice([2, 3, 5, 7]), # Pick from list
+    "z": lambda k: np.random.normal(50, 10),       # Normal distribution
+}
+```
+
+### 2. Parameter Validation
+
+Use the `requirements` list to ensure generated parameters meet mathematical constraints:
+
+```python
+gen.requirements = [
+    lambda: gen.parameters["x"] < gen.parameters["y"],  # x must be less than y
+    lambda: (gen.parameters["x"] + gen.parameters["y"]) % 10 != 0,  # sum not divisible by 10
+]
+gen.reload_parameters()
+gen.test_parameters()  # Validates up to 10,000 times
+```
+
+### 3. Cloze Wrapper
+
+The **Cloze** class handles batch generation and Moodle XML export:
+
+```python
+cloze = Cloze()
+cloze.set_info(materia="Math", clave="CALC", tema="Derivatives")
+cloze.set_generator(gen)
+cloze.get_exercises(cuantos=50)  # Generate 50 questions
+```
+
+Output structure:
+```
+MATH_CALC_DERIVATIVES/
+├── MATH_CALC_DERIVATIVES_20260630122345.xml  (Moodle-ready XML)
+└── [more XML files as you generate batches]
+```
+
+### 4. Numerical Answers
+
+Use `tools.NM()` to format numerical answers with tolerance for Moodle:
+
+```python
+from tools import NM
+
+answer = NM(42.5, error=0.001)      # Value ±0.1% tolerance
+answer = NM(100, entero=True)       # Integer answer
+# Returns Moodle format: {1:NM:=42.5:0.0425}
+```
+
+## Financial Mathematics
+
+MoodPy includes specialized generators for financial math problems:
+
+```python
+from matfin import get_frec, gen_rates, gen_flux, VPN, tab_flux_vertical, TIR
+
+# Generate frequency (annual, semi-annual, quarterly, etc.)
+frec = get_frec()  # Returns: {'f': 2, 'frecuencia': 'semestralmente', ...}
+
+# Generate interest rate
+rates = gen_rates(r_mean=8, f=frec['f'])  # 8% mean annual rate
+
+# Generate cash flow
+flux = gen_flux(f=frec['f'], N_mean=5, j=rates['j'])
+
+# Calculate financial metrics
+npv = VPN(flux['F'], rates['j'])
+irr = TIR(flux['F'])
+
+# Generate HTML table for exercise
+table = tab_flux_vertical(flux['F'], f=frec['f'], fmt="html")
+```
+
+## File Organization
+
+MoodPy automatically organizes output by subject and topic:
+
+```
+PROJECT_CODE_TOPIC/
+├── PROJECT_CODE_TOPIC_YYYYMMDDHHMMSS.xml      (XML for Moodle)
+├── PROJECT_CODE_TOPIC_YYYYMMDDHHMMSS.xml
+└── TESTING-PROJECT_CODE_TOPIC_YYYYMMDDHHMMSS.txt  (Debug output)
+```
+
+Naming convention:
+- **Folder**: `{SUBJECT}_{CODE}_{TOPIC}` (uppercase/lowercase)
+- **Files**: Include timestamp to avoid overwrites
+- **Encoding**: UTF-8 for Spanish characters (ñ, á, é, etc.)
+
+## Module Reference
+
+| Module | Purpose |
+|--------|---------|
+| `generator.py` | `Generator` class - core parametric exercise engine |
+| `cloze.py` | `Cloze` class - batch generation and Moodle XML export |
+| `tools.py` | Utility functions (random numbers, Moodle formatting) |
+| `matfin.py` | Financial mathematics generators (rates, cash flows, NPV, IRR) |
+| `graphics.py` | Image handling utilities (matplotlib integration) |
+
+### Submodules
+
+- **moodpy-generators**: Domain-specific exercise generators
+- **moodpy-library**: Shared reusable components
 
 ## Advanced Usage
 
-### Financial Mathematics
+### Testing Without XML Export
+
+Generate and inspect exercises without creating XML files:
+
 ```python
-from moodpy import matfin
-
-# Generate cash flow exercises
-gen = matfin.create_npv_generator()
-gen.reload_parameters()
-
-# Create compound interest problems
-gen = matfin.create_interest_generator()
+cloze.testing(n=5)  # Creates TESTING-*.txt with parameters
 ```
 
-### Custom Validation
+### Custom Random Distributions
+
+Define complex parameter distributions:
+
 ```python
-# Add parameter requirements
-gen.requirements = [
-    "d['a'] > d['b']",
-    "d['a'] * d['b'] < 100"
-]
-gen.test_parameters()  # Validates up to 10,000 iterations
+from tools import round_normal, int_normal
+
+gen.lambdas = {
+    # Integer from bounded normal distribution
+    "amount": lambda k: int_normal(m=50000, s=10000, size=1, a=10000, b=100000)[0],
+    
+    # Rounded decimal from bounded normal distribution
+    "rate": lambda k: round_normal(m=0.08, s=0.02, size=1, a=0.05, b=0.12, d=4)[0],
+}
 ```
 
-### Numerical Answers with Tolerance
+### Formatted Output with Feedback
+
+Add explanations and solutions:
+
 ```python
-import moodpy.tools as tools
+gen.set_feedback("""
+Solution: Using the compound interest formula...
+Answer: ${d[answer]:.2f}
+""")
 
-# Create numerical answer with automatic tolerance
-answer = tools.NM(42.5, error=0.001)  # Creates {1:NM:=42.5:0.001}
+xml = gen.statement()  # Includes feedback section
+```
 
-# Integer answers
-integer_answer = tools.NM(42, entero=True)  # Creates {1:NM:=42}
+## Limitations & Known Issues
+
+- **graphics.py** is incomplete and missing imports
+- No automated CI/CD yet (workflows defined in `.github/prompts/`)
+- Not packaged on PyPI (install from source)
+- Parameter validation timeout: 10,000 iterations max
+
+## Importing into Moodle
+
+1. Generate questions with MoodPy
+2. In Moodle:
+   - Course → Import content → Import course
+   - Select the XML file from `{SUBJECT}_{CODE}_{TOPIC}/`
+   - Questions appear as Cloze-type (fill-in-the-blank)
+
+## Dependencies
+
+- `numpy` - Numerical operations and random number generation
+- `matplotlib` - Plotting utilities
+- `tabulate` - HTML/text table generation
+
+```bash
+pip install numpy matplotlib tabulate
 ```
 
 ## Project Structure
 
 ```
 moodpy/
-├── __init__.py          # Package initialization and exports
-├── generator.py         # Core Generator class for parametric exercises
-├── cloze.py            # Moodle XML export and batch processing
-├── tools.py            # Utility functions and random generation
-├── matfin.py           # Financial mathematics generators
-├── graphics.py         # Image handling and matplotlib integration
-├── generators/         # Submodule: Collection of exercise generators
-├── library/           # Submodule: Question banks and course materials
-└── pyproject.toml     # Project configuration and dependencies
+├── generator.py          # Core Generator class
+├── cloze.py              # Moodle XML export
+├── tools.py              # Utilities
+├── matfin.py             # Financial math
+├── graphics.py           # Image handling
+├── generators/           # Submodule: specific generators
+├── library/              # Submodule: shared components
+├── .github/
+│   ├── copilot-instructions.md
+│   └── prompts/          # Automation workflows
+└── README.md             # This file
 ```
-
-## Submodules
-
-This repository includes two important submodules:
-
-- **`generators/`**: Contains 80+ Jupyter notebooks with ready-to-use exercise generators
-- **`library/`**: Organized collection of question banks and course materials from different semesters
-
-To initialize submodules after cloning:
-```bash
-git submodule update --init --recursive
-```
-
-## Dependencies
-
-### Required
-- **Python 3.8+**
-- **numpy**: Numerical computations and random generation
-- **matplotlib**: Plot generation and image handling
-- **tabulate**: HTML table formatting for financial calculations
-
-### Optional
-- **Jupyter**: For working with generator notebooks
-- **pandas**: Advanced data manipulation (used in some generators)
-
-## Development Status
-
-MoodPy v2.0.0 represents a major milestone in the project's evolution:
-
-- ✅ **Stable Core**: Generator and Cloze classes are production-ready
-- ✅ **Rich Content**: 80+ exercise generators in multiple mathematical domains
-- ✅ **Proven**: Used in real educational environments with multiple semesters of content
-- 🔄 **Active Development**: Continuous improvements and new features
-- 📚 **Well Documented**: Comprehensive AI-assisted development with detailed instructions
 
 ## Contributing
 
-We welcome contributions! The project uses AI-assisted development with detailed instructions in `.github/copilot-instructions.md`.
-
-### Development Setup
-```bash
-git clone --recurse-submodules https://github.com/julihocc/moodpy.git
-cd moodpy
-pip install -e .
-```
-
-### Key Development Patterns
-- Use `Generator` class for all parametric exercises
-- Follow the lambda → reload → validate → generate workflow
-- Maintain UTF-8 encoding for international content
-- Use `tools.NM()` for numerical Moodle answers
-- Test with `cloze.testing()` before XML export
+This project is organized with Git submodules for modularity:
+- Core exercises: Add to `generators/` submodule
+- Shared code: Add to `library/` submodule
+- Core framework: Modify main files
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+*See repository for license information.*
 
-## Author
+## Getting Help
 
-**Julio Cesar Hernandez Ochoa**
-- Email: julihocc@gmail.com
-- GitHub: [@julihocc](https://github.com/julihocc)
-
-## Acknowledgments
-
-- Built for educators creating dynamic mathematical content
-- Designed with Moodle LMS integration in mind
-- Supports international educational standards
-- Community-driven development with AI assistance
+- **Architecture Guide**: See `.github/copilot-instructions.md`
+- **Code Examples**: Check the examples above
+- **Domain Patterns**: Review `matfin.py` for financial math patterns
 
 ---
 
-*MoodPy v2.0.0 - Empowering educators with dynamic, parametric question generation*
+**Made for Spanish educational institutions. Full UTF-8 support for mathematical notation and Spanish language content.**
