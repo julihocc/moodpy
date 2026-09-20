@@ -1,3 +1,18 @@
+# MoodPy 3.0.1 Release Notes
+
+**Release date:** 2026-09-20
+
+## Highlights
+
+- **Batch generation fixed**: each cloze question now gets freshly rendered parameters (no more identical copies).
+- **Requirements must be lambdas**: string requirements were silently ignored; use `lambda: ...`.
+- **NumPy 1.24+ compatibility** in `matfin` / tools.
+- **New APIs**: `Cloze.create_question()`, `Cloze.save()`, `exercise_fn` for Pattern B, `graphics.fig2str()`.
+
+See `CHANGELOG.md` for the full list.
+
+---
+
 # MoodPy v3.0.0 Release Notes
 
 ## 🚀 Major Release: Complete PyPI Refactoring
