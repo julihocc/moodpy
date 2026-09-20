@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "moodpy"
-version = "3.0.0"
+version = "3.0.1"
 description = "Modern Python library for generating parametric Moodle cloze questions with reconstructed educational generators across mathematics, economics, and finance"
 readme = "README.md"
 requires-python = ">=3.8"
