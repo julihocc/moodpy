@@ -62,7 +62,7 @@ examples = [
 Homepage = "https://github.com/julihocc/moodpy"
 Repository = "https://github.com/julihocc/moodpy.git"
 Issues = "https://github.com/julihocc/moodpy/issues"
-Documentation = "https://moodpy.readthedocs.io"
+Documentation = "https://github.com/julihocc/moodpy#readme"
 Examples = "https://github.com/julihocc/moodpy/tree/main/examples"
 
 [tool.setuptools.packages.find]
