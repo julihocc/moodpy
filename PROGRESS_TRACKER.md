@@ -1,386 +1,48 @@
-# MoodPy v3.0.0 Refactoring Progress Tracker
+# MoodPy Progress Tracker
 
-**Last Updated**: September 14, 2025  
-**Current Phase**: Phase 7 (Legacy Module Integration) - In Progress  
-**Overall Progress**: 8.0/10 Major Phases Complete (80%)
+**Last updated:** 2026-09-21  
+**Default branch:** `main`  
+**Package version on main:** `3.0.1` (prepared; GitHub Release / production PyPI postponed)
 
-## ✅ Completed Phases
+## Current status
 
-### Phase 1: Package Structure Refactor ✅ 
-**Status**: COMPLETE  
-**Completion Date**: September 13, 2025
+MoodPy is a modern `src/moodpy/` package that generates parametric Moodle cloze questions and exports Moodle XML. Core engine fixes from 2026-06-30 (batch generation, lambda requirements, NumPy 1.24+, `fig2str`, `exercise_fn`) are on `main` and documented under CHANGELOG `[3.0.1]`.
 
-**Achievements**:
-- ✅ Created proper src/moodpy/ layout following modern Python packaging standards
-- ✅ Moved all core modules to src/moodpy/: generator.py, cloze.py, tools.py, matfin.py, graphics.py
-- ✅ Updated __init__.py with proper package exports
-- ✅ Fixed all import paths and references
-- ✅ Maintained examples/ directory structure with proper organization
+| Area | State |
+|------|--------|
+| Package layout | `src/moodpy/` (generator, cloze, tools, matfin, graphics) |
+| Tests | 78/78 passing locally; CI on push/PR (Python 3.10–3.13) via `.github/workflows/test.yml` |
+| Coverage | ~70% overall (strong on generator/cloze; weaker on graphics/matfin/tools) |
+| Examples | 62 scripts under `examples/` (math, stats, finance, engineering, …) |
+| TestPyPI | `moodpy` 3.0.0 present |
+| Production PyPI | Not published yet (issue #5) |
+| Docs site | ReadTheDocs URL retired; use GitHub README |
+| Submodules | `generators/` → moodpy-generators; `library/` → moodpy-library (need `git submodule update --init`) |
 
-**Files Modified**:
-- `src/moodpy/__init__.py` - Package initialization and exports
-- `src/moodpy/*.py` - All core modules moved and imports fixed
-- `examples/` - Proper directory structure maintained
+## Recently completed
 
-### Phase 2: Fix Module Dependencies ✅
-**Status**: COMPLETE  
-**Completion Date**: September 13, 2025
+- **PR #12** — CI test workflow + prepare 3.0.1 version/changelog (issue #4 closed)
+- **PR #13** — Repo hygiene: description/topics, remove TESTING artifacts, gitignore, docs URL (issue #7 closed)
+- **2026-06-30** — Engine bugfixes + docs (see CHANGELOG 3.0.1)
 
-**Achievements**:
-- ✅ Added missing imports to graphics.py (matplotlib.pyplot, time, base64, os)
-- ✅ Implemented graceful degradation for optional dependencies (matplotlib, tabulate)
-- ✅ Added proper error handling with installation instructions
-- ✅ Fixed import issues and circular dependencies
-- ✅ Enhanced error messages for better user experience
+## Open work (GitHub)
 
-**Key Improvements**:
-- Conditional imports with try/except blocks
-- Clear error messages with installation guidance
-- No more silent failures or import errors
-- Backwards compatibility maintained
+### Paused (publish)
 
-### Phase 3: Add Test Suite ✅
-**Status**: COMPLETE  
-**Completion Date**: September 13, 2025
+- [#3](https://github.com/julihocc/moodpy/issues/3) Cut GitHub Release `v3.0.1`
+- [#5](https://github.com/julihocc/moodpy/issues/5) Publish to production PyPI (`PYPI_API_TOKEN` required)
 
-**Achievements**:
-- ✅ Created comprehensive test suite with pytest configuration
-- ✅ Implemented tests covering all major modules:
-  - `tests/test_generator.py` - Generator class functionality (10 tests, 85% coverage)
-  - `tests/test_cloze.py` - XML export and file management
-  - `tests/test_tools.py` - Utility functions (NM, round_normal, txt2arr)
-  - `tests/test_matfin.py` - Financial mathematics functions
-  - `tests/test_graphics.py` - Image handling with graceful degradation
-  - `tests/test_integration.py` - End-to-end workflow testing
-- ✅ Configured pytest with coverage reporting in pyproject.toml
-- ✅ Added fixtures and dependency-aware test skipping
-- ✅ Installed pytest, pytest-cov, and all testing dependencies
+### P1
 
-**Coverage Stats**:
-- Generator: 85% coverage
-- Overall package: 32% and growing
-- Test suite: 7 test files, 50+ individual tests
+- [#6](https://github.com/julihocc/moodpy/issues/6) Refresh trackers (this document)
+- [#8](https://github.com/julihocc/moodpy/issues/8) Document/verify git submodules
 
-### Phase 4: Organize Examples ✅
-**Status**: COMPLETE  
-**Completion Date**: September 13, 2025
+### P2
 
-**Achievements**:
-- ✅ Created comprehensive examples organization:
-  - `examples/README.md` - 200+ line comprehensive documentation
-  - `examples/demo.py` - Interactive demonstration script
-  - `examples/basic/arithmetic.py` - Simple arithmetic operations
-  - `examples/mathematics/linear_equations.py` - Parametric algebra problems
-  - `examples/mathematics/statistics.py` - Statistics and probability
-  - `examples/finance/compound_interest.py` - Financial mathematics
-- ✅ Enhanced Generator class with calculate_derived() method and derived attribute
-- ✅ Improved set_exercise() and set_feedback() with flexible formatting
-- ✅ Maintained backward compatibility with d=self.data pattern
-- ✅ Created domain-specific examples across mathematics, finance, and statistics
+- [#9](https://github.com/julihocc/moodpy/issues/9) Advanced mathematics generator migration
+- [#10](https://github.com/julihocc/moodpy/issues/10) Raise coverage on graphics / matfin / tools
+- [#11](https://github.com/julihocc/moodpy/issues/11) Clear Sage → MoodPy TODOs in examples
 
-**Documentation Excellence**:
-- Complete usage patterns from basic to advanced
-- Best practices and development workflows
-- Migration guidance from v2.0.0
-- Interactive demonstrations and testing workflows
+## Historical note
 
-## 🔄 Current Phase - WORK PAUSED
-
-**PAUSE POINT**: September 14, 2025  
-**RESUMPTION STATUS**: Data Science batch completed, ready for next specialized content batch  
-**CURRENT PROGRESS**: 70/136 generators migrated (51.5%)  
-
-## Phase 5: Reconstruct Missing Generators (Week 3)
-**Status**: ✅ COMPLETED
-**Progress**: Successfully reconstructed 3 high-value generators with full validation
-
-### Completed Tasks:
-- ✅ Library structure analysis (2017-2022 collection)
-- ✅ Successfully reconstructed 3 generators:
-  - **Supply/Demand Equilibrium Point** (`equilibrium_point.py`) - Economics/Microeconomics
-  - **Separable ODEs** (`separable_ode.py`) - Differential Equations  
-  - **Net Present Value Calculator** (`npv_calculator.py`) - Financial Mathematics
-- ✅ Mathematical pattern analysis and formula reconstruction
-- ✅ Parameter validation and requirement systems
-- ✅ Full integration with MoodPy v3.0.0 package structure
-- ✅ Comprehensive documentation and usage instructions
-- ✅ Validated against original XML outputs
-
-### Technical Achievements:
-- 🎯 3/3 target generators completed (100%)
-- 🎯 Mathematical accuracy: 100% validated against original outputs
-- 🎯 Modern package integration: Full compatibility
-- 🎯 Educational value: Preserved from classroom-tested originals
-
-### Success Metrics:
-- ✅ Target: 3-4 reconstructed generators (3 completed)
-- ✅ Target: 100% mathematical accuracy validation
-- ✅ Target: Full integration with modern package structure
-
-### Educational Impact:
-- **Domain Coverage**: Economics, Differential Equations, Financial Mathematics
-- **Proven Content**: Reverse-engineered from classroom-tested materials (2017-2022)
-- **Scalability**: Infinite unique problem variations with parametric generation
-
-### Phase 6: PyPI Publishing Configuration ✅
-**Status**: COMPLETE  
-**Completion Date**: September 14, 2025
-
-**Achievements**:
-- ✅ Updated pyproject.toml with modern SPDX license format (MIT)
-- ✅ Enhanced package metadata with comprehensive classifiers and keywords
-- ✅ Added scipy>=1.7.0 dependency for advanced mathematical functions
-- ✅ Created LICENSE file with proper MIT license text
-- ✅ Created comprehensive CHANGELOG.md with v3.0.0 release notes
-- ✅ Added py.typed marker for type support indication
-- ✅ Created automated GitHub Actions workflow for PyPI publishing
-- ✅ Successfully built and validated package (moodpy-3.0.0.tar.gz and .whl)
-- ✅ Package validation: 100% passing with twine check
-- ✅ Created release notes template for v3.0.0 launch
-
-**Technical Achievements**:
-- Package builds cleanly without warnings
-- Modern setuptools configuration with SPDX license
-- Automated CI/CD pipeline for release management
-- Production-ready package metadata and classifiers
-
-## � Active Phases
-
-### Phase 7: Legacy Module Integration
-**Status**: IN PROGRESS  
-**Completion**: 70/136 generators migrated (51.5%)  
-**Last Batch**: Advanced Statistical Analysis (8 generators)  
-
-**Achievements So Far**:
-- ✅ Cataloged 136 legacy generators in GENERATORS_CATALOG.md
-- ✅ Built migration framework (migrate_generator.py) 
-- ✅ Reorganized from src/moodpy/subjects/ to examples/ structure
-- ✅ Migrated 70 total generators across 8 subject areas:
-  - **Economics**: 7 generators (price equilibrium, supply/demand, market analysis, profit maximization)
-  - **Finance**: 9 generators (TIR, NPV, amortization tables, debt payments, annual returns)
-  - **Mathematics**: 26 generators (linear functions, differential equations, partial fractions, trigonometric integrals)
-  - **Business**: 4 generators (direct proportions, Cramer's rule 2x2/3x3, business mathematics)
-  - **Statistics**: 9 generators (correlation analysis, hypothesis testing, probability distributions, p-value interpretation)
-  - **Engineering**: 6 generators (transforms, complex analysis, numerical methods, vector calculus, signal processing, system analysis)
-  - **Data Science**: 3 generators (linear regression, curve fitting, optimization methods)
-  - **Physics**: 1 generator (placeholder for future expansion)
-
-**Latest Batch - Data Science and Optimization (September 14)**:
-- ✅ `linear_regression_analysis.py` - Comprehensive least squares regression with parameter estimation and model evaluation
-- ✅ `curve_fitting_analysis.py` - Learning curves, logistic growth modeling, and statistical model comparison
-- ✅ `optimization_methods.py` - Gradient descent, Newton's method, and multivariable optimization analysis
-
-**New Subject Area Milestone**: Data Science generators introduce advanced machine learning concepts:
-- Mathematical optimization theory (gradient descent, Newton's method, learning rates)
-- Statistical modeling (regression analysis, curve fitting, model selection criteria)
-- Machine learning metrics (R², RMSE, AIC, correlation coefficients, prediction intervals)
-- Educational scaffolding for complex algorithms with step-by-step mathematical derivations
-
-**Previous Batch - Advanced Statistical Analysis (September 14)**:
-- ✅ `discrete_correlation_pep201.py` - Joint probability distributions and discrete correlation analysis
-- ✅ `correlation_matrix_analysis.py` - Multivariate correlation matrices and statistical significance
-- ✅ `right_tailed_hypothesis_test.py` - Right-tailed z-tests with statistical inference
-- ✅ `left_tailed_hypothesis_test.py` - Left-tailed z-tests with critical region analysis
-- ✅ `chi_square_independence_test.py` - Contingency table analysis and categorical data testing
-- ✅ `two_tailed_hypothesis_test.py` - Bilateral hypothesis testing with dual critical regions
-- ✅ `p_value_analysis.py` - Comprehensive p-value calculation and interpretation
-- ✅ `probability_distributions.py` - Normal, binomial, and Poisson distribution analysis
-
-**Previous Batch - Management/Economics Applications (September 14)**:
-- ✅ `price_equilibrium_man_101.py` - Supply and demand equilibrium analysis
-- ✅ `direct_proportions_man_101.py` - Business proportions and recipe scaling
-- ✅ `profit_maximization_man_102.py` - Linear programming optimization problems
-- ✅ `cramers_rule_2x2_mb0405.py` - Business systems solving (2x2 matrices)
-- ✅ `cramers_rule_3x3_mb0406.py` - Complex resource allocation (3x3 systems)
-
-**Previous Batch - Advanced Financial Mathematics**:
-- ✅ `amortization_tables_301.py` - Complete amortization table generation with payment schedules
-- ✅ `mate_financiera_204_renta_checkpoint.py` - Debt amortization payment calculations
-- ✅ `mate_financiera_105_rendimiento_anual_efectivo_checkpoint.py` - Annual effective return analysis
-
-**Previous Batch - Level 3 Mathematics**:
-- ✅ `p301_fp_lin_nr.py` - Partial fractions with non-repeated linear factors
-- ✅ `p302_fp_lin_r.py` - Partial fractions with repeated linear factors  
-- ✅ `p303_fp_qi.py` - Partial fractions with quadratic irreducible factors
-- ✅ `p301_sinkcosn.py` - Trigonometric integrals (powers of sine/cosine)  
-- ✅ `p302_tanksecn.py` - Trigonometric integrals (powers of tangent/secant)
-- ✅ `p303_fp_lin_nr.py` - Advanced partial fractions (non-repeated)
-- ✅ `p304_fp_lin_r.py` - Advanced partial fractions (repeated)  
-- ✅ `p305_fp_qi.py` - Advanced partial fractions (quadratic)
-
-**Previous Batch - Differential Equations**:
-- ✅ `p101_edo_separable.py` - First-order separable differential equations
-- ✅ `p203_edo2_homo.py` - Second-order homogeneous equations  
-- ✅ `p205_edo2_ekx.py` - Non-homogeneous equations with exponential terms
-- ✅ `second_order_homogeneous_edo_203.py` - Advanced second-order analysis
-
-**Migration Quality**:
-- Jupyter notebooks converted via jupytext to Python format
-- Sage-specific syntax preserved with compatibility imports
-- Educational content integrity maintained
-- Subject-based organization implemented
-
-**Next Target Batches** (PRIORITY ORDER FOR RESUMPTION):
-1. **Advanced Mathematics Applications** - 15+ generators (optimization, linear algebra, calculus applications)
-2. **Computer Science/Algorithms** - 8+ generators (sorting, graph algorithms, computational complexity)  
-3. **Physics Applications** - 12+ generators (mechanics, electromagnetics, thermodynamics)
-4. **Chemistry Applications** - 8+ generators (stoichiometry, thermochemistry, kinetics)
-
-**RESUMPTION CHECKPOINT**:
-- Current Status: 70/136 generators (51.5% complete)
-- Last Completed: Data Science batch (3 generators)
-- Next Milestone Target: 85+ generators (62.5% complete)
-- Recommended Next Batch: Advanced Mathematics (targeting 10-15 generators)
-
-## �📋 Upcoming Phases
-
-### Phase 8: Documentation Enhancement  
-**Status**: NOT STARTED  
-**Estimated Timeline**: 2-3 days
-
-**Planned Work**:
-- Create docs/ directory with Sphinx setup
-- Generate API reference from docstrings
-- Write getting started guide and tutorials
-- Create examples gallery and advanced usage guides
-- Write comprehensive migration guide v2→v3
-- Add contributing guidelines and development setup
-
-### Phase 9: CI/CD Setup
-**Status**: NOT STARTED  
-**Estimated Timeline**: 1-2 days
-
-**Planned Work**:
-- Create .github/workflows/ directory
-- Implement test.yml for Python 3.8-3.12 matrix testing
-- Add docs.yml for automatic documentation building
-- Create publish.yml for automated PyPI releases
-- Add code quality checks (Black, flake8, coverage)
-- Set up automated quality assurance pipeline
-
-### Phase 10: Version Management & Breaking Changes
-**Status**: NOT STARTED  
-**Estimated Timeline**: 0.5 days
-
-**Planned Work**:
-- Implement v3.0.0 breaking changes
-- Update import structure: `from moodpy import Generator`
-- Create comprehensive migration guide
-- Add backwards compatibility where possible
-- Update CHANGELOG.md with detailed changes
-- Prepare deprecation warnings
-
-### Phase 11: Release Preparation
-**Status**: NOT STARTED  
-**Estimated Timeline**: 1 day
-
-**Release Checklist**:
-- [ ] All tests passing on multiple Python versions
-- [ ] Documentation built and reviewed  
-- [ ] All examples tested and validated
-- [ ] CHANGELOG.md updated with detailed changes
-- [ ] PyPI test deployment successful
-- [ ] Release notes prepared
-- [ ] Community announcement ready
-
-## 📊 Success Metrics Status
-
-### Technical Metrics
-- **Test Coverage**: 32% → Target: >90%
-- **Package Size**: <5MB → Target: <10MB ✅
-- **Installation**: Works via pip → Target: <30s ✅
-- **Documentation**: Partial → Target: 100% API coverage
-- **Generators**: 3 reconstructed + 5 existing → Target: 15+ working generators
-
-### Generator Portfolio Status
-- **Basic Examples**: 4 generators (arithmetic, linear equations, statistics, compound interest) ✅
-- **Reconstructed Generators**: 3 new high-value generators ✅
-  - Supply/Demand Equilibrium Point (Economics)
-  - Separable ODEs (Differential Equations)  
-  - Net Present Value Calculator (Financial Mathematics)
-- **Domain Coverage**: Mathematics, Economics, Finance, Statistics ✅
-- **Educational Validation**: 100% accuracy against original XML patterns ✅
-
-### User Experience Metrics  
-- **Installation**: `pip install moodpy` ready → Working ✅
-- **Getting Started**: 5min example ready → Ready ✅
-- **Example Quality**: All produce valid XML → Verified ✅
-- **Documentation**: Good → Target: Complete API reference
-
-### Community Metrics
-- **GitHub**: Repository ready → Ready ✅
-- **PyPI**: Not published → Target: Published
-- **Issues**: No tracking → Target: <7 days response
-- **Contributions**: Not ready → Target: Contribution guidelines
-
-## 🎯 Next Actions
-
-### Immediate (Phase 6)
-1. **PyPI Configuration**: Complete package metadata and build system
-2. **Version Management**: Finalize v3.0.0 configuration and breaking changes
-3. **Build System**: Configure setuptools>=61.0 and test deployment
-4. **Metadata**: Add proper dependencies, classifiers, and project URLs
-
-### Short Term (Phase 7-8)
-1. **Documentation**: Create comprehensive docs with Sphinx
-2. **CI/CD**: Automated testing and deployment pipelines
-3. **Testing**: Increase coverage to >90%
-
-### Medium Term (Phase 9-10)
-1. **Community**: Marketing materials and educational outreach
-2. **Release**: PyPI publication with v3.0.0
-3. **Maintenance**: Enable contributions and long-term support
-
-## 🚨 Risk Tracking
-
-### Technical Risks - MANAGED ✅
-- **Breaking Changes**: Comprehensive migration guide planned
-- **Dependencies**: Graceful degradation implemented ✅  
-- **Test Coverage**: Extensive testing framework in place ✅
-
-### Community Risks - MONITORED ⚠️
-- **User Migration**: Clear documentation and transition support planned
-- **Maintenance**: Automated CI/CD will reduce burden
-- **Version Conflicts**: Proper semantic versioning planned
-
-### Timeline Risks - ON TRACK ✅
-- **Phase Delays**: Currently ahead of schedule (5/10 phases complete)
-- **Scope Creep**: Well-defined phase boundaries maintained
-- **Quality vs Speed**: Maintaining high quality standards with educational validation
-
----
-
-## 🎯 WORK RESUMPTION PLAN - GITHUB ISSUES SETUP
-
-**PAUSE DATE**: September 14, 2025  
-**COMPLETION STATUS**: Phase 7 at 51.5% (70/136 generators migrated)  
-**LAST ACHIEVEMENT**: Data Science batch completed (3 advanced generators)
-
-### Priority Issues to Create:
-
-#### Phase 7 Continuation - Legacy Module Integration
-1. **Advanced Mathematics Batch** - 15+ generators (optimization, linear algebra, calculus applications)
-2. **Computer Science/Algorithms Batch** - 8+ generators (sorting, graph algorithms, computational complexity)  
-3. **Physics Applications Batch** - 12+ generators (mechanics, electromagnetics, thermodynamics)
-4. **Chemistry Applications Batch** - 8+ generators (stoichiometry, thermochemistry, kinetics)
-
-#### Phase 8-11 - Infrastructure & Release
-5. **Documentation Enhancement** - Sphinx setup, API reference, tutorials
-6. **CI/CD Pipeline Setup** - GitHub Actions, multi-version testing, automated releases
-7. **Version Management** - v3.0.0 breaking changes, migration guide
-8. **Release Preparation** - Final testing, PyPI deployment, community announcement
-
-### GitHub Project Structure:
-- **Milestones**: Phase 7 (75% completion), Phase 8-9 (Infrastructure), Phase 10-11 (Release)
-- **Labels**: generator-migration, documentation, ci-cd, testing, release-prep
-- **Assignees**: Self-assigned for continuity
-- **Priority**: High for Phase 7 continuation, Medium for infrastructure, Low for nice-to-have features
-
-### Resumption Checkpoint:
-- **Current Branch**: `refactora-as-package` 
-- **Last Commit**: Data Science batch completion with progress tracker update
-- **Virtual Environment**: `.venv` configured with all dependencies
-- **Package Status**: Installed in editable mode, all tests passing
-- **Next Recommended Action**: Create GitHub issues → Start Advanced Mathematics batch
-
-**Summary**: Outstanding progress with 51.5% completion (70/136 generators migrated, 6/10 phases complete). Data Science batch successfully completed with advanced ML/optimization content. Strong foundation with modern package structure, comprehensive testing, rich examples, and proven educational content. Ready for systematic GitHub issue creation and Phase 7 continuation toward 75% milestone.
+Older copies of this file (Sep 2025) tracked a “70/136 generators / Phase 7” migration on branch `refactora-as-package`. That branch is obsolete; **`main` is the source of truth.** Generator migration continues via issues #9–#11 rather than the old phase checklist.
