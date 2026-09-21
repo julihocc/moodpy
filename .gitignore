@@ -159,3 +159,12 @@ Thumbs.db
 *.csv
 *.json
 *.xml
+
+# Generated MoodPy exercise / testing output
+TESTING-*.txt
+*_*/TESTING-*.txt
+MATEMÁTICAS*/
+MICROECONOMÍA*/
+MATH_*/
+# Subject_Code_Topic output folders (common Cloze naming)
+**/TESTING-*.txt
