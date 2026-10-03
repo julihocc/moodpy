@@ -3066,7 +3066,7 @@ wheels = [
 
 [[package]]
 name = "moodpy"
-version = "3.0.0"
+version = "3.0.1"
 source = { editable = "." }
 dependencies = [
     { name = "matplotlib", version = "3.7.5", source = { registry = "https://pypi.org/simple" }, marker = "python_full_version < '3.9'" },

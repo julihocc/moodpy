@@ -10,7 +10,6 @@ testing random number generation, array manipulation, and Moodle formatting.
 import pytest
 import sys
 import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 from moodpy.tools import NM, round_normal, int_normal, txt2arr
 from moodpy.generator import cdata

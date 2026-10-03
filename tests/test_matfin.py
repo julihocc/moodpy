@@ -11,7 +11,6 @@ Tests the financial mathematics functions against their actual API:
 import pytest
 import sys
 import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 from moodpy.matfin import frec, per, tempo, gen_flux
 

@@ -15,7 +15,6 @@ from unittest.mock import Mock, patch
 # Import from the new package structure
 import sys
 import os
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), '..', 'src'))
 
 from moodpy import Generator
 

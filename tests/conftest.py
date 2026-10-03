@@ -13,7 +13,8 @@ import pytest
 # Add src to Python path for testing
 test_dir = os.path.dirname(__file__)
 src_dir = os.path.join(os.path.dirname(test_dir), 'src')
-sys.path.insert(0, src_dir)
+if not os.environ.get("MOODPY_TEST_INSTALLED"):
+    sys.path.insert(0, src_dir)
 
 # Import dependencies for testing
 try:
