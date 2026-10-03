@@ -2,14 +2,9 @@
 mode: agent
 ---
 
-- Execute .github/prompts/commit.prompt.md to commit the changes in suitable chunks to maintain a clean git history.
-- Exclude dependencies or virtual enviroments like .venv or node_modules
-- Check for the recent history commit messages to identify the last version bump.
-- Update the documentation accordingly.
-- Rewrite README files accross the repo to reflect the new version.
-- Ensure the version in all relevant files (e.g., `pyproject.toml`, `setup.py`, `__init__.py`) is consistent.
-- Update any AI agent instructions to reflect the new version.
-- Update AI Manifest files if applicable. If there are no manifest files, create one.
-- Create a new commit with the updated documentation and version changes.
-- Tag the new version in Git and push the changes.
-
+Read AGENTS.md, docs/README.md, and docs/development.md. Update maintained guides
+for the current implementation and record changes under Unreleased. Keep the
+canonical authoring workflow in docs/authoring-guide.md. Archived plans, scripts,
+and examples are historical material; do not present them as current instructions.
+Verify relative links and runtime/package version agreement. Do not invent release
+claims, bump versions, create manifests, tag, push, or publish as a side effect.

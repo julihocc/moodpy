@@ -2,9 +2,8 @@
 mode: agent
 ---
 
-- Execute instructions given in .github/prompts/summarize-changes.prompt.md
-- Realize an strategy to commit these changes incluiding those on submodules
-- Commit changes in suitable chunks to maintain a clean history.
-- Rely on chat history to compose commits.
-- Use descriptive commit messages that summarize the changes made.
-- Sync the submodules 
+Read AGENTS.md and docs/development.md. Inspect the current changes and history,
+then commit authorized work in logical chunks with descriptive messages. Preserve
+unrelated local edits. Include submodule changes only when explicitly requested;
+do not synchronize, commit, or push them merely because their worktrees are dirty.
+Do not tag, push, release, or publish as a side effect of committing.

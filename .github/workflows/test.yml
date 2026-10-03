@@ -27,6 +27,7 @@ jobs:
           python -m pip install dist/*.whl pytest pytest-cov
       - name: Verify installed package
         run: |
+          python scripts/check_environment.py --require-wheel
           python -c "from pathlib import Path; from importlib.metadata import version; import moodpy; assert Path.cwd() / 'src' not in Path(moodpy.__file__).resolve().parents; assert moodpy.__version__ == version('moodpy') == '3.0.1'"
       - name: Run tests against the installed wheel
         env:

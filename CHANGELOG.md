@@ -37,6 +37,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- Maintenance prompts no longer chain unrelated commits, submodule synchronization,
+  tagging, or publication. CI checks dependencies and all four core recipes through
+  the environment checker against the installed wheel.
 - Legacy batch/preview generation now enforces constraints and refreshes feedback.
 - Literal rendering support for mathematical braces; missing template values and
   string requirements now raise errors. Generators recover after validation exhaustion.
