@@ -9,6 +9,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Reorganized generator submodule: all 87 original notebooks retained in a hashed,
+  topic-based archive; 31 migrated Python recipe families, source regeneration CLI,
+  independent mathematical tests, and installed-wheel CI across Python 3.8–3.14.
+  Generator checks also gate publishing, and the disposable Moodle matrix imports
+  all migrated topics with independently calculated grading expectations, including
+  questions with multiple embedded fields. Legacy empty/scaffold notebooks remain
+  explicitly classified rather than advertised as runnable questions.
+
 - Agent entry point, collaborative authoring guide, verified recipes, and a portable
   seed/output CLI template with a saved quiz brief.
 - Typed QuestionFamily/build_bank/QuestionBank API with independent family RNGs,

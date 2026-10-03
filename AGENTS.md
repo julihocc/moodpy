@@ -17,8 +17,10 @@ bundle. Start with [the authoring guide](docs/authoring-guide.md).
    preview, manifest, sources, import instructions, and ZIP.
 6. Report local validation separately from a successful live Moodle import.
 
-The verified catalog is the supported starting point. Other examples, generators/,
-and library/ are legacy references requiring independent verification. Do not
+The verified catalog is the supported starting point. The [generator catalog](generators/CATALOG.md)
+lists migrated recipes with mathematical tests; read generators/README.md for setup.
+Other examples, archived generator notebooks, and library/ are legacy references
+requiring independent verification. Do not
 execute arbitrary legacy scripts or use txt2arr() on untrusted input. Recipes are
 trusted executable Python, not a sandboxed data format.
 

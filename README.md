@@ -42,12 +42,18 @@ The preview contains teacher answers. XML and preview use the same saved questio
 export does not resample. Local checks validate supported syntax and XML structure,
 not educational suitability or mathematical truth. CI is configured to import a generated bank
 into disposable Moodle instances (4.5 LTS and 5.0–5.2) and check Moodle's Cloze grader
-against independently calculated recipe answers. Compatibility requires passing CI
+against independently calculated answers for the four core recipes and all 31
+migrated generator families. Compatibility requires passing CI
 results; no successful Moodle run has been recorded yet.
 The [manual checklist](docs/moodle-import-checklist.md) covers the web-interface path
 and remains useful for checking a specific Moodle installation.
 
 ## Python interface
+
+The [generator submodule](generators/README.md) also provides 31 migrated notebook
+topics with independent mathematical tests and a portable bank CLI. Its
+[catalog](generators/CATALOG.md) indexes all original notebooks and distinguishes
+working replacements from unfinished templates and scratch references.
 
 ```python
 from moodpy import build_bank

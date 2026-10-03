@@ -12,8 +12,11 @@ jobs:
   moodle-compat:
     uses: ./.github/workflows/moodle-compat.yml
 
+  generator-tests:
+    uses: ./.github/workflows/generators.yml
+
   build:
-    needs: [tests, moodle-compat]
+    needs: [tests, moodle-compat, generator-tests]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4

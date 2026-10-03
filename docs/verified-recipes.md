@@ -17,7 +17,7 @@ learner. Adapt the wording, objectives, bounds, counts, and tolerance with the e
 
 ## Legacy references
 
-All other scripts in examples/ and notebooks in generators/ or library/ require
+Other scripts in examples/ and archived notebooks in generators/ or library/ require
 independent verification before reuse. Some contain Sage syntax, missing dependencies,
 old Moodle APIs, or migration TODOs. Several do not parse as Python. Their presence
 is not a claim that they run or produce correct questions.
@@ -30,3 +30,11 @@ recipe calculates its formula directly. Do not reuse txt2arr() with untrusted in
 Do not initialize or modify submodules merely to author a question bank. Keep
 independently reviewed adaptations as new Python recipes and record their sources
 and educational assumptions in the quiz brief.
+
+## Migrated notebook recipes
+
+The separate [generator package](../generators/README.md) adds 31 mathematically
+tested families from the teaching notebooks. Its [catalog](../generators/CATALOG.md)
+maps every original notebook to a replacement, scratch reference, or unfinished
+template. Install this MoodPy checkout and the generator package before use.
+These local tests do not establish successful live Moodle imports for those families.

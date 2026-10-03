@@ -1,0 +1,54 @@
+name: Migrated generator recipes
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  installed-generators:
+    name: Generator wheel on Python ${{ matrix.python }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        python: ["3.8", "3.9", "3.10", "3.11", "3.12", "3.13", "3.14"]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check out only the generator submodule
+        run: git submodule update --init -- generators
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Build and install both wheels
+        run: |
+          python -m pip install --upgrade pip build
+          python -m build --wheel --outdir "$RUNNER_TEMP/moodpy-dist" .
+          python -m build --wheel --outdir "$RUNNER_TEMP/generator-dist" generators
+          python -m pip install "$RUNNER_TEMP"/moodpy-dist/*.whl
+          python -m pip install "$RUNNER_TEMP"/generator-dist/*.whl nbformat
+      - name: Verify installed imports, mathematics, and archive
+        working-directory: ${{ runner.temp }}
+        run: |
+          python -c "import moodpy_generators; from importlib.metadata import version; assert '/site-packages/' in moodpy_generators.__file__; assert moodpy_generators.__version__ == version('moodpy-generators'); from moodpy import build_bank"
+          python -m unittest discover -s "$GITHUB_WORKSPACE/generators/tests" -v
+          python "$GITHUB_WORKSPACE/generators/tools/build_catalog.py" --check
+      - name: Generate and regenerate every topic
+        working-directory: ${{ runner.temp }}
+        run: |
+          python -m moodpy_generators --seed 42 --count 3 --output bank
+          python bank/sources/author_bank.py --manifest bank/manifest.json --output regenerated
+          cmp bank/bank.xml regenerated/bank.xml
+          cmp bank/preview.html regenerated/preview.html
+          python -c "from xml.etree import ElementTree as ET; ET.parse('bank/bank.xml')"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: generator-review-python-${{ matrix.python }}
+          path: ${{ runner.temp }}/bank/bundle.zip
