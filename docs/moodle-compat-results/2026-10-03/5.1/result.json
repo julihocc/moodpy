@@ -1,0 +1,9 @@
+{
+  "requested_version": "5.1",
+  "branch": "MOODLE_501_STABLE",
+  "status": "passed",
+  "started_at": "2026-10-03T18:37:14.240455+00:00",
+  "phase": "remove only this run's containers, volume and network",
+  "completed_phase": "import both banks and grade independent answers",
+  "duration_seconds": 190.06
+}

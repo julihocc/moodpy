@@ -1,0 +1,146 @@
+{
+  "families": [
+    {
+      "category": "Mathematics/Arithmetic",
+      "count": 2,
+      "id": "addition",
+      "tags": [
+        "addition"
+      ],
+      "title": "Integer addition"
+    },
+    {
+      "category": "Mathematics/Algebra",
+      "count": 2,
+      "id": "linear",
+      "tags": [
+        "linear-equations"
+      ],
+      "title": "Linear equation"
+    },
+    {
+      "category": "Finance/Compound interest",
+      "count": 2,
+      "id": "compound",
+      "tags": [
+        "annual-compounding"
+      ],
+      "title": "Compound interest"
+    },
+    {
+      "category": "Mathematics/Short answer",
+      "count": 2,
+      "id": "sign",
+      "tags": [
+        "integer-sign"
+      ],
+      "title": "Integer sign"
+    }
+  ],
+  "format": "moodpy-bank-v1",
+  "max_attempts": 10000,
+  "questions": [
+    {
+      "family_id": "addition",
+      "id": "addition-001",
+      "parameters": {
+        "a": 76,
+        "answer": 104,
+        "b": 28
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "addition",
+      "id": "addition-002",
+      "parameters": {
+        "a": 43,
+        "answer": 61,
+        "b": 18
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "linear",
+      "id": "linear-001",
+      "parameters": {
+        "a": -4,
+        "b": 7,
+        "c": -29,
+        "x": 9
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "linear",
+      "id": "linear-002",
+      "parameters": {
+        "a": 10,
+        "b": -7,
+        "c": 93,
+        "x": 10
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "compound",
+      "id": "compound-001",
+      "parameters": {
+        "P": 49500,
+        "amount": 183247.46,
+        "rate": 0.098,
+        "rate_percent": 9.8,
+        "years": 14
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "compound",
+      "id": "compound-002",
+      "parameters": {
+        "P": 44400,
+        "amount": 55931.21,
+        "rate": 0.08,
+        "rate_percent": 8.0,
+        "years": 3
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "sign",
+      "id": "sign-001",
+      "parameters": {
+        "answer": "positive",
+        "n": 462
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "sign",
+      "id": "sign-002",
+      "parameters": {
+        "answer": "negative",
+        "n": -786
+      },
+      "variant": 2
+    }
+  ],
+  "seed": 42,
+  "sources": {
+    "sources/author_bank.py": "769a99a0426b44cf13f9561a40634f357554bd04881a51a00607754d73755cb3",
+    "sources/brief.md": "78f5facb55b855199c66fc25c7ed4d49fa71378577cd1f18ff37ed9fff9e921b"
+  },
+  "title": "Example course question bank",
+  "validation": {
+    "issues": [],
+    "live_moodle_import": "not tested",
+    "question_count": 8,
+    "valid": true
+  },
+  "versions": {
+    "installed_moodpy": "3.0.1",
+    "moodpy": "3.0.1",
+    "numpy": "2.3.5",
+    "python": "3.14.4"
+  }
+}

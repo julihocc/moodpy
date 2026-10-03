@@ -1,0 +1,1482 @@
+{
+  "format": "moodpy-moodle-expectations-v1",
+  "manifest_sha256": "c518329b38e21fd6f2a9e56515f9002af9b309bdac692f6b69d9070e6b3b03ed",
+  "questions": {
+    "direct-proportion-001": [
+      {
+        "kind": "numerical",
+        "answer": 435.0,
+        "tolerance": 0.435
+      }
+    ],
+    "direct-proportion-002": [
+      {
+        "kind": "numerical",
+        "answer": 30.0,
+        "tolerance": 0.03
+      }
+    ],
+    "direct-proportion-003": [
+      {
+        "kind": "numerical",
+        "answer": 23.25,
+        "tolerance": 0.02325
+      }
+    ],
+    "proportional-segments-001": [
+      {
+        "kind": "numerical",
+        "answer": 79.54545454545455,
+        "tolerance": 0.07954545454545454
+      },
+      {
+        "kind": "numerical",
+        "answer": 79.54545454545455,
+        "tolerance": 0.07954545454545454
+      },
+      {
+        "kind": "numerical",
+        "answer": 125.0,
+        "tolerance": 0.125
+      },
+      {
+        "kind": "numerical",
+        "answer": 56.81818181818182,
+        "tolerance": 0.05681818181818182
+      },
+      {
+        "kind": "numerical",
+        "answer": 34.09090909090909,
+        "tolerance": 0.034090909090909095
+      }
+    ],
+    "proportional-segments-002": [
+      {
+        "kind": "numerical",
+        "answer": 81.71428571428571,
+        "tolerance": 0.08171428571428571
+      },
+      {
+        "kind": "numerical",
+        "answer": 40.857142857142854,
+        "tolerance": 0.040857142857142856
+      },
+      {
+        "kind": "numerical",
+        "answer": 163.42857142857142,
+        "tolerance": 0.16342857142857142
+      }
+    ],
+    "proportional-segments-003": [
+      {
+        "kind": "numerical",
+        "answer": 30.57894736842105,
+        "tolerance": 0.030578947368421053
+      },
+      {
+        "kind": "numerical",
+        "answer": 48.05263157894737,
+        "tolerance": 0.04805263157894737
+      },
+      {
+        "kind": "numerical",
+        "answer": 34.94736842105263,
+        "tolerance": 0.03494736842105263
+      },
+      {
+        "kind": "numerical",
+        "answer": 4.368421052631579,
+        "tolerance": 0.004368421052631579
+      },
+      {
+        "kind": "numerical",
+        "answer": 48.05263157894737,
+        "tolerance": 0.04805263157894737
+      }
+    ],
+    "cramer-2-001": [
+      {
+        "kind": "numerical",
+        "answer": -4.483870967741935,
+        "tolerance": 0.004483870967741935
+      },
+      {
+        "kind": "numerical",
+        "answer": 2.4193548387096775,
+        "tolerance": 0.0024193548387096775
+      }
+    ],
+    "cramer-2-002": [
+      {
+        "kind": "numerical",
+        "answer": 9.111111111111112,
+        "tolerance": 0.009111111111111113
+      },
+      {
+        "kind": "numerical",
+        "answer": 2.8888888888888893,
+        "tolerance": 0.002888888888888889
+      }
+    ],
+    "cramer-2-003": [
+      {
+        "kind": "numerical",
+        "answer": 3.625,
+        "tolerance": 0.003625
+      },
+      {
+        "kind": "numerical",
+        "answer": -6.75,
+        "tolerance": 0.00675
+      }
+    ],
+    "cramer-3-001": [
+      {
+        "kind": "numerical",
+        "answer": 2.1823899371069184,
+        "tolerance": 0.0021823899371069184
+      },
+      {
+        "kind": "numerical",
+        "answer": 1.6352201257861636,
+        "tolerance": 0.0016352201257861635
+      },
+      {
+        "kind": "numerical",
+        "answer": -0.779874213836478,
+        "tolerance": 0.0007798742138364781
+      }
+    ],
+    "cramer-3-002": [
+      {
+        "kind": "numerical",
+        "answer": 14.999999999999998,
+        "tolerance": 0.014999999999999998
+      },
+      {
+        "kind": "numerical",
+        "answer": 7.299999999999999,
+        "tolerance": 0.007299999999999999
+      },
+      {
+        "kind": "numerical",
+        "answer": -13.744444444444444,
+        "tolerance": 0.013744444444444445
+      }
+    ],
+    "cramer-3-003": [
+      {
+        "kind": "numerical",
+        "answer": 0.11111111111111213,
+        "tolerance": 0.00011111111111111213
+      },
+      {
+        "kind": "numerical",
+        "answer": -4.055555555555556,
+        "tolerance": 0.004055555555555556
+      },
+      {
+        "kind": "numerical",
+        "answer": -1.8611111111111116,
+        "tolerance": 0.0018611111111111116
+      }
+    ],
+    "recurrence-001": [
+      {
+        "kind": "numerical",
+        "answer": -4.0,
+        "tolerance": 0.004
+      }
+    ],
+    "recurrence-002": [
+      {
+        "kind": "numerical",
+        "answer": 162.0,
+        "tolerance": 0.162
+      }
+    ],
+    "recurrence-003": [
+      {
+        "kind": "numerical",
+        "answer": -10.0,
+        "tolerance": 0.01
+      }
+    ],
+    "equilibrium-001": [
+      {
+        "kind": "numerical",
+        "answer": 3038.0,
+        "tolerance": 3.0380000000000003
+      }
+    ],
+    "equilibrium-002": [
+      {
+        "kind": "numerical",
+        "answer": 8352.0,
+        "tolerance": 8.352
+      }
+    ],
+    "equilibrium-003": [
+      {
+        "kind": "numerical",
+        "answer": 598.0,
+        "tolerance": 0.598
+      }
+    ],
+    "portfolio-001": [
+      {
+        "kind": "numerical",
+        "answer": 71000.0,
+        "tolerance": 71.0
+      },
+      {
+        "kind": "numerical",
+        "answer": 51000.00000000001,
+        "tolerance": 51.00000000000001
+      }
+    ],
+    "portfolio-002": [
+      {
+        "kind": "numerical",
+        "answer": 44000.0,
+        "tolerance": 44.0
+      },
+      {
+        "kind": "numerical",
+        "answer": 43000.0,
+        "tolerance": 43.0
+      }
+    ],
+    "portfolio-003": [
+      {
+        "kind": "numerical",
+        "answer": 41000.000000000015,
+        "tolerance": 41.000000000000014
+      },
+      {
+        "kind": "numerical",
+        "answer": 76999.99999999999,
+        "tolerance": 76.99999999999999
+      }
+    ],
+    "loan-payment-001": [
+      {
+        "kind": "numerical",
+        "answer": 3406.946121360531,
+        "tolerance": 3.406946121360531
+      }
+    ],
+    "loan-payment-002": [
+      {
+        "kind": "numerical",
+        "answer": 474.2305297044982,
+        "tolerance": 0.47423052970449825
+      }
+    ],
+    "loan-payment-003": [
+      {
+        "kind": "numerical",
+        "answer": 59.43220744087554,
+        "tolerance": 0.05943220744087554
+      }
+    ],
+    "amortization-001": [
+      {
+        "kind": "numerical",
+        "answer": 2800.0,
+        "tolerance": 2.8000000000000003
+      },
+      {
+        "kind": "numerical",
+        "answer": 126.0,
+        "tolerance": 0.126
+      },
+      {
+        "kind": "numerical",
+        "answer": 780.4822141390421,
+        "tolerance": 0.7804822141390421
+      },
+      {
+        "kind": "numerical",
+        "answer": 654.4822141390421,
+        "tolerance": 0.6544822141390421
+      },
+      {
+        "kind": "numerical",
+        "answer": 2145.5177858609577,
+        "tolerance": 2.1455177858609575
+      },
+      {
+        "kind": "numerical",
+        "answer": 2145.5177858609577,
+        "tolerance": 2.1455177858609575
+      },
+      {
+        "kind": "numerical",
+        "answer": 96.5483003637431,
+        "tolerance": 0.0965483003637431
+      },
+      {
+        "kind": "numerical",
+        "answer": 780.4822141390421,
+        "tolerance": 0.7804822141390421
+      },
+      {
+        "kind": "numerical",
+        "answer": 683.933913775299,
+        "tolerance": 0.683933913775299
+      },
+      {
+        "kind": "numerical",
+        "answer": 1461.5838720856586,
+        "tolerance": 1.4615838720856587
+      },
+      {
+        "kind": "numerical",
+        "answer": 1461.5838720856584,
+        "tolerance": 1.4615838720856584
+      },
+      {
+        "kind": "numerical",
+        "answer": 65.77127424385462,
+        "tolerance": 0.06577127424385462
+      },
+      {
+        "kind": "numerical",
+        "answer": 780.4822141390421,
+        "tolerance": 0.7804822141390421
+      },
+      {
+        "kind": "numerical",
+        "answer": 714.7109398951875,
+        "tolerance": 0.7147109398951875
+      },
+      {
+        "kind": "numerical",
+        "answer": 746.8729321904709,
+        "tolerance": 0.7468729321904709
+      },
+      {
+        "kind": "numerical",
+        "answer": 746.8729321904709,
+        "tolerance": 0.7468729321904709
+      },
+      {
+        "kind": "numerical",
+        "answer": 33.60928194857119,
+        "tolerance": 0.033609281948571185
+      },
+      {
+        "kind": "numerical",
+        "answer": 780.4822141390421,
+        "tolerance": 0.7804822141390421
+      },
+      {
+        "kind": "numerical",
+        "answer": 746.8729321904709,
+        "tolerance": 0.7468729321904709
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.0,
+        "tolerance": 1e-05
+      }
+    ],
+    "amortization-002": [
+      {
+        "kind": "numerical",
+        "answer": 7900.0,
+        "tolerance": 7.9
+      },
+      {
+        "kind": "numerical",
+        "answer": 237.0,
+        "tolerance": 0.23700000000000002
+      },
+      {
+        "kind": "numerical",
+        "answer": 2792.8898702643246,
+        "tolerance": 2.792889870264325
+      },
+      {
+        "kind": "numerical",
+        "answer": 2555.8898702643246,
+        "tolerance": 2.5558898702643247
+      },
+      {
+        "kind": "numerical",
+        "answer": 5344.110129735675,
+        "tolerance": 5.344110129735675
+      },
+      {
+        "kind": "numerical",
+        "answer": 5344.110129735676,
+        "tolerance": 5.344110129735676
+      },
+      {
+        "kind": "numerical",
+        "answer": 160.32330389207027,
+        "tolerance": 0.16032330389207028
+      },
+      {
+        "kind": "numerical",
+        "answer": 2792.8898702643246,
+        "tolerance": 2.792889870264325
+      },
+      {
+        "kind": "numerical",
+        "answer": 2632.5665663722543,
+        "tolerance": 2.632566566372254
+      },
+      {
+        "kind": "numerical",
+        "answer": 2711.543563363422,
+        "tolerance": 2.711543563363422
+      },
+      {
+        "kind": "numerical",
+        "answer": 2711.543563363422,
+        "tolerance": 2.711543563363422
+      },
+      {
+        "kind": "numerical",
+        "answer": 81.34630690090266,
+        "tolerance": 0.08134630690090267
+      },
+      {
+        "kind": "numerical",
+        "answer": 2792.8898702643246,
+        "tolerance": 2.792889870264325
+      },
+      {
+        "kind": "numerical",
+        "answer": 2711.543563363422,
+        "tolerance": 2.711543563363422
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.0,
+        "tolerance": 1e-05
+      }
+    ],
+    "amortization-003": [
+      {
+        "kind": "numerical",
+        "answer": 7700.0,
+        "tolerance": 7.7
+      },
+      {
+        "kind": "numerical",
+        "answer": 693.0,
+        "tolerance": 0.6930000000000001
+      },
+      {
+        "kind": "numerical",
+        "answer": 1716.4823313486859,
+        "tolerance": 1.7164823313486859
+      },
+      {
+        "kind": "numerical",
+        "answer": 1023.4823313486859,
+        "tolerance": 1.0234823313486858
+      },
+      {
+        "kind": "numerical",
+        "answer": 6676.517668651314,
+        "tolerance": 6.676517668651314
+      },
+      {
+        "kind": "numerical",
+        "answer": 6676.517668651315,
+        "tolerance": 6.676517668651315
+      },
+      {
+        "kind": "numerical",
+        "answer": 600.8865901786183,
+        "tolerance": 0.6008865901786183
+      },
+      {
+        "kind": "numerical",
+        "answer": 1716.4823313486859,
+        "tolerance": 1.7164823313486859
+      },
+      {
+        "kind": "numerical",
+        "answer": 1115.5957411700674,
+        "tolerance": 1.1155957411700674
+      },
+      {
+        "kind": "numerical",
+        "answer": 5560.921927481248,
+        "tolerance": 5.560921927481248
+      },
+      {
+        "kind": "numerical",
+        "answer": 5560.921927481248,
+        "tolerance": 5.560921927481248
+      },
+      {
+        "kind": "numerical",
+        "answer": 500.48297347331226,
+        "tolerance": 0.5004829734733123
+      },
+      {
+        "kind": "numerical",
+        "answer": 1716.4823313486859,
+        "tolerance": 1.7164823313486859
+      },
+      {
+        "kind": "numerical",
+        "answer": 1215.9993578753736,
+        "tolerance": 1.2159993578753736
+      },
+      {
+        "kind": "numerical",
+        "answer": 4344.922569605874,
+        "tolerance": 4.344922569605874
+      },
+      {
+        "kind": "numerical",
+        "answer": 4344.922569605875,
+        "tolerance": 4.344922569605875
+      },
+      {
+        "kind": "numerical",
+        "answer": 391.04303126452874,
+        "tolerance": 0.3910430312645287
+      },
+      {
+        "kind": "numerical",
+        "answer": 1716.4823313486859,
+        "tolerance": 1.7164823313486859
+      },
+      {
+        "kind": "numerical",
+        "answer": 1325.4393000841571,
+        "tolerance": 1.3254393000841571
+      },
+      {
+        "kind": "numerical",
+        "answer": 3019.4832695217174,
+        "tolerance": 3.0194832695217175
+      },
+      {
+        "kind": "numerical",
+        "answer": 3019.4832695217183,
+        "tolerance": 3.0194832695217184
+      },
+      {
+        "kind": "numerical",
+        "answer": 271.75349425695464,
+        "tolerance": 0.27175349425695466
+      },
+      {
+        "kind": "numerical",
+        "answer": 1716.4823313486859,
+        "tolerance": 1.7164823313486859
+      },
+      {
+        "kind": "numerical",
+        "answer": 1444.7288370917313,
+        "tolerance": 1.4447288370917313
+      },
+      {
+        "kind": "numerical",
+        "answer": 1574.754432429987,
+        "tolerance": 1.574754432429987
+      },
+      {
+        "kind": "numerical",
+        "answer": 1574.754432429987,
+        "tolerance": 1.574754432429987
+      },
+      {
+        "kind": "numerical",
+        "answer": 141.72789891869883,
+        "tolerance": 0.14172789891869883
+      },
+      {
+        "kind": "numerical",
+        "answer": 1716.4823313486859,
+        "tolerance": 1.7164823313486859
+      },
+      {
+        "kind": "numerical",
+        "answer": 1574.754432429987,
+        "tolerance": 1.574754432429987
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.0,
+        "tolerance": 1e-05
+      }
+    ],
+    "separable-implicit-001": [
+      {
+        "kind": "numerical",
+        "answer": 1.4747474747474747,
+        "tolerance": 0.0014747474747474748
+      }
+    ],
+    "separable-implicit-002": [
+      {
+        "kind": "numerical",
+        "answer": 1.0344827586206897,
+        "tolerance": 0.0010344827586206897
+      }
+    ],
+    "separable-implicit-003": [
+      {
+        "kind": "numerical",
+        "answer": 0.5,
+        "tolerance": 0.0005
+      }
+    ],
+    "exponential-growth-001": [
+      {
+        "kind": "numerical",
+        "answer": 0.07882236850319285,
+        "tolerance": 7.882236850319286e-05
+      }
+    ],
+    "exponential-growth-002": [
+      {
+        "kind": "numerical",
+        "answer": 0.2987224102337373,
+        "tolerance": 0.0002987224102337373
+      }
+    ],
+    "exponential-growth-003": [
+      {
+        "kind": "numerical",
+        "answer": 7620.614502412645,
+        "tolerance": 7.6206145024126455
+      }
+    ],
+    "logistic-001": [
+      {
+        "kind": "numerical",
+        "answer": 33.91359233359438,
+        "tolerance": 0.03391359233359438
+      }
+    ],
+    "logistic-002": [
+      {
+        "kind": "numerical",
+        "answer": 3.930286752879672,
+        "tolerance": 0.0039302867528796725
+      }
+    ],
+    "logistic-003": [
+      {
+        "kind": "numerical",
+        "answer": 23.757536936888506,
+        "tolerance": 0.023757536936888507
+      }
+    ],
+    "ode-homogeneous-001": [
+      {
+        "kind": "numerical",
+        "answer": 2.5116965878152304,
+        "tolerance": 0.0025116965878152304
+      }
+    ],
+    "ode-homogeneous-002": [
+      {
+        "kind": "numerical",
+        "answer": -12.609847735795517,
+        "tolerance": 0.012609847735795517
+      }
+    ],
+    "ode-homogeneous-003": [
+      {
+        "kind": "numerical",
+        "answer": -0.148975591145625,
+        "tolerance": 0.000148975591145625
+      }
+    ],
+    "ode-exponential-001": [
+      {
+        "kind": "numerical",
+        "answer": 8.9214025682222,
+        "tolerance": 0.0089214025682222
+      }
+    ],
+    "ode-exponential-002": [
+      {
+        "kind": "numerical",
+        "answer": -1.8942866559336204,
+        "tolerance": 0.0018942866559336206
+      }
+    ],
+    "ode-exponential-003": [
+      {
+        "kind": "numerical",
+        "answer": 3.1694357088107212,
+        "tolerance": 0.0031694357088107214
+      }
+    ],
+    "average-log-001": [
+      {
+        "kind": "numerical",
+        "answer": -1.072852490849688,
+        "tolerance": 0.001072852490849688
+      }
+    ],
+    "average-log-002": [
+      {
+        "kind": "numerical",
+        "answer": 0.915223800262653,
+        "tolerance": 0.0009152238002626531
+      }
+    ],
+    "average-log-003": [
+      {
+        "kind": "numerical",
+        "answer": -1.3756763480830865,
+        "tolerance": 0.0013756763480830866
+      }
+    ],
+    "average-tan-001": [
+      {
+        "kind": "numerical",
+        "answer": -0.10170825075705676,
+        "tolerance": 0.00010170825075705677
+      }
+    ],
+    "average-tan-002": [
+      {
+        "kind": "numerical",
+        "answer": 0.0,
+        "tolerance": 1e-05
+      }
+    ],
+    "average-tan-003": [
+      {
+        "kind": "numerical",
+        "answer": -0.025210695715288403,
+        "tolerance": 2.5210695715288403e-05
+      }
+    ],
+    "average-poly-exp-001": [
+      {
+        "kind": "numerical",
+        "answer": 0.005718644980192353,
+        "tolerance": 5.718644980192353e-06
+      }
+    ],
+    "average-poly-exp-002": [
+      {
+        "kind": "numerical",
+        "answer": 0.020108805020073995,
+        "tolerance": 2.0108805020073996e-05
+      }
+    ],
+    "average-poly-exp-003": [
+      {
+        "kind": "numerical",
+        "answer": 4.241653953657128,
+        "tolerance": 0.004241653953657128
+      }
+    ],
+    "average-exp-cos-001": [
+      {
+        "kind": "numerical",
+        "answer": -0.004432673317279196,
+        "tolerance": 4.432673317279196e-06
+      }
+    ],
+    "average-exp-cos-002": [
+      {
+        "kind": "numerical",
+        "answer": -0.003914970761930196,
+        "tolerance": 3.914970761930196e-06
+      }
+    ],
+    "average-exp-cos-003": [
+      {
+        "kind": "numerical",
+        "answer": -4.207578366154644e-05,
+        "tolerance": 4.207578366154644e-08
+      }
+    ],
+    "average-sin-cos-001": [
+      {
+        "kind": "numerical",
+        "answer": 1.0,
+        "tolerance": 0.001
+      }
+    ],
+    "average-sin-cos-002": [
+      {
+        "kind": "numerical",
+        "answer": 0.018570429860124003,
+        "tolerance": 1.8570429860124004e-05
+      }
+    ],
+    "average-sin-cos-003": [
+      {
+        "kind": "numerical",
+        "answer": -0.06262142051865513,
+        "tolerance": 6.262142051865513e-05
+      }
+    ],
+    "average-tan-sec-001": [
+      {
+        "kind": "numerical",
+        "answer": 0.42441318157838764,
+        "tolerance": 0.00042441318157838764
+      }
+    ],
+    "average-tan-sec-002": [
+      {
+        "kind": "numerical",
+        "answer": 0.33272974042155357,
+        "tolerance": 0.0003327297404215536
+      }
+    ],
+    "average-tan-sec-003": [
+      {
+        "kind": "numerical",
+        "answer": 0.6790610905254201,
+        "tolerance": 0.0006790610905254201
+      }
+    ],
+    "partial-distinct-001": [
+      {
+        "kind": "numerical",
+        "answer": 3.0,
+        "tolerance": 0.003
+      },
+      {
+        "kind": "numerical",
+        "answer": 1.0,
+        "tolerance": 0.001
+      },
+      {
+        "kind": "numerical",
+        "answer": 3.0,
+        "tolerance": 0.003
+      }
+    ],
+    "partial-distinct-002": [
+      {
+        "kind": "numerical",
+        "answer": -1.0,
+        "tolerance": 0.001
+      },
+      {
+        "kind": "numerical",
+        "answer": 3.0,
+        "tolerance": 0.003
+      },
+      {
+        "kind": "numerical",
+        "answer": 2.0,
+        "tolerance": 0.002
+      }
+    ],
+    "partial-distinct-003": [
+      {
+        "kind": "numerical",
+        "answer": 3.0,
+        "tolerance": 0.003
+      },
+      {
+        "kind": "numerical",
+        "answer": 8.0,
+        "tolerance": 0.008
+      },
+      {
+        "kind": "numerical",
+        "answer": -6.0,
+        "tolerance": 0.006
+      }
+    ],
+    "partial-repeated-001": [
+      {
+        "kind": "numerical",
+        "answer": 3.0,
+        "tolerance": 0.003
+      },
+      {
+        "kind": "numerical",
+        "answer": 7.0,
+        "tolerance": 0.007
+      },
+      {
+        "kind": "numerical",
+        "answer": -6.0,
+        "tolerance": 0.006
+      }
+    ],
+    "partial-repeated-002": [
+      {
+        "kind": "numerical",
+        "answer": -2.0,
+        "tolerance": 0.002
+      },
+      {
+        "kind": "numerical",
+        "answer": -6.0,
+        "tolerance": 0.006
+      },
+      {
+        "kind": "numerical",
+        "answer": -7.0,
+        "tolerance": 0.007
+      }
+    ],
+    "partial-repeated-003": [
+      {
+        "kind": "numerical",
+        "answer": 2.0,
+        "tolerance": 0.002
+      },
+      {
+        "kind": "numerical",
+        "answer": -1.0,
+        "tolerance": 0.001
+      },
+      {
+        "kind": "numerical",
+        "answer": -5.0,
+        "tolerance": 0.005
+      }
+    ],
+    "partial-quadratic-001": [
+      {
+        "kind": "numerical",
+        "answer": -2.0,
+        "tolerance": 0.002
+      },
+      {
+        "kind": "numerical",
+        "answer": -3.0,
+        "tolerance": 0.003
+      },
+      {
+        "kind": "numerical",
+        "answer": 9.0,
+        "tolerance": 0.009000000000000001
+      }
+    ],
+    "partial-quadratic-002": [
+      {
+        "kind": "numerical",
+        "answer": -3.0,
+        "tolerance": 0.003
+      },
+      {
+        "kind": "numerical",
+        "answer": 7.0,
+        "tolerance": 0.007
+      },
+      {
+        "kind": "numerical",
+        "answer": 2.0,
+        "tolerance": 0.002
+      }
+    ],
+    "partial-quadratic-003": [
+      {
+        "kind": "numerical",
+        "answer": -6.0,
+        "tolerance": 0.006
+      },
+      {
+        "kind": "numerical",
+        "answer": -2.0,
+        "tolerance": 0.002
+      },
+      {
+        "kind": "numerical",
+        "answer": -4.0,
+        "tolerance": 0.004
+      }
+    ],
+    "laplace-poly-exp-001": [
+      {
+        "kind": "numerical",
+        "answer": 0.5413411329464508,
+        "tolerance": 0.0005413411329464508
+      }
+    ],
+    "laplace-poly-exp-002": [
+      {
+        "kind": "numerical",
+        "answer": 0.056973847769407185,
+        "tolerance": 5.6973847769407184e-05
+      }
+    ],
+    "laplace-poly-exp-003": [
+      {
+        "kind": "numerical",
+        "answer": 0.7902887559753979,
+        "tolerance": 0.0007902887559753979
+      }
+    ],
+    "laplace-damped-trig-001": [
+      {
+        "kind": "numerical",
+        "answer": 1.583809250467564,
+        "tolerance": 0.001583809250467564
+      }
+    ],
+    "laplace-damped-trig-002": [
+      {
+        "kind": "numerical",
+        "answer": 3.9709208621083665,
+        "tolerance": 0.003970920862108367
+      }
+    ],
+    "laplace-damped-trig-003": [
+      {
+        "kind": "numerical",
+        "answer": 82.27607761529129,
+        "tolerance": 0.0822760776152913
+      }
+    ],
+    "normal-left-001": [
+      {
+        "kind": "numerical",
+        "answer": 0.6495423403072748,
+        "tolerance": 0.0006495423403072748
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.7420060557808482,
+        "tolerance": 0.0007420060557808483
+      },
+      {
+        "kind": "shortanswer",
+        "answer": "no se rechaza",
+        "tolerance": null
+      }
+    ],
+    "normal-left-002": [
+      {
+        "kind": "numerical",
+        "answer": 2.022526315789476,
+        "tolerance": 0.002022526315789476
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.9784389961166535,
+        "tolerance": 0.0009784389961166534
+      },
+      {
+        "kind": "shortanswer",
+        "answer": "no se rechaza",
+        "tolerance": null
+      }
+    ],
+    "normal-left-003": [
+      {
+        "kind": "numerical",
+        "answer": 0.1079008598462289,
+        "tolerance": 0.00010790085984622889
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.542962832476533,
+        "tolerance": 0.000542962832476533
+      },
+      {
+        "kind": "shortanswer",
+        "answer": "no se rechaza",
+        "tolerance": null
+      }
+    ],
+    "normal-right-001": [
+      {
+        "kind": "numerical",
+        "answer": -1.255898572735883,
+        "tolerance": 0.001255898572735883
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.8954236269423722,
+        "tolerance": 0.0008954236269423723
+      },
+      {
+        "kind": "shortanswer",
+        "answer": "no se rechaza",
+        "tolerance": null
+      }
+    ],
+    "normal-right-002": [
+      {
+        "kind": "numerical",
+        "answer": 0.423703921701598,
+        "tolerance": 0.000423703921701598
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.3358908773735498,
+        "tolerance": 0.0003358908773735498
+      },
+      {
+        "kind": "shortanswer",
+        "answer": "no se rechaza",
+        "tolerance": null
+      }
+    ],
+    "normal-right-003": [
+      {
+        "kind": "numerical",
+        "answer": 0.42523999999999945,
+        "tolerance": 0.00042523999999999947
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.3353308637835166,
+        "tolerance": 0.0003353308637835166
+      },
+      {
+        "kind": "shortanswer",
+        "answer": "no se rechaza",
+        "tolerance": null
+      }
+    ],
+    "chi-square-001": [
+      {
+        "kind": "numerical",
+        "answer": 0.44470911400444535,
+        "tolerance": 0.00044470911400444537
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.8006314445199001,
+        "tolerance": 0.0008006314445199002
+      },
+      {
+        "kind": "shortanswer",
+        "answer": "no se rechaza",
+        "tolerance": null
+      }
+    ],
+    "chi-square-002": [
+      {
+        "kind": "numerical",
+        "answer": 0.5784138039379977,
+        "tolerance": 0.0005784138039379977
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.7488572493334781,
+        "tolerance": 0.0007488572493334781
+      },
+      {
+        "kind": "shortanswer",
+        "answer": "no se rechaza",
+        "tolerance": null
+      }
+    ],
+    "chi-square-003": [
+      {
+        "kind": "numerical",
+        "answer": 2.444173013433997,
+        "tolerance": 0.0024441730134339974
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.29461480939472284,
+        "tolerance": 0.00029461480939472286
+      },
+      {
+        "kind": "shortanswer",
+        "answer": "no se rechaza",
+        "tolerance": null
+      }
+    ],
+    "chi-square-biased-001": [
+      {
+        "kind": "numerical",
+        "answer": 11.864600160329607,
+        "tolerance": 0.011864600160329607
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.0026523742938721093,
+        "tolerance": 2.6523742938721094e-06
+      },
+      {
+        "kind": "shortanswer",
+        "answer": "rechaza",
+        "tolerance": null
+      }
+    ],
+    "chi-square-biased-002": [
+      {
+        "kind": "numerical",
+        "answer": 11.688038161986107,
+        "tolerance": 0.011688038161986106
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.002897175213546151,
+        "tolerance": 2.897175213546151e-06
+      },
+      {
+        "kind": "shortanswer",
+        "answer": "rechaza",
+        "tolerance": null
+      }
+    ],
+    "chi-square-biased-003": [
+      {
+        "kind": "numerical",
+        "answer": 7.837396025603917,
+        "tolerance": 0.007837396025603918
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.019866944420044344,
+        "tolerance": 1.9866944420044345e-05
+      },
+      {
+        "kind": "shortanswer",
+        "answer": "rechaza",
+        "tolerance": null
+      }
+    ],
+    "discrete-moments-001": [
+      {
+        "kind": "numerical",
+        "answer": 0.0003616636528028933,
+        "tolerance": 3.616636528028933e-07
+      },
+      {
+        "kind": "numerical",
+        "answer": 2.213381555153707,
+        "tolerance": 0.0022133815551537072
+      },
+      {
+        "kind": "numerical",
+        "answer": 4.509945750452079,
+        "tolerance": 0.004509945750452079
+      },
+      {
+        "kind": "numerical",
+        "answer": 9.931283905967451,
+        "tolerance": 0.009931283905967451
+      },
+      {
+        "kind": "numerical",
+        "answer": 5.52622061482821,
+        "tolerance": 0.00552622061482821
+      },
+      {
+        "kind": "numerical",
+        "answer": 22.125135623869802,
+        "tolerance": 0.022125135623869804
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.627162706133567,
+        "tolerance": 0.000627162706133567
+      },
+      {
+        "kind": "numerical",
+        "answer": 1.785524951849034,
+        "tolerance": 0.001785524951849034
+      },
+      {
+        "kind": "numerical",
+        "answer": -0.050946832827024835,
+        "tolerance": 5.0946832827024835e-05
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.7919360492701206,
+        "tolerance": 0.0007919360492701207
+      },
+      {
+        "kind": "numerical",
+        "answer": 1.3362353654386767,
+        "tolerance": 0.0013362353654386768
+      },
+      {
+        "kind": "numerical",
+        "answer": -0.048144215706777724,
+        "tolerance": 4.814421570677772e-05
+      }
+    ],
+    "discrete-moments-002": [
+      {
+        "kind": "numerical",
+        "answer": 0.00022002200220022002,
+        "tolerance": 2.2002200220022002e-07
+      },
+      {
+        "kind": "numerical",
+        "answer": 4.077007700770077,
+        "tolerance": 0.004077007700770077
+      },
+      {
+        "kind": "numerical",
+        "answer": 4.633663366336633,
+        "tolerance": 0.0046336633663366334
+      },
+      {
+        "kind": "numerical",
+        "answer": 18.873487348734873,
+        "tolerance": 0.018873487348734872
+      },
+      {
+        "kind": "numerical",
+        "answer": 17.28272827282728,
+        "tolerance": 0.017282728272827282
+      },
+      {
+        "kind": "numerical",
+        "answer": 23.143234323432342,
+        "tolerance": 0.023143234323432342
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.6607364806887759,
+        "tolerance": 0.0006607364806887759
+      },
+      {
+        "kind": "numerical",
+        "answer": 1.6723981309022022,
+        "tolerance": 0.0016723981309022023
+      },
+      {
+        "kind": "numerical",
+        "answer": -0.017993878595778057,
+        "tolerance": 1.7993878595778056e-05
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.812856986614974,
+        "tolerance": 0.000812856986614974
+      },
+      {
+        "kind": "numerical",
+        "answer": 1.2932123301694127,
+        "tolerance": 0.0012932123301694128
+      },
+      {
+        "kind": "numerical",
+        "answer": -0.0171175185163348,
+        "tolerance": 1.71175185163348e-05
+      }
+    ],
+    "discrete-moments-003": [
+      {
+        "kind": "numerical",
+        "answer": 0.00011834319526627219,
+        "tolerance": 1.1834319526627219e-07
+      },
+      {
+        "kind": "numerical",
+        "answer": 4.289940828402367,
+        "tolerance": 0.004289940828402367
+      },
+      {
+        "kind": "numerical",
+        "answer": 4.603550295857988,
+        "tolerance": 0.004603550295857988
+      },
+      {
+        "kind": "numerical",
+        "answer": 19.668639053254438,
+        "tolerance": 0.019668639053254437
+      },
+      {
+        "kind": "numerical",
+        "answer": 20.336094674556215,
+        "tolerance": 0.020336094674556215
+      },
+      {
+        "kind": "numerical",
+        "answer": 22.89467455621302,
+        "tolerance": 0.02289467455621302
+      },
+      {
+        "kind": "numerical",
+        "answer": 1.9325023633626301,
+        "tolerance": 0.0019325023633626301
+      },
+      {
+        "kind": "numerical",
+        "answer": 1.7019992297188473,
+        "tolerance": 0.0017019992297188473
+      },
+      {
+        "kind": "numerical",
+        "answer": -0.08031931655053981,
+        "tolerance": 8.031931655053981e-05
+      },
+      {
+        "kind": "numerical",
+        "answer": 1.39014472748798,
+        "tolerance": 0.0013901447274879799
+      },
+      {
+        "kind": "numerical",
+        "answer": 1.3046069253682686,
+        "tolerance": 0.0013046069253682686
+      },
+      {
+        "kind": "numerical",
+        "answer": -0.04428741256007902,
+        "tolerance": 4.428741256007903e-05
+      }
+    ],
+    "correlation-001": [
+      {
+        "kind": "numerical",
+        "answer": 0.5158500910777315,
+        "tolerance": 0.0005158500910777315
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.6879866627551678,
+        "tolerance": 0.0006879866627551678
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.8646567699329195,
+        "tolerance": 0.0008646567699329195
+      }
+    ],
+    "correlation-002": [
+      {
+        "kind": "numerical",
+        "answer": 0.47147025608622234,
+        "tolerance": 0.00047147025608622236
+      },
+      {
+        "kind": "numerical",
+        "answer": -0.1772664211695113,
+        "tolerance": 0.0001772664211695113
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.24340238120607172,
+        "tolerance": 0.0002434023812060717
+      }
+    ],
+    "correlation-003": [
+      {
+        "kind": "numerical",
+        "answer": -0.3674624604548009,
+        "tolerance": 0.0003674624604548009
+      },
+      {
+        "kind": "numerical",
+        "answer": 0.23521349558156687,
+        "tolerance": 0.00023521349558156687
+      },
+      {
+        "kind": "numerical",
+        "answer": -0.2112042186207355,
+        "tolerance": 0.0002112042186207355
+      }
+    ]
+  }
+}

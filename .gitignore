@@ -175,3 +175,6 @@ MICROECONOMÍA*/
 MATH_*/
 # Subject_Code_Topic output folders (common Cloze naming)
 **/TESTING-*.txt
+
+# Retain real Moodle import and grading evidence.
+!docs/moodle-compat-results/**/*.xml

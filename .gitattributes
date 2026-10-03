@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Preserve exact exported Moodle fixtures, including whitespace-only XML lines.
+docs/moodle-compat-results/*/fixtures/*/bank.xml -whitespace

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<question type="category"><category><text>$course$/Mathematics/Arithmetic</text></category></question>
+<question type="cloze">
+<name><text>Integer addition [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>76 + 28 = {1:NM:=104}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Add the two integers: 76 + 28 = 104.</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>addition</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Integer addition [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>43 + 18 = {1:NM:=61}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Add the two integers: 43 + 18 = 61.</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>addition</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Mathematics/Algebra</text></category></question>
+<question type="cloze">
+<name><text>Linear equation [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Solve -4x + 7 = -29.</p><p>x = {1:NM:=9}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Subtract 7 and divide by -4: x = (-29 - 7) / -4 = 9.</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>linear-equations</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Linear equation [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Solve 10x - 7 = 93.</p><p>x = {1:NM:=10}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Subtract -7 and divide by 10: x = (93 - -7) / 10 = 10.</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>linear-equations</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Finance/Compound interest</text></category></question>
+<question type="cloze">
+<name><text>Compound interest [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Invest $49,500.00 at 9.8% annually, compounded once a year, for 14 years.</p><p>Find the final amount in dollars: {1:NM:=183247.46:183.24746}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>A = P(1 + r)<sup>t</sup> = 49500(1 + 0.098)<sup>14</sup> = $183,247.46.</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>annual-compounding</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Compound interest [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Invest $44,400.00 at 8.0% annually, compounded once a year, for 3 years.</p><p>Find the final amount in dollars: {1:NM:=55931.21:55.93121}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>A = P(1 + r)<sup>t</sup> = 44400(1 + 0.08)<sup>3</sup> = $55,931.21.</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>annual-compounding</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Mathematics/Short answer</text></category></question>
+<question type="cloze">
+<name><text>Integer sign [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Classify 462 as positive, negative, or zero: {1:SHORTANSWER:=positive}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>462 is positive.</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>integer-sign</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Integer sign [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Classify -786 as positive, negative, or zero: {1:SHORTANSWER:=negative}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>-786 is negative.</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>integer-sign</text></tag>
+</tags>
+</question>
+</quiz>

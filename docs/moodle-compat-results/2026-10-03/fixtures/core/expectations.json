@@ -1,0 +1,62 @@
+{
+  "format": "moodpy-moodle-expectations-v1",
+  "manifest_sha256": "f3e6d88eceb609fe1f4cbec7a747c0da5e023ac27dab90c832739e90cada0fd6",
+  "questions": {
+    "addition-001": [
+      {
+        "kind": "numerical",
+        "answer": 104,
+        "tolerance": 0
+      }
+    ],
+    "addition-002": [
+      {
+        "kind": "numerical",
+        "answer": 61,
+        "tolerance": 0
+      }
+    ],
+    "linear-001": [
+      {
+        "kind": "numerical",
+        "answer": 9.0,
+        "tolerance": 0
+      }
+    ],
+    "linear-002": [
+      {
+        "kind": "numerical",
+        "answer": 10.0,
+        "tolerance": 0
+      }
+    ],
+    "compound-001": [
+      {
+        "kind": "numerical",
+        "answer": 183247.46,
+        "tolerance": 183.24746
+      }
+    ],
+    "compound-002": [
+      {
+        "kind": "numerical",
+        "answer": 55931.21,
+        "tolerance": 55.93121
+      }
+    ],
+    "sign-001": [
+      {
+        "kind": "shortanswer",
+        "answer": "positive",
+        "tolerance": null
+      }
+    ],
+    "sign-002": [
+      {
+        "kind": "shortanswer",
+        "answer": "negative",
+        "tolerance": null
+      }
+    ]
+  }
+}

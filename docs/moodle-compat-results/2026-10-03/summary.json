@@ -1,0 +1,121 @@
+{
+  "format": "moodpy-live-moodle-results-v1",
+  "environment": "Local Docker Desktop Linux containers; no GitHub Actions run claimed",
+  "database": "PostgreSQL 16.15",
+  "php": "8.3.35",
+  "moodpy": "3.0.1",
+  "recipe_runtime": {
+    "python": "3.14.4",
+    "moodpy_generators": "0.1.0",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "sympy": "1.14.0"
+  },
+  "engine_revision": "0ca51bf11ecb79716ed5052bfcdbe801e02a4143",
+  "generator_revision": "d11814407a4e3c1e188411c5918b2841cc8ee885",
+  "fixtures": {
+    "core": {
+      "families": 4,
+      "questions": 8,
+      "answer_fields": 8,
+      "seed": 42
+    },
+    "migrated": {
+      "families": 31,
+      "questions": 93,
+      "answer_fields": 258,
+      "seed": 42
+    }
+  },
+  "versions": [
+    {
+      "version": "4.5",
+      "status": "passed",
+      "runtime": {
+        "release": "4.5.15 (Build: 20261005)",
+        "branch": "405",
+        "version": 2024100715,
+        "php": "8.3.35"
+      },
+      "moodle_revision": "215f44380bdc3ccf852a3a22e34f8423ff64033a",
+      "moodle_docker_revision": "f4c2324d32fb74d7753264381f0a9b418b6034b2",
+      "tests": 2,
+      "assertions": 2933,
+      "started_at": "2026-10-03T18:32:48.044117+00:00",
+      "duration_seconds": 221.0
+    },
+    {
+      "version": "5.0",
+      "status": "passed",
+      "runtime": {
+        "release": "5.0.11 (Build: 20261005)",
+        "branch": "500",
+        "version": 2025041411,
+        "php": "8.3.35"
+      },
+      "moodle_revision": "744cc0c19013e7be831dca24fafd6501d7eb8348",
+      "moodle_docker_revision": "f4c2324d32fb74d7753264381f0a9b418b6034b2",
+      "tests": 2,
+      "assertions": 2933,
+      "started_at": "2026-10-03T18:33:45.458894+00:00",
+      "duration_seconds": 208.79
+    },
+    {
+      "version": "5.1",
+      "status": "passed",
+      "runtime": {
+        "release": "5.1.8 (Build: 20261005)",
+        "branch": "501",
+        "version": 2025100608,
+        "php": "8.3.35"
+      },
+      "moodle_revision": "cc0bf17da8b5fbd290faf95b2b14a03d64331923",
+      "moodle_docker_revision": "f4c2324d32fb74d7753264381f0a9b418b6034b2",
+      "tests": 2,
+      "assertions": 2933,
+      "started_at": "2026-10-03T18:37:14.240455+00:00",
+      "duration_seconds": 190.06
+    },
+    {
+      "version": "5.2",
+      "status": "passed",
+      "runtime": {
+        "release": "5.2.4 (Build: 20261005)",
+        "branch": "502",
+        "version": 2026042004,
+        "php": "8.3.35"
+      },
+      "moodle_revision": "2df605b1e093248e8f8d1e2fc081fb3b1f65665f",
+      "moodle_docker_revision": "f4c2324d32fb74d7753264381f0a9b418b6034b2",
+      "tests": 2,
+      "assertions": 2933,
+      "started_at": "2026-10-03T18:40:24.293884+00:00",
+      "duration_seconds": 202.61
+    }
+  ],
+  "manual_browser_check": "not performed",
+  "sha256": {
+    "4.5/moodpy-moodle-compat-junit.xml": "ba05c5469f054434b2d552d7a8f122a283a72005c38db890c83f9321d6cff41f",
+    "4.5/moodpy-moodle-compat-revision.txt": "88337edf3f0def6e6c17ed02c8c012e139d1d40a30c59138bdf4972df17a7f88",
+    "4.5/moodpy-moodle-compat-runtime.json": "7c8968dd19b94db91c36dec097319f0066c342defea0f1cfc0afffe6268bc16a",
+    "4.5/result.json": "0f508ab5d5342a08741069af5d37fdd781cd63e5f8b3c2fa0237a718d0f77af2",
+    "5.0/moodpy-moodle-compat-junit.xml": "79b0c596ad837b18a47e46783e5ee85501aaf3f641748df01d9756869ca34cbd",
+    "5.0/moodpy-moodle-compat-revision.txt": "63ea464fdcfaabd668f0ad5267b0bc8583e2fc79dfee1e92a4711a948f058164",
+    "5.0/moodpy-moodle-compat-runtime.json": "f1608fd315f35ddd059f4b8a8a8377cd9dd02e0eb82b93fd62f60c9af06a69c2",
+    "5.0/result.json": "a31b9ce95d33bf5c2e7f15e4eac04f4946bb24b7ca88e477ce043fdd3d756b74",
+    "5.1/moodpy-moodle-compat-junit.xml": "b4f1644c22c400a18554d11d8e6990470bfde4c469af3da431b81b9b8d124c92",
+    "5.1/moodpy-moodle-compat-revision.txt": "aa17b77fac05fa98ef2021a2a792dc4ad0f09ab25ecf1ef6e76a8edfea8b3793",
+    "5.1/moodpy-moodle-compat-runtime.json": "58f12f7c8106819af06a763404ec13dc26d045f25e6e4ad380b1b8a52734f2fa",
+    "5.1/result.json": "49b6e896e59b334bceee3d510c6ecaed4726efbac4687c4c18cf265fbea9d2d8",
+    "5.2/moodpy-moodle-compat-junit.xml": "cb81b06023e538f319b5247c2fe9e68a367143a8bc33efca83a25b55011f1227",
+    "5.2/moodpy-moodle-compat-revision.txt": "ed5475d8b67cc46a681b9b4afaee03df4026536b6b60de3951ac373446883b01",
+    "5.2/moodpy-moodle-compat-runtime.json": "93815e47d6c74dbda40662ace82d6175f2aca1d7ab555f19b74601967b13600c",
+    "5.2/result.json": "2f2cf426ea74d511919dbfe7e7d91a9b779b2a175a2f06bd786ee30eaafa769d",
+    "fixtures/core/bank.xml": "d21446dacd431d73aa17f475c8cdb3941fc0bde36a40478e95e0061cd8c7109e",
+    "fixtures/core/expectations.json": "7357d7263af5963b188eaff7bba607d733e4a52cd97cb48ac6a3f368860147f4",
+    "fixtures/core/manifest.json": "f3e6d88eceb609fe1f4cbec7a747c0da5e023ac27dab90c832739e90cada0fd6",
+    "fixtures/migrated/bank.xml": "9e65d1f5fc68d1254f69af76c3c892ebcf8c0957ea8fe6cc19cf3092dcae99b4",
+    "fixtures/migrated/expectations.json": "f873b333f798a43605702ff5192151d54caf652018a4a3d914657b04212d391d",
+    "fixtures/migrated/manifest.json": "c518329b38e21fd6f2a9e56515f9002af9b309bdac692f6b69d9070e6b3b03ed"
+  }
+}

@@ -43,8 +43,9 @@ export does not resample. Local checks validate supported syntax and XML structu
 not educational suitability or mathematical truth. CI is configured to import a generated bank
 into disposable Moodle instances (4.5 LTS and 5.0–5.2) and check Moodle's Cloze grader
 against independently calculated answers for the four core recipes and all 31
-migrated generator families. Compatibility requires passing CI
-results; no successful Moodle run has been recorded yet.
+migrated generator families. [Recorded local Moodle runs](docs/moodle-compat-results/2026-10-03/README.md)
+passed on all four branch snapshots: 101 questions and 266 answer fields per version.
+Publishing still requires the compatibility CI jobs to pass.
 The [manual checklist](docs/moodle-import-checklist.md) covers the web-interface path
 and remains useful for checking a specific Moodle installation.
 

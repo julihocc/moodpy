@@ -1,0 +1,2075 @@
+{
+  "families": [
+    {
+      "category": "Matemáticas/Proporciones",
+      "count": 3,
+      "id": "direct-proportion",
+      "tags": [
+        "direct-proportion"
+      ],
+      "title": "Proporciones directas"
+    },
+    {
+      "category": "Matemáticas/Proporciones",
+      "count": 3,
+      "id": "proportional-segments",
+      "tags": [
+        "proportional-segments"
+      ],
+      "title": "Segmentos proporcionales"
+    },
+    {
+      "category": "Matemáticas/Álgebra",
+      "count": 3,
+      "id": "cramer-2",
+      "tags": [
+        "cramer-2"
+      ],
+      "title": "Cramer 2×2"
+    },
+    {
+      "category": "Matemáticas/Álgebra",
+      "count": 3,
+      "id": "cramer-3",
+      "tags": [
+        "cramer-3"
+      ],
+      "title": "Cramer 3×3"
+    },
+    {
+      "category": "Matemáticas/Sucesiones",
+      "count": 3,
+      "id": "recurrence",
+      "tags": [
+        "recurrence"
+      ],
+      "title": "Recurrencias lineales"
+    },
+    {
+      "category": "Economía/Oferta y demanda",
+      "count": 3,
+      "id": "equilibrium",
+      "tags": [
+        "equilibrium"
+      ],
+      "title": "Precio de equilibrio"
+    },
+    {
+      "category": "Finanzas/Interés simple",
+      "count": 3,
+      "id": "portfolio",
+      "tags": [
+        "portfolio"
+      ],
+      "title": "Portafolio de inversión"
+    },
+    {
+      "category": "Finanzas/Anualidades",
+      "count": 3,
+      "id": "loan-payment",
+      "tags": [
+        "loan-payment"
+      ],
+      "title": "Renta de un préstamo"
+    },
+    {
+      "category": "Finanzas/Amortización",
+      "count": 3,
+      "id": "amortization",
+      "tags": [
+        "amortization"
+      ],
+      "title": "Tabla de amortización"
+    },
+    {
+      "category": "Matemáticas/EDO",
+      "count": 3,
+      "id": "separable-implicit",
+      "tags": [
+        "separable-implicit"
+      ],
+      "title": "EDO separable implícita"
+    },
+    {
+      "category": "Matemáticas/EDO",
+      "count": 3,
+      "id": "exponential-growth",
+      "tags": [
+        "exponential-growth"
+      ],
+      "title": "EDO separable exponencial"
+    },
+    {
+      "category": "Matemáticas/EDO",
+      "count": 3,
+      "id": "logistic",
+      "tags": [
+        "logistic"
+      ],
+      "title": "Curva logística"
+    },
+    {
+      "category": "Matemáticas/EDO",
+      "count": 3,
+      "id": "ode-homogeneous",
+      "tags": [
+        "ode-homogeneous"
+      ],
+      "title": "EDO homogénea de segundo orden"
+    },
+    {
+      "category": "Matemáticas/EDO",
+      "count": 3,
+      "id": "ode-exponential",
+      "tags": [
+        "ode-exponential"
+      ],
+      "title": "EDO con fuerza exponencial"
+    },
+    {
+      "category": "Matemáticas/Cálculo integral",
+      "count": 3,
+      "id": "average-log",
+      "tags": [
+        "average-log"
+      ],
+      "title": "Valor promedio: log"
+    },
+    {
+      "category": "Matemáticas/Cálculo integral",
+      "count": 3,
+      "id": "average-tan",
+      "tags": [
+        "average-tan"
+      ],
+      "title": "Valor promedio: tan"
+    },
+    {
+      "category": "Matemáticas/Cálculo integral",
+      "count": 3,
+      "id": "average-poly-exp",
+      "tags": [
+        "average-poly-exp"
+      ],
+      "title": "Valor promedio: poly-exp"
+    },
+    {
+      "category": "Matemáticas/Cálculo integral",
+      "count": 3,
+      "id": "average-exp-cos",
+      "tags": [
+        "average-exp-cos"
+      ],
+      "title": "Valor promedio: exp-cos"
+    },
+    {
+      "category": "Matemáticas/Cálculo integral",
+      "count": 3,
+      "id": "average-sin-cos",
+      "tags": [
+        "average-sin-cos"
+      ],
+      "title": "Valor promedio: sin-cos"
+    },
+    {
+      "category": "Matemáticas/Cálculo integral",
+      "count": 3,
+      "id": "average-tan-sec",
+      "tags": [
+        "average-tan-sec"
+      ],
+      "title": "Valor promedio: tan-sec"
+    },
+    {
+      "category": "Matemáticas/Fracciones parciales",
+      "count": 3,
+      "id": "partial-distinct",
+      "tags": [
+        "partial-distinct"
+      ],
+      "title": "Fracciones parciales: distinct"
+    },
+    {
+      "category": "Matemáticas/Fracciones parciales",
+      "count": 3,
+      "id": "partial-repeated",
+      "tags": [
+        "partial-repeated"
+      ],
+      "title": "Fracciones parciales: repeated"
+    },
+    {
+      "category": "Matemáticas/Fracciones parciales",
+      "count": 3,
+      "id": "partial-quadratic",
+      "tags": [
+        "partial-quadratic"
+      ],
+      "title": "Fracciones parciales: quadratic"
+    },
+    {
+      "category": "Matemáticas/Laplace",
+      "count": 3,
+      "id": "laplace-poly-exp",
+      "tags": [
+        "laplace-poly-exp"
+      ],
+      "title": "Laplace inversa: poly-exp"
+    },
+    {
+      "category": "Matemáticas/Laplace",
+      "count": 3,
+      "id": "laplace-damped-trig",
+      "tags": [
+        "laplace-damped-trig"
+      ],
+      "title": "Laplace inversa: damped-trig"
+    },
+    {
+      "category": "Estadística/Hipótesis",
+      "count": 3,
+      "id": "normal-left",
+      "tags": [
+        "normal-left"
+      ],
+      "title": "Prueba Z: cola izquierda"
+    },
+    {
+      "category": "Estadística/Hipótesis",
+      "count": 3,
+      "id": "normal-right",
+      "tags": [
+        "normal-right"
+      ],
+      "title": "Prueba Z: cola derecha"
+    },
+    {
+      "category": "Estadística/Independencia",
+      "count": 3,
+      "id": "chi-square",
+      "tags": [
+        "chi-square"
+      ],
+      "title": "Independencia chi-cuadrado"
+    },
+    {
+      "category": "Estadística/Independencia",
+      "count": 3,
+      "id": "chi-square-biased",
+      "tags": [
+        "chi-square-biased"
+      ],
+      "title": "Independencia con asociación"
+    },
+    {
+      "category": "Estadística/Probabilidad",
+      "count": 3,
+      "id": "discrete-moments",
+      "tags": [
+        "discrete-moments"
+      ],
+      "title": "Momentos de distribución conjunta"
+    },
+    {
+      "category": "Estadística/Correlación",
+      "count": 3,
+      "id": "correlation",
+      "tags": [
+        "correlation"
+      ],
+      "title": "Matriz de correlación"
+    }
+  ],
+  "format": "moodpy-bank-v1",
+  "max_attempts": 10000,
+  "questions": [
+    {
+      "family_id": "direct-proportion",
+      "id": "direct-proportion-001",
+      "parameters": {
+        "inputs": {
+          "amount": "87",
+          "flour": "3/5",
+          "milk": "3"
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "direct-proportion",
+      "id": "direct-proportion-002",
+      "parameters": {
+        "inputs": {
+          "amount": "15",
+          "flour": "1/2",
+          "milk": "1"
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "direct-proportion",
+      "id": "direct-proportion-003",
+      "parameters": {
+        "inputs": {
+          "amount": "31/4",
+          "flour": "2",
+          "milk": "6"
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "proportional-segments",
+      "id": "proportional-segments-001",
+      "parameters": {
+        "inputs": {
+          "total": 375,
+          "weights": [
+            7,
+            7,
+            11,
+            5,
+            3
+          ]
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "proportional-segments",
+      "id": "proportional-segments-002",
+      "parameters": {
+        "inputs": {
+          "total": 286,
+          "weights": [
+            2,
+            1,
+            4
+          ]
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "proportional-segments",
+      "id": "proportional-segments-003",
+      "parameters": {
+        "inputs": {
+          "total": 166,
+          "weights": [
+            7,
+            11,
+            8,
+            1,
+            11
+          ]
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "cramer-2",
+      "id": "cramer-2-001",
+      "parameters": {
+        "inputs": {
+          "matrix": [
+            [
+              1,
+              -6
+            ],
+            [
+              -5,
+              -1
+            ]
+          ],
+          "rhs": [
+            -19,
+            20
+          ]
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "cramer-2",
+      "id": "cramer-2-002",
+      "parameters": {
+        "inputs": {
+          "matrix": [
+            [
+              -3,
+              6
+            ],
+            [
+              1,
+              1
+            ]
+          ],
+          "rhs": [
+            -10,
+            12
+          ]
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "cramer-2",
+      "id": "cramer-2-003",
+      "parameters": {
+        "inputs": {
+          "matrix": [
+            [
+              6,
+              1
+            ],
+            [
+              8,
+              4
+            ]
+          ],
+          "rhs": [
+            15,
+            2
+          ]
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "cramer-3",
+      "id": "cramer-3-001",
+      "parameters": {
+        "inputs": {
+          "matrix": [
+            [
+              1,
+              -8,
+              -5
+            ],
+            [
+              2,
+              -3,
+              7
+            ],
+            [
+              0,
+              4,
+              -7
+            ]
+          ],
+          "rhs": [
+            -7,
+            -6,
+            12
+          ]
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "cramer-3",
+      "id": "cramer-3-002",
+      "parameters": {
+        "inputs": {
+          "matrix": [
+            [
+              5,
+              9,
+              9
+            ],
+            [
+              -1,
+              0,
+              0
+            ],
+            [
+              8,
+              -1,
+              9
+            ]
+          ],
+          "rhs": [
+            17,
+            -15,
+            -11
+          ]
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "cramer-3",
+      "id": "cramer-3-003",
+      "parameters": {
+        "inputs": {
+          "matrix": [
+            [
+              -3,
+              -1,
+              2
+            ],
+            [
+              -5,
+              -5,
+              2
+            ],
+            [
+              -4,
+              8,
+              -8
+            ]
+          ],
+          "rhs": [
+            0,
+            16,
+            -18
+          ]
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "recurrence",
+      "id": "recurrence-001",
+      "parameters": {
+        "inputs": {
+          "a": -1,
+          "b": 19,
+          "initial": -4,
+          "n": 2
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "recurrence",
+      "id": "recurrence-002",
+      "parameters": {
+        "inputs": {
+          "a": -5,
+          "b": -3,
+          "initial": 6,
+          "n": 2
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "recurrence",
+      "id": "recurrence-003",
+      "parameters": {
+        "inputs": {
+          "a": -1,
+          "b": -19,
+          "initial": -10,
+          "n": 4
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "equilibrium",
+      "id": "equilibrium-001",
+      "parameters": {
+        "inputs": {
+          "demand_slope": 77,
+          "quantity": 98,
+          "supply_slope": 31
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "equilibrium",
+      "id": "equilibrium-002",
+      "parameters": {
+        "inputs": {
+          "demand_slope": 40,
+          "quantity": 87,
+          "supply_slope": 96
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "equilibrium",
+      "id": "equilibrium-003",
+      "parameters": {
+        "inputs": {
+          "demand_slope": 29,
+          "quantity": 26,
+          "supply_slope": 23
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "portfolio",
+      "id": "portfolio-001",
+      "parameters": {
+        "inputs": {
+          "bond_percent": 8,
+          "bonds": 71000,
+          "stock_percent": 25,
+          "stocks": 51000
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "portfolio",
+      "id": "portfolio-002",
+      "parameters": {
+        "inputs": {
+          "bond_percent": 2,
+          "bonds": 44000,
+          "stock_percent": 25,
+          "stocks": 43000
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "portfolio",
+      "id": "portfolio-003",
+      "parameters": {
+        "inputs": {
+          "bond_percent": 3,
+          "bonds": 41000,
+          "stock_percent": 17,
+          "stocks": 77000
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "loan-payment",
+      "id": "loan-payment-001",
+      "parameters": {
+        "inputs": {
+          "frequency": 1,
+          "percent": 17,
+          "principal": 10900,
+          "years": 5
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "loan-payment",
+      "id": "loan-payment-002",
+      "parameters": {
+        "inputs": {
+          "frequency": 4,
+          "percent": 2,
+          "principal": 10700,
+          "years": 6
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "loan-payment",
+      "id": "loan-payment-003",
+      "parameters": {
+        "inputs": {
+          "frequency": 6,
+          "percent": 15,
+          "principal": 1400,
+          "years": 6
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "amortization",
+      "id": "amortization-001",
+      "parameters": {
+        "inputs": {
+          "frequency": 2,
+          "percent": 9,
+          "principal": 2800,
+          "years": 2
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "amortization",
+      "id": "amortization-002",
+      "parameters": {
+        "inputs": {
+          "frequency": 1,
+          "percent": 3,
+          "principal": 7900,
+          "years": 3
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "amortization",
+      "id": "amortization-003",
+      "parameters": {
+        "inputs": {
+          "frequency": 2,
+          "percent": 18,
+          "principal": 7700,
+          "years": 3
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "separable-implicit",
+      "id": "separable-implicit-001",
+      "parameters": {
+        "inputs": {
+          "a": -3,
+          "b": -4,
+          "c": 2,
+          "d": -5,
+          "x0": 5,
+          "x1": -1,
+          "x2": -2,
+          "y0": 1,
+          "y1": 0,
+          "y2": -4
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "separable-implicit",
+      "id": "separable-implicit-002",
+      "parameters": {
+        "inputs": {
+          "a": 5,
+          "b": 4,
+          "c": -3,
+          "d": 5,
+          "x0": 1,
+          "x1": 4,
+          "x2": -1,
+          "y0": -5,
+          "y1": -5,
+          "y2": 2
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "separable-implicit",
+      "id": "separable-implicit-003",
+      "parameters": {
+        "inputs": {
+          "a": 5,
+          "b": 5,
+          "c": 5,
+          "d": 1,
+          "x0": -4,
+          "x1": 3,
+          "x2": 4,
+          "y0": -4,
+          "y1": -1,
+          "y2": 0
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "exponential-growth",
+      "id": "exponential-growth-001",
+      "parameters": {
+        "inputs": {
+          "a": -1,
+          "b": -2,
+          "point": 1.2,
+          "x0": -1,
+          "y0": 8
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "exponential-growth",
+      "id": "exponential-growth-002",
+      "parameters": {
+        "inputs": {
+          "a": -2,
+          "b": -2,
+          "point": 1.0,
+          "x0": 0,
+          "y0": 6
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "exponential-growth",
+      "id": "exponential-growth-003",
+      "parameters": {
+        "inputs": {
+          "a": 2,
+          "b": -2,
+          "point": -1.8,
+          "x0": 1,
+          "y0": 3
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "logistic",
+      "id": "logistic-001",
+      "parameters": {
+        "inputs": {
+          "B": 3,
+          "a": 0.001,
+          "capacity": 127,
+          "point": 0.7
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "logistic",
+      "id": "logistic-002",
+      "parameters": {
+        "inputs": {
+          "B": 12,
+          "a": 0.003,
+          "capacity": 42,
+          "point": 1.7
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "logistic",
+      "id": "logistic-003",
+      "parameters": {
+        "inputs": {
+          "B": 12,
+          "a": 0.002,
+          "capacity": 146,
+          "point": 2.9
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "ode-homogeneous",
+      "id": "ode-homogeneous-001",
+      "parameters": {
+        "inputs": {
+          "b": 2,
+          "c": -1,
+          "point": 0.9,
+          "y0": 2,
+          "y1": 0
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "ode-homogeneous",
+      "id": "ode-homogeneous-002",
+      "parameters": {
+        "inputs": {
+          "b": -4,
+          "c": -1,
+          "point": 1.1,
+          "y0": -2,
+          "y1": 0
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "ode-homogeneous",
+      "id": "ode-homogeneous-003",
+      "parameters": {
+        "inputs": {
+          "b": 2,
+          "c": 1,
+          "point": 0.7,
+          "y0": -1,
+          "y1": 2
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "ode-exponential",
+      "id": "ode-exponential-001",
+      "parameters": {
+        "inputs": {
+          "amplitude": -3,
+          "b": -2,
+          "c": 4,
+          "k": -2,
+          "point": 1.7,
+          "y0": -2,
+          "y1": -2
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "ode-exponential",
+      "id": "ode-exponential-002",
+      "parameters": {
+        "inputs": {
+          "amplitude": 5,
+          "b": -1,
+          "c": 4,
+          "k": -1,
+          "point": 1.5,
+          "y0": 2,
+          "y1": 1
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "ode-exponential",
+      "id": "ode-exponential-003",
+      "parameters": {
+        "inputs": {
+          "amplitude": 2,
+          "b": 4,
+          "c": 0,
+          "k": 3,
+          "point": 1.1,
+          "y0": 1,
+          "y1": -1
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "average-log",
+      "id": "average-log-001",
+      "parameters": {
+        "inputs": {
+          "denominator": 5,
+          "frequency": 1,
+          "k": 2,
+          "kind": "log",
+          "left": 2,
+          "n": 3,
+          "p": -1,
+          "q": -1,
+          "rate": -2,
+          "scale": 4,
+          "width": 4
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "average-log",
+      "id": "average-log-002",
+      "parameters": {
+        "inputs": {
+          "denominator": 4,
+          "frequency": 2,
+          "k": 0,
+          "kind": "log",
+          "left": 2,
+          "n": 3,
+          "p": 1,
+          "q": 3,
+          "rate": -1,
+          "scale": 3,
+          "width": 3
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "average-log",
+      "id": "average-log-003",
+      "parameters": {
+        "inputs": {
+          "denominator": 4,
+          "frequency": 4,
+          "k": 4,
+          "kind": "log",
+          "left": 3,
+          "n": 2,
+          "p": -2,
+          "q": 4,
+          "rate": -3,
+          "scale": 2,
+          "width": 2
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "average-tan",
+      "id": "average-tan-001",
+      "parameters": {
+        "inputs": {
+          "denominator": 5,
+          "frequency": 3,
+          "k": 4,
+          "kind": "tan",
+          "left": 3,
+          "n": 2,
+          "p": 2,
+          "q": -5,
+          "rate": -1,
+          "scale": 5,
+          "width": 1
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "average-tan",
+      "id": "average-tan-002",
+      "parameters": {
+        "inputs": {
+          "denominator": 1,
+          "frequency": 2,
+          "k": 2,
+          "kind": "tan",
+          "left": 2,
+          "n": 2,
+          "p": -1,
+          "q": 5,
+          "rate": -1,
+          "scale": -4,
+          "width": 2
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "average-tan",
+      "id": "average-tan-003",
+      "parameters": {
+        "inputs": {
+          "denominator": 4,
+          "frequency": 4,
+          "k": 4,
+          "kind": "tan",
+          "left": 1,
+          "n": 2,
+          "p": 1,
+          "q": 0,
+          "rate": -2,
+          "scale": -2,
+          "width": 2
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "average-poly-exp",
+      "id": "average-poly-exp-001",
+      "parameters": {
+        "inputs": {
+          "denominator": 4,
+          "frequency": 5,
+          "k": 4,
+          "kind": "poly-exp",
+          "left": 2,
+          "n": 1,
+          "p": -2,
+          "q": -3,
+          "rate": -2,
+          "scale": -1,
+          "width": 4
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "average-poly-exp",
+      "id": "average-poly-exp-002",
+      "parameters": {
+        "inputs": {
+          "denominator": 4,
+          "frequency": 1,
+          "k": 0,
+          "kind": "poly-exp",
+          "left": 1,
+          "n": 4,
+          "p": 3,
+          "q": 4,
+          "rate": -3,
+          "scale": 1,
+          "width": 4
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "average-poly-exp",
+      "id": "average-poly-exp-003",
+      "parameters": {
+        "inputs": {
+          "denominator": 4,
+          "frequency": 5,
+          "k": 0,
+          "kind": "poly-exp",
+          "left": 3,
+          "n": 4,
+          "p": -4,
+          "q": 0,
+          "rate": -1,
+          "scale": -5,
+          "width": 3
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "average-exp-cos",
+      "id": "average-exp-cos-001",
+      "parameters": {
+        "inputs": {
+          "denominator": 2,
+          "frequency": 3,
+          "k": 3,
+          "kind": "exp-cos",
+          "left": 3,
+          "n": 0,
+          "p": 4,
+          "q": -1,
+          "rate": -1,
+          "scale": -3,
+          "width": 2
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "average-exp-cos",
+      "id": "average-exp-cos-002",
+      "parameters": {
+        "inputs": {
+          "denominator": 5,
+          "frequency": 2,
+          "k": 0,
+          "kind": "exp-cos",
+          "left": 1,
+          "n": 1,
+          "p": -2,
+          "q": -5,
+          "rate": -3,
+          "scale": -1,
+          "width": 3
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "average-exp-cos",
+      "id": "average-exp-cos-003",
+      "parameters": {
+        "inputs": {
+          "denominator": 3,
+          "frequency": 2,
+          "k": 0,
+          "kind": "exp-cos",
+          "left": 2,
+          "n": 4,
+          "p": -1,
+          "q": 0,
+          "rate": -3,
+          "scale": 3,
+          "width": 2
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "average-sin-cos",
+      "id": "average-sin-cos-001",
+      "parameters": {
+        "inputs": {
+          "denominator": 1,
+          "frequency": 1,
+          "k": 0,
+          "kind": "sin-cos",
+          "left": 2,
+          "n": 0,
+          "p": -4,
+          "q": 5,
+          "rate": -1,
+          "scale": -5,
+          "width": 1
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "average-sin-cos",
+      "id": "average-sin-cos-002",
+      "parameters": {
+        "inputs": {
+          "denominator": 2,
+          "frequency": 2,
+          "k": 4,
+          "kind": "sin-cos",
+          "left": 3,
+          "n": 4,
+          "p": 2,
+          "q": -1,
+          "rate": -3,
+          "scale": -3,
+          "width": 1
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "average-sin-cos",
+      "id": "average-sin-cos-003",
+      "parameters": {
+        "inputs": {
+          "denominator": 2,
+          "frequency": 1,
+          "k": 3,
+          "kind": "sin-cos",
+          "left": 1,
+          "n": 1,
+          "p": -1,
+          "q": -2,
+          "rate": -3,
+          "scale": 5,
+          "width": 2
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "average-tan-sec",
+      "id": "average-tan-sec-001",
+      "parameters": {
+        "inputs": {
+          "denominator": 4,
+          "frequency": 4,
+          "k": 2,
+          "kind": "tan-sec",
+          "left": 3,
+          "n": 2,
+          "p": 1,
+          "q": 0,
+          "rate": -3,
+          "scale": 3,
+          "width": 2
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "average-tan-sec",
+      "id": "average-tan-sec-002",
+      "parameters": {
+        "inputs": {
+          "denominator": 2,
+          "frequency": 4,
+          "k": 4,
+          "kind": "tan-sec",
+          "left": 1,
+          "n": 3,
+          "p": 4,
+          "q": 4,
+          "rate": -1,
+          "scale": -5,
+          "width": 4
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "average-tan-sec",
+      "id": "average-tan-sec-003",
+      "parameters": {
+        "inputs": {
+          "denominator": 2,
+          "frequency": 2,
+          "k": 2,
+          "kind": "tan-sec",
+          "left": 2,
+          "n": 4,
+          "p": 4,
+          "q": 2,
+          "rate": -3,
+          "scale": -5,
+          "width": 3
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "partial-distinct",
+      "id": "partial-distinct-001",
+      "parameters": {
+        "inputs": {
+          "coefficients": [
+            3,
+            1,
+            3
+          ],
+          "h": 2,
+          "k": 5,
+          "kind": "distinct",
+          "roots": [
+            2,
+            -7,
+            -9
+          ]
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "partial-distinct",
+      "id": "partial-distinct-002",
+      "parameters": {
+        "inputs": {
+          "coefficients": [
+            -1,
+            3,
+            2
+          ],
+          "h": 1,
+          "k": 4,
+          "kind": "distinct",
+          "roots": [
+            0,
+            -3,
+            2
+          ]
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "partial-distinct",
+      "id": "partial-distinct-003",
+      "parameters": {
+        "inputs": {
+          "coefficients": [
+            3,
+            8,
+            -6
+          ],
+          "h": -2,
+          "k": 9,
+          "kind": "distinct",
+          "roots": [
+            -5,
+            3,
+            4
+          ]
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "partial-repeated",
+      "id": "partial-repeated-001",
+      "parameters": {
+        "inputs": {
+          "coefficients": [
+            3,
+            7,
+            -6
+          ],
+          "h": -5,
+          "k": 5,
+          "kind": "repeated",
+          "roots": [
+            2,
+            -3,
+            -7
+          ]
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "partial-repeated",
+      "id": "partial-repeated-002",
+      "parameters": {
+        "inputs": {
+          "coefficients": [
+            -2,
+            -6,
+            -7
+          ],
+          "h": 2,
+          "k": 9,
+          "kind": "repeated",
+          "roots": [
+            -2,
+            9,
+            5
+          ]
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "partial-repeated",
+      "id": "partial-repeated-003",
+      "parameters": {
+        "inputs": {
+          "coefficients": [
+            2,
+            -1,
+            -5
+          ],
+          "h": -5,
+          "k": 8,
+          "kind": "repeated",
+          "roots": [
+            3,
+            7,
+            -9
+          ]
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "partial-quadratic",
+      "id": "partial-quadratic-001",
+      "parameters": {
+        "inputs": {
+          "coefficients": [
+            -2,
+            -3,
+            9
+          ],
+          "h": 2,
+          "k": 8,
+          "kind": "quadratic",
+          "roots": [
+            -9,
+            8,
+            -3
+          ]
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "partial-quadratic",
+      "id": "partial-quadratic-002",
+      "parameters": {
+        "inputs": {
+          "coefficients": [
+            -3,
+            7,
+            2
+          ],
+          "h": 5,
+          "k": 3,
+          "kind": "quadratic",
+          "roots": [
+            -9,
+            3,
+            8
+          ]
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "partial-quadratic",
+      "id": "partial-quadratic-003",
+      "parameters": {
+        "inputs": {
+          "coefficients": [
+            -6,
+            -2,
+            -4
+          ],
+          "h": -1,
+          "k": 8,
+          "kind": "quadratic",
+          "roots": [
+            5,
+            8,
+            1
+          ]
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "laplace-poly-exp",
+      "id": "laplace-poly-exp-001",
+      "parameters": {
+        "inputs": {
+          "A": 2,
+          "B": -5,
+          "b": -1,
+          "frequency": 4,
+          "kind": "poly-exp",
+          "n": 1,
+          "point": 2.0
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "laplace-poly-exp",
+      "id": "laplace-poly-exp-002",
+      "parameters": {
+        "inputs": {
+          "A": 1,
+          "B": 3,
+          "b": 2,
+          "frequency": 3,
+          "kind": "poly-exp",
+          "n": 4,
+          "point": 0.4
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "laplace-poly-exp",
+      "id": "laplace-poly-exp-003",
+      "parameters": {
+        "inputs": {
+          "A": 4,
+          "B": 1,
+          "b": -1,
+          "frequency": 6,
+          "kind": "poly-exp",
+          "n": 2,
+          "point": 0.6
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "laplace-damped-trig",
+      "id": "laplace-damped-trig-001",
+      "parameters": {
+        "inputs": {
+          "A": 3,
+          "B": 2,
+          "b": -1,
+          "frequency": 1,
+          "kind": "damped-trig",
+          "n": 2,
+          "point": 0.8
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "laplace-damped-trig",
+      "id": "laplace-damped-trig-002",
+      "parameters": {
+        "inputs": {
+          "A": 2,
+          "B": 2,
+          "b": 2,
+          "frequency": 2,
+          "kind": "damped-trig",
+          "n": 1,
+          "point": 1.1
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "laplace-damped-trig",
+      "id": "laplace-damped-trig-003",
+      "parameters": {
+        "inputs": {
+          "A": 5,
+          "B": -1,
+          "b": 2,
+          "frequency": 4,
+          "kind": "damped-trig",
+          "n": 1,
+          "point": 1.8
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "normal-left",
+      "id": "normal-left-001",
+      "parameters": {
+        "inputs": {
+          "alpha": 0.1,
+          "mean": 132.5094,
+          "mu": 131,
+          "n": 60,
+          "sigma": 18,
+          "tail": "left"
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "normal-left",
+      "id": "normal-left-002",
+      "parameters": {
+        "inputs": {
+          "alpha": 0.05,
+          "mean": 62.956,
+          "mu": 60,
+          "n": 169,
+          "sigma": 19,
+          "tail": "left"
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "normal-left",
+      "id": "normal-left-003",
+      "parameters": {
+        "inputs": {
+          "alpha": 0.1,
+          "mean": 122.4392,
+          "mu": 122,
+          "n": 44,
+          "sigma": 27,
+          "tail": "left"
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "normal-right",
+      "id": "normal-right-001",
+      "parameters": {
+        "inputs": {
+          "alpha": 0.05,
+          "mean": 178.4114,
+          "mu": 180,
+          "n": 40,
+          "sigma": 8,
+          "tail": "right"
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "normal-right",
+      "id": "normal-right-002",
+      "parameters": {
+        "inputs": {
+          "alpha": 0.01,
+          "mean": 159.6434,
+          "mu": 159,
+          "n": 85,
+          "sigma": 14,
+          "tail": "right"
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "normal-right",
+      "id": "normal-right-003",
+      "parameters": {
+        "inputs": {
+          "alpha": 0.05,
+          "mean": 52.0631,
+          "mu": 51,
+          "n": 64,
+          "sigma": 20,
+          "tail": "right"
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "chi-square",
+      "id": "chi-square-001",
+      "parameters": {
+        "inputs": {
+          "alpha": 0.1,
+          "observed": [
+            [
+              34,
+              33,
+              27
+            ],
+            [
+              33,
+              34,
+              33
+            ]
+          ]
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "chi-square",
+      "id": "chi-square-002",
+      "parameters": {
+        "inputs": {
+          "alpha": 0.05,
+          "observed": [
+            [
+              24,
+              39,
+              30
+            ],
+            [
+              26,
+              33,
+              25
+            ]
+          ]
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "chi-square",
+      "id": "chi-square-003",
+      "parameters": {
+        "inputs": {
+          "alpha": 0.1,
+          "observed": [
+            [
+              25,
+              29,
+              33
+            ],
+            [
+              36,
+              34,
+              27
+            ]
+          ]
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "chi-square-biased",
+      "id": "chi-square-biased-001",
+      "parameters": {
+        "inputs": {
+          "alpha": 0.01,
+          "observed": [
+            [
+              40,
+              34,
+              52
+            ],
+            [
+              27,
+              63,
+              43
+            ]
+          ]
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "chi-square-biased",
+      "id": "chi-square-biased-002",
+      "parameters": {
+        "inputs": {
+          "alpha": 0.1,
+          "observed": [
+            [
+              49,
+              26,
+              47
+            ],
+            [
+              26,
+              44,
+              49
+            ]
+          ]
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "chi-square-biased",
+      "id": "chi-square-biased-003",
+      "parameters": {
+        "inputs": {
+          "alpha": 0.1,
+          "observed": [
+            [
+              54,
+              40,
+              44
+            ],
+            [
+              34,
+              58,
+              44
+            ]
+          ]
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "discrete-moments",
+      "id": "discrete-moments-001",
+      "parameters": {
+        "inputs": {
+          "coefficients": [
+            5,
+            3,
+            8,
+            7,
+            7,
+            1
+          ],
+          "xmin": 1,
+          "xwidth": 2,
+          "ymin": 2,
+          "ywidth": 4
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "discrete-moments",
+      "id": "discrete-moments-002",
+      "parameters": {
+        "inputs": {
+          "coefficients": [
+            0,
+            8,
+            7,
+            7,
+            4,
+            3
+          ],
+          "xmin": 3,
+          "xwidth": 2,
+          "ymin": 2,
+          "ywidth": 4
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "discrete-moments",
+      "id": "discrete-moments-003",
+      "parameters": {
+        "inputs": {
+          "coefficients": [
+            2,
+            8,
+            8,
+            1,
+            6,
+            2
+          ],
+          "xmin": 2,
+          "xwidth": 4,
+          "ymin": 2,
+          "ywidth": 4
+        }
+      },
+      "variant": 3
+    },
+    {
+      "family_id": "correlation",
+      "id": "correlation-001",
+      "parameters": {
+        "inputs": {
+          "data": [
+            [
+              5,
+              59,
+              41
+            ],
+            [
+              7,
+              16,
+              12
+            ],
+            [
+              43,
+              57,
+              82
+            ],
+            [
+              33,
+              33,
+              24
+            ],
+            [
+              79,
+              50,
+              61
+            ],
+            [
+              66,
+              72,
+              70
+            ],
+            [
+              52,
+              83,
+              81
+            ],
+            [
+              55,
+              64,
+              78
+            ]
+          ]
+        }
+      },
+      "variant": 1
+    },
+    {
+      "family_id": "correlation",
+      "id": "correlation-002",
+      "parameters": {
+        "inputs": {
+          "data": [
+            [
+              4,
+              9,
+              22
+            ],
+            [
+              13,
+              68,
+              62
+            ],
+            [
+              38,
+              49,
+              95
+            ],
+            [
+              61,
+              46,
+              51
+            ],
+            [
+              72,
+              79,
+              14
+            ],
+            [
+              43,
+              96,
+              67
+            ],
+            [
+              38,
+              24,
+              36
+            ],
+            [
+              90,
+              68,
+              39
+            ]
+          ]
+        }
+      },
+      "variant": 2
+    },
+    {
+      "family_id": "correlation",
+      "id": "correlation-003",
+      "parameters": {
+        "inputs": {
+          "data": [
+            [
+              65,
+              98,
+              26
+            ],
+            [
+              91,
+              82,
+              76
+            ],
+            [
+              75,
+              67,
+              33
+            ],
+            [
+              12,
+              90,
+              75
+            ],
+            [
+              83,
+              65,
+              98
+            ],
+            [
+              63,
+              98,
+              63
+            ],
+            [
+              22,
+              94,
+              31
+            ],
+            [
+              55,
+              55,
+              47
+            ]
+          ]
+        }
+      },
+      "variant": 3
+    }
+  ],
+  "seed": 42,
+  "sources": {
+    "sources/__init__.py": "102203e8bef5bc5d8fffce0e7b2382b274f7927f47a02cb813049b581230ca4e",
+    "sources/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "sources/algebra.py": "ae35e9c550e13e061efc47df3ec7347e8336761678fb0b271f0a8218e344d91d",
+    "sources/author_bank.py": "4e7b0d316c41ad907cc067f2d78e9f7a9b0184c1ffa493fd4f15e43916d36117",
+    "sources/brief.md": "8ff6319524935fd30cdb2ad9011e2f11e5a722b4ef3d63899beb4eb0aed5ef53",
+    "sources/calculus.py": "62956f65844fffd7af00591a43078a059d071d413956998a350daae012b49b08",
+    "sources/cli.py": "c4b6bb3937b507dbfff2403e4a2ae0f0f4247931770138b0e83e62828a9f1115",
+    "sources/common.py": "f5dfc8dd5ae201422ff7debdd065935d8fafe3878c89f6669a9065acba065e82",
+    "sources/differential_equations.py": "9ae8f96348c2d9f94d456df261cfa2228104bf82ce10b39aee0248876238d4ec",
+    "sources/finance.py": "ddd673c2d717c9c046a6e7177e0c7f79e8ab356930f8e12829d943d7c820a089",
+    "sources/laplace.py": "07e7ac1c68660f50606f05c4f1897f43d2c4b636960223e8b2e70cffe8a38287",
+    "sources/recipe-runtime.json": "1d97f5290084a6cd584732fb3d061da84c65ceccc0f70cbb5d9c91f60df2e55b",
+    "sources/statistics.py": "a6ecf0b66a497754da900c2bdf6047c05a0a30f1f0c1e7164c1146a4946f8b8a"
+  },
+  "title": "Generadores docentes migrados",
+  "validation": {
+    "issues": [],
+    "live_moodle_import": "not tested",
+    "question_count": 93,
+    "valid": true
+  },
+  "versions": {
+    "installed_moodpy": "3.0.1",
+    "moodpy": "3.0.1",
+    "numpy": "2.5.3",
+    "python": "3.14.4"
+  }
+}

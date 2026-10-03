@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="local_moodpycompat\import_test" file="/var/www/html/local/moodpycompat/tests/import_test.php" tests="2" assertions="2933" errors="0" failures="0" skipped="0" time="2.765192">
+    <testcase name="test_bundle_imports_and_grades_in_moodle" file="/var/www/html/local/moodpycompat/tests/import_test.php" line="14" class="local_moodpycompat\import_test" classname="local_moodpycompat.import_test" assertions="138" time="0.448178"/>
+    <testcase name="test_migrated_topics_import_and_grade_in_moodle" file="/var/www/html/local/moodpycompat/tests/import_test.php" line="18" class="local_moodpycompat\import_test" classname="local_moodpycompat.import_test" assertions="2795" time="2.317015"/>
+  </testsuite>
+</testsuites>

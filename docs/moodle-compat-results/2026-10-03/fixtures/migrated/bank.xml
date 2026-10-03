@@ -1,0 +1,2250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+<question type="category"><category><text>$course$/Matemáticas/Proporciones</text></category></question>
+<question type="cloze">
+<name><text>Proporciones directas [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Una receta usa 3/5 tazas de harina por 3 tazas de leche. ¿Cuánta leche necesita para 87 tazas de harina?</p><p>Tazas de leche: {1:NM:=435.0:0.435}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Mantenga la razón leche/harina: leche = harina nueva × leche original / harina original.</p><p>Tazas de leche: 435.0</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>direct-proportion</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Proporciones directas [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Una receta usa 1/2 tazas de harina por 1 tazas de leche. ¿Cuánta leche necesita para 15 tazas de harina?</p><p>Tazas de leche: {1:NM:=30.0:0.03}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Mantenga la razón leche/harina: leche = harina nueva × leche original / harina original.</p><p>Tazas de leche: 30.0</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>direct-proportion</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Proporciones directas [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Una receta usa 2 tazas de harina por 6 tazas de leche. ¿Cuánta leche necesita para 31/4 tazas de harina?</p><p>Tazas de leche: {1:NM:=23.25:0.02325}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Mantenga la razón leche/harina: leche = harina nueva × leche original / harina original.</p><p>Tazas de leche: 23.25</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>direct-proportion</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Segmentos proporcionales [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Divida 375 en partes proporcionales a 7:7:11:5:3. Dé cada parte en el orden indicado.</p><p>Parte 1: {1:NM:=79.54545454545455:0.07954545454545454}</p><p>Parte 2: {1:NM:=79.54545454545455:0.07954545454545454}</p><p>Parte 3: {1:NM:=125.0:0.125}</p><p>Parte 4: {1:NM:=56.81818181818182:0.05681818181818182}</p><p>Parte 5: {1:NM:=34.09090909090909:0.034090909090909095}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Cada parte es el total multiplicado por su peso y dividido por la suma de los pesos, 33.</p><p>Parte 1: 79.54545454545455</p><p>Parte 2: 79.54545454545455</p><p>Parte 3: 125.0</p><p>Parte 4: 56.81818181818182</p><p>Parte 5: 34.09090909090909</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>proportional-segments</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Segmentos proporcionales [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Divida 286 en partes proporcionales a 2:1:4. Dé cada parte en el orden indicado.</p><p>Parte 1: {1:NM:=81.71428571428571:0.08171428571428571}</p><p>Parte 2: {1:NM:=40.857142857142854:0.040857142857142856}</p><p>Parte 3: {1:NM:=163.42857142857142:0.16342857142857142}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Cada parte es el total multiplicado por su peso y dividido por la suma de los pesos, 7.</p><p>Parte 1: 81.71428571428571</p><p>Parte 2: 40.857142857142854</p><p>Parte 3: 163.42857142857142</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>proportional-segments</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Segmentos proporcionales [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Divida 166 en partes proporcionales a 7:11:8:1:11. Dé cada parte en el orden indicado.</p><p>Parte 1: {1:NM:=30.57894736842105:0.030578947368421053}</p><p>Parte 2: {1:NM:=48.05263157894737:0.04805263157894737}</p><p>Parte 3: {1:NM:=34.94736842105263:0.03494736842105263}</p><p>Parte 4: {1:NM:=4.368421052631579:0.004368421052631579}</p><p>Parte 5: {1:NM:=48.05263157894737:0.04805263157894737}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Cada parte es el total multiplicado por su peso y dividido por la suma de los pesos, 38.</p><p>Parte 1: 30.57894736842105</p><p>Parte 2: 48.05263157894737</p><p>Parte 3: 34.94736842105263</p><p>Parte 4: 4.368421052631579</p><p>Parte 5: 48.05263157894737</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>proportional-segments</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Matemáticas/Álgebra</text></category></question>
+<question type="cloze">
+<name><text>Cramer 2×2 [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva Ax=b usando la regla de Cramer. Las primeras columnas son A; la última es b.</p><table><tr><th>x1</th><th>x2</th><th>b</th></tr><tr><td>1</td><td>-6</td><td>-19</td></tr><tr><td>-5</td><td>-1</td><td>20</td></tr></table><p>x1: {1:NM:=-4.483870967741935:0.004483870967741935}</p><p>x2: {1:NM:=2.4193548387096775:0.0024193548387096775}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>det(A) = -31. Para cada variable, sustituya su columna por b y divida el determinante resultante por det(A).</p><p>x1: -4.483870967741935</p><p>x2: 2.4193548387096775</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>cramer-2</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Cramer 2×2 [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva Ax=b usando la regla de Cramer. Las primeras columnas son A; la última es b.</p><table><tr><th>x1</th><th>x2</th><th>b</th></tr><tr><td>-3</td><td>6</td><td>-10</td></tr><tr><td>1</td><td>1</td><td>12</td></tr></table><p>x1: {1:NM:=9.11111111111111:0.009111111111111111}</p><p>x2: {1:NM:=2.888888888888889:0.0028888888888888888}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>det(A) = -9. Para cada variable, sustituya su columna por b y divida el determinante resultante por det(A).</p><p>x1: 9.11111111111111</p><p>x2: 2.888888888888889</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>cramer-2</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Cramer 2×2 [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva Ax=b usando la regla de Cramer. Las primeras columnas son A; la última es b.</p><table><tr><th>x1</th><th>x2</th><th>b</th></tr><tr><td>6</td><td>1</td><td>15</td></tr><tr><td>8</td><td>4</td><td>2</td></tr></table><p>x1: {1:NM:=3.625:0.003625}</p><p>x2: {1:NM:=-6.75:0.00675}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>det(A) = 16. Para cada variable, sustituya su columna por b y divida el determinante resultante por det(A).</p><p>x1: 3.625</p><p>x2: -6.75</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>cramer-2</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Cramer 3×3 [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva Ax=b usando la regla de Cramer. Las primeras columnas son A; la última es b.</p><table><tr><th>x1</th><th>x2</th><th>x3</th><th>b</th></tr><tr><td>1</td><td>-8</td><td>-5</td><td>-7</td></tr><tr><td>2</td><td>-3</td><td>7</td><td>-6</td></tr><tr><td>0</td><td>4</td><td>-7</td><td>12</td></tr></table><p>x1: {1:NM:=2.1823899371069184:0.0021823899371069184}</p><p>x2: {1:NM:=1.6352201257861636:0.0016352201257861635}</p><p>x3: {1:NM:=-0.779874213836478:0.0007798742138364781}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>det(A) = -159. Para cada variable, sustituya su columna por b y divida el determinante resultante por det(A).</p><p>x1: 2.1823899371069184</p><p>x2: 1.6352201257861636</p><p>x3: -0.779874213836478</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>cramer-3</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Cramer 3×3 [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva Ax=b usando la regla de Cramer. Las primeras columnas son A; la última es b.</p><table><tr><th>x1</th><th>x2</th><th>x3</th><th>b</th></tr><tr><td>5</td><td>9</td><td>9</td><td>17</td></tr><tr><td>-1</td><td>0</td><td>0</td><td>-15</td></tr><tr><td>8</td><td>-1</td><td>9</td><td>-11</td></tr></table><p>x1: {1:NM:=15.0:0.015}</p><p>x2: {1:NM:=7.3:0.0073}</p><p>x3: {1:NM:=-13.744444444444444:0.013744444444444445}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>det(A) = 90. Para cada variable, sustituya su columna por b y divida el determinante resultante por det(A).</p><p>x1: 15.0</p><p>x2: 7.3</p><p>x3: -13.744444444444444</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>cramer-3</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Cramer 3×3 [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva Ax=b usando la regla de Cramer. Las primeras columnas son A; la última es b.</p><table><tr><th>x1</th><th>x2</th><th>x3</th><th>b</th></tr><tr><td>-3</td><td>-1</td><td>2</td><td>0</td></tr><tr><td>-5</td><td>-5</td><td>2</td><td>16</td></tr><tr><td>-4</td><td>8</td><td>-8</td><td>-18</td></tr></table><p>x1: {1:NM:=0.1111111111111111:0.0001111111111111111}</p><p>x2: {1:NM:=-4.055555555555555:0.004055555555555555}</p><p>x3: {1:NM:=-1.8611111111111112:0.0018611111111111111}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>det(A) = -144. Para cada variable, sustituya su columna por b y divida el determinante resultante por det(A).</p><p>x1: 0.1111111111111111</p><p>x2: -4.055555555555555</p><p>x3: -1.8611111111111112</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>cramer-3</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Matemáticas/Sucesiones</text></category></question>
+<question type="cloze">
+<name><text>Recurrencias lineales [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>x(0)=-4; x(n)=-1x(n−1)+(19). Calcule x(2).</p><p>x(2): {1:NM:=-4.0:0.004}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Itere la recurrencia: -4, 23, -4.</p><p>x(2): -4</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>recurrence</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Recurrencias lineales [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>x(0)=6; x(n)=-5x(n−1)+(-3). Calcule x(2).</p><p>x(2): {1:NM:=162.0:0.162}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Itere la recurrencia: 6, -33, 162.</p><p>x(2): 162</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>recurrence</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Recurrencias lineales [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>x(0)=-10; x(n)=-1x(n−1)+(-19). Calcule x(4).</p><p>x(4): {1:NM:=-10.0:0.01}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Itere la recurrencia: -10, -9, -10, -9, -10.</p><p>x(4): -10</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>recurrence</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Economía/Oferta y demanda</text></category></question>
+<question type="cloze">
+<name><text>Precio de equilibrio [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Oferta y demanda son lineales. Encuentre el precio de equilibrio a partir de la tabla.</p><table><tr><th>Unidades</th><th>Precio oferta</th><th>Precio demanda</th></tr><tr><td>0</td><td>0</td><td>10584</td></tr><tr><td>1</td><td>31</td><td>10507</td></tr><tr><td>2</td><td>62</td><td>10430</td></tr><tr><td>3</td><td>93</td><td>10353</td></tr></table><p>Precio de equilibrio: {1:NM:=3038.0:3.0380000000000003}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>S(u)=31u; D(u)=10584−77u. Igualando S=D, u=98 y precio=3038.</p><p>Precio de equilibrio: 3038</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>equilibrium</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Precio de equilibrio [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Oferta y demanda son lineales. Encuentre el precio de equilibrio a partir de la tabla.</p><table><tr><th>Unidades</th><th>Precio oferta</th><th>Precio demanda</th></tr><tr><td>0</td><td>0</td><td>11832</td></tr><tr><td>1</td><td>96</td><td>11792</td></tr><tr><td>2</td><td>192</td><td>11752</td></tr><tr><td>3</td><td>288</td><td>11712</td></tr></table><p>Precio de equilibrio: {1:NM:=8352.0:8.352}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>S(u)=96u; D(u)=11832−40u. Igualando S=D, u=87 y precio=8352.</p><p>Precio de equilibrio: 8352</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>equilibrium</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Precio de equilibrio [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Oferta y demanda son lineales. Encuentre el precio de equilibrio a partir de la tabla.</p><table><tr><th>Unidades</th><th>Precio oferta</th><th>Precio demanda</th></tr><tr><td>0</td><td>0</td><td>1352</td></tr><tr><td>1</td><td>23</td><td>1323</td></tr><tr><td>2</td><td>46</td><td>1294</td></tr><tr><td>3</td><td>69</td><td>1265</td></tr></table><p>Precio de equilibrio: {1:NM:=598.0:0.598}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>S(u)=23u; D(u)=1352−29u. Igualando S=D, u=26 y precio=598.</p><p>Precio de equilibrio: 598</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>equilibrium</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Finanzas/Interés simple</text></category></question>
+<question type="cloze">
+<name><text>Portafolio de inversión [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Invirtió $122000 en bonos al 8% y acciones al 25%, con interés anual simple. El interés total fue $18430.0. Determine cada inversión.</p><p>Bonos: {1:NM:=71000.0:71.0}</p><p>Acciones: {1:NM:=51000.0:51.0}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Resuelva B+S=122000 y 0.08B+0.25S=18430.0.</p><p>Bonos: 71000</p><p>Acciones: 51000</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>portfolio</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Portafolio de inversión [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Invirtió $87000 en bonos al 2% y acciones al 25%, con interés anual simple. El interés total fue $11630.0. Determine cada inversión.</p><p>Bonos: {1:NM:=44000.0:44.0}</p><p>Acciones: {1:NM:=43000.0:43.0}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Resuelva B+S=87000 y 0.02B+0.25S=11630.0.</p><p>Bonos: 44000</p><p>Acciones: 43000</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>portfolio</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Portafolio de inversión [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Invirtió $118000 en bonos al 3% y acciones al 17%, con interés anual simple. El interés total fue $14320.0. Determine cada inversión.</p><p>Bonos: {1:NM:=41000.0:41.0}</p><p>Acciones: {1:NM:=77000.0:77.0}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Resuelva B+S=118000 y 0.03B+0.17S=14320.0.</p><p>Bonos: 41000</p><p>Acciones: 77000</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>portfolio</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Finanzas/Anualidades</text></category></question>
+<question type="cloze">
+<name><text>Renta de un préstamo [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Préstamo de $10900, tasa nominal anual 17%, compuesto 1 veces al año, a 5 años. Los pagos se hacen al final de cada periodo. Use valores sin redondear durante el cálculo.</p><p>Pago periódico: {1:NM:=3406.9461213605327:3.4069461213605328}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>R = Ai / (1 − (1+i)<sup>−N</sup>), con i=0.17, N=5.</p><p>Pago periódico: 3406.9461213605327</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>loan-payment</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Renta de un préstamo [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Préstamo de $10700, tasa nominal anual 2%, compuesto 4 veces al año, a 6 años. Los pagos se hacen al final de cada periodo. Use valores sin redondear durante el cálculo.</p><p>Pago periódico: {1:NM:=474.23052970449885:0.47423052970449886}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>R = Ai / (1 − (1+i)<sup>−N</sup>), con i=0.005, N=24.</p><p>Pago periódico: 474.23052970449885</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>loan-payment</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Renta de un préstamo [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Préstamo de $1400, tasa nominal anual 15%, compuesto 6 veces al año, a 6 años. Los pagos se hacen al final de cada periodo. Use valores sin redondear durante el cálculo.</p><p>Pago periódico: {1:NM:=59.43220744087563:0.05943220744087563}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>R = Ai / (1 − (1+i)<sup>−N</sup>), con i=0.024999999999999998, N=36.</p><p>Pago periódico: 59.43220744087563</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>loan-payment</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Finanzas/Amortización</text></category></question>
+<question type="cloze">
+<name><text>Tabla de amortización [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Préstamo de $2800, tasa nominal anual 9%, compuesto 2 veces al año, a 2 años. Los pagos se hacen al final de cada periodo. Use valores sin redondear durante el cálculo.</p><p>Complete los cinco valores de cada periodo.</p><p>Periodo 1 — Saldo inicial: {1:NM:=2800.0:2.8000000000000003}</p><p>Periodo 1 — Interés: {1:NM:=126.0:0.126}</p><p>Periodo 1 — Pago: {1:NM:=780.4822141390423:0.7804822141390423}</p><p>Periodo 1 — Capital pagado: {1:NM:=654.4822141390423:0.6544822141390423}</p><p>Periodo 1 — Saldo final: {1:NM:=2145.5177858609577:2.1455177858609575}</p><p>Periodo 2 — Saldo inicial: {1:NM:=2145.5177858609577:2.1455177858609575}</p><p>Periodo 2 — Interés: {1:NM:=96.5483003637431:0.0965483003637431}</p><p>Periodo 2 — Pago: {1:NM:=780.4822141390423:0.7804822141390423}</p><p>Periodo 2 — Capital pagado: {1:NM:=683.9339137752992:0.6839339137752992}</p><p>Periodo 2 — Saldo final: {1:NM:=1461.5838720856586:1.4615838720856587}</p><p>Periodo 3 — Saldo inicial: {1:NM:=1461.5838720856586:1.4615838720856587}</p><p>Periodo 3 — Interés: {1:NM:=65.77127424385463:0.06577127424385464}</p><p>Periodo 3 — Pago: {1:NM:=780.4822141390423:0.7804822141390423}</p><p>Periodo 3 — Capital pagado: {1:NM:=714.7109398951877:0.7147109398951877}</p><p>Periodo 3 — Saldo final: {1:NM:=746.8729321904709:0.7468729321904709}</p><p>Periodo 4 — Saldo inicial: {1:NM:=746.8729321904709:0.7468729321904709}</p><p>Periodo 4 — Interés: {1:NM:=33.60928194857119:0.033609281948571185}</p><p>Periodo 4 — Pago: {1:NM:=780.4822141390423:0.7804822141390423}</p><p>Periodo 4 — Capital pagado: {1:NM:=746.8729321904711:0.7468729321904711}</p><p>Periodo 4 — Saldo final: {1:NM:=0:0.00001}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Interés = saldo inicial × i; capital pagado = pago − interés; saldo final = saldo inicial − capital pagado.</p><table><tr><th>Periodo</th><th>Saldo inicial</th><th>Interés</th><th>Pago</th><th>Capital pagado</th><th>Saldo final</th></tr><tr><td>1</td><td>2800.0</td><td>126.0</td><td>780.4822</td><td>654.4822</td><td>2145.5178</td></tr><tr><td>2</td><td>2145.5178</td><td>96.5483</td><td>780.4822</td><td>683.9339</td><td>1461.5839</td></tr><tr><td>3</td><td>1461.5839</td><td>65.7713</td><td>780.4822</td><td>714.7109</td><td>746.8729</td></tr><tr><td>4</td><td>746.8729</td><td>33.6093</td><td>780.4822</td><td>746.8729</td><td>0.0</td></tr></table><p>Periodo 1 — Saldo inicial: 2800.0</p><p>Periodo 1 — Interés: 126.0</p><p>Periodo 1 — Pago: 780.4822141390423</p><p>Periodo 1 — Capital pagado: 654.4822141390423</p><p>Periodo 1 — Saldo final: 2145.5177858609577</p><p>Periodo 2 — Saldo inicial: 2145.5177858609577</p><p>Periodo 2 — Interés: 96.5483003637431</p><p>Periodo 2 — Pago: 780.4822141390423</p><p>Periodo 2 — Capital pagado: 683.9339137752992</p><p>Periodo 2 — Saldo final: 1461.5838720856586</p><p>Periodo 3 — Saldo inicial: 1461.5838720856586</p><p>Periodo 3 — Interés: 65.77127424385463</p><p>Periodo 3 — Pago: 780.4822141390423</p><p>Periodo 3 — Capital pagado: 714.7109398951877</p><p>Periodo 3 — Saldo final: 746.8729321904709</p><p>Periodo 4 — Saldo inicial: 746.8729321904709</p><p>Periodo 4 — Interés: 33.60928194857119</p><p>Periodo 4 — Pago: 780.4822141390423</p><p>Periodo 4 — Capital pagado: 746.8729321904711</p><p>Periodo 4 — Saldo final: 0.0</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>amortization</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Tabla de amortización [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Préstamo de $7900, tasa nominal anual 3%, compuesto 1 veces al año, a 3 años. Los pagos se hacen al final de cada periodo. Use valores sin redondear durante el cálculo.</p><p>Complete los cinco valores de cada periodo.</p><p>Periodo 1 — Saldo inicial: {1:NM:=7900.0:7.9}</p><p>Periodo 1 — Interés: {1:NM:=237.0:0.23700000000000002}</p><p>Periodo 1 — Pago: {1:NM:=2792.8898702643246:2.792889870264325}</p><p>Periodo 1 — Capital pagado: {1:NM:=2555.8898702643246:2.5558898702643247}</p><p>Periodo 1 — Saldo final: {1:NM:=5344.110129735675:5.344110129735675}</p><p>Periodo 2 — Saldo inicial: {1:NM:=5344.110129735675:5.344110129735675}</p><p>Periodo 2 — Interés: {1:NM:=160.32330389207024:0.16032330389207025}</p><p>Periodo 2 — Pago: {1:NM:=2792.8898702643246:2.792889870264325}</p><p>Periodo 2 — Capital pagado: {1:NM:=2632.5665663722543:2.632566566372254}</p><p>Periodo 2 — Saldo final: {1:NM:=2711.543563363421:2.711543563363421}</p><p>Periodo 3 — Saldo inicial: {1:NM:=2711.543563363421:2.711543563363421}</p><p>Periodo 3 — Interés: {1:NM:=81.34630690090263:0.08134630690090264}</p><p>Periodo 3 — Pago: {1:NM:=2792.8898702643246:2.792889870264325}</p><p>Periodo 3 — Capital pagado: {1:NM:=2711.543563363422:2.711543563363422}</p><p>Periodo 3 — Saldo final: {1:NM:=0:0.00001}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Interés = saldo inicial × i; capital pagado = pago − interés; saldo final = saldo inicial − capital pagado.</p><table><tr><th>Periodo</th><th>Saldo inicial</th><th>Interés</th><th>Pago</th><th>Capital pagado</th><th>Saldo final</th></tr><tr><td>1</td><td>7900.0</td><td>237.0</td><td>2792.8899</td><td>2555.8899</td><td>5344.1101</td></tr><tr><td>2</td><td>5344.1101</td><td>160.3233</td><td>2792.8899</td><td>2632.5666</td><td>2711.5436</td></tr><tr><td>3</td><td>2711.5436</td><td>81.3463</td><td>2792.8899</td><td>2711.5436</td><td>0.0</td></tr></table><p>Periodo 1 — Saldo inicial: 7900.0</p><p>Periodo 1 — Interés: 237.0</p><p>Periodo 1 — Pago: 2792.8898702643246</p><p>Periodo 1 — Capital pagado: 2555.8898702643246</p><p>Periodo 1 — Saldo final: 5344.110129735675</p><p>Periodo 2 — Saldo inicial: 5344.110129735675</p><p>Periodo 2 — Interés: 160.32330389207024</p><p>Periodo 2 — Pago: 2792.8898702643246</p><p>Periodo 2 — Capital pagado: 2632.5665663722543</p><p>Periodo 2 — Saldo final: 2711.543563363421</p><p>Periodo 3 — Saldo inicial: 2711.543563363421</p><p>Periodo 3 — Interés: 81.34630690090263</p><p>Periodo 3 — Pago: 2792.8898702643246</p><p>Periodo 3 — Capital pagado: 2711.543563363422</p><p>Periodo 3 — Saldo final: 0.0</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>amortization</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Tabla de amortización [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Préstamo de $7700, tasa nominal anual 18%, compuesto 2 veces al año, a 3 años. Los pagos se hacen al final de cada periodo. Use valores sin redondear durante el cálculo.</p><p>Complete los cinco valores de cada periodo.</p><p>Periodo 1 — Saldo inicial: {1:NM:=7700.0:7.7}</p><p>Periodo 1 — Interés: {1:NM:=693.0:0.6930000000000001}</p><p>Periodo 1 — Pago: {1:NM:=1716.4823313486854:1.7164823313486854}</p><p>Periodo 1 — Capital pagado: {1:NM:=1023.4823313486854:1.0234823313486854}</p><p>Periodo 1 — Saldo final: {1:NM:=6676.517668651315:6.676517668651315}</p><p>Periodo 2 — Saldo inicial: {1:NM:=6676.517668651315:6.676517668651315}</p><p>Periodo 2 — Interés: {1:NM:=600.8865901786183:0.6008865901786183}</p><p>Periodo 2 — Pago: {1:NM:=1716.4823313486854:1.7164823313486854}</p><p>Periodo 2 — Capital pagado: {1:NM:=1115.595741170067:1.115595741170067}</p><p>Periodo 2 — Saldo final: {1:NM:=5560.921927481248:5.560921927481248}</p><p>Periodo 3 — Saldo inicial: {1:NM:=5560.921927481248:5.560921927481248}</p><p>Periodo 3 — Interés: {1:NM:=500.48297347331226:0.5004829734733123}</p><p>Periodo 3 — Pago: {1:NM:=1716.4823313486854:1.7164823313486854}</p><p>Periodo 3 — Capital pagado: {1:NM:=1215.999357875373:1.2159993578753732}</p><p>Periodo 3 — Saldo final: {1:NM:=4344.922569605875:4.344922569605875}</p><p>Periodo 4 — Saldo inicial: {1:NM:=4344.922569605875:4.344922569605875}</p><p>Periodo 4 — Interés: {1:NM:=391.04303126452874:0.3910430312645287}</p><p>Periodo 4 — Pago: {1:NM:=1716.4823313486854:1.7164823313486854}</p><p>Periodo 4 — Capital pagado: {1:NM:=1325.4393000841567:1.3254393000841567}</p><p>Periodo 4 — Saldo final: {1:NM:=3019.4832695217183:3.0194832695217184}</p><p>Periodo 5 — Saldo inicial: {1:NM:=3019.4832695217183:3.0194832695217184}</p><p>Periodo 5 — Interés: {1:NM:=271.75349425695464:0.27175349425695466}</p><p>Periodo 5 — Pago: {1:NM:=1716.4823313486854:1.7164823313486854}</p><p>Periodo 5 — Capital pagado: {1:NM:=1444.7288370917308:1.4447288370917308}</p><p>Periodo 5 — Saldo final: {1:NM:=1574.7544324299874:1.5747544324299876}</p><p>Periodo 6 — Saldo inicial: {1:NM:=1574.7544324299874:1.5747544324299876}</p><p>Periodo 6 — Interés: {1:NM:=141.72789891869886:0.14172789891869886}</p><p>Periodo 6 — Pago: {1:NM:=1716.4823313486854:1.7164823313486854}</p><p>Periodo 6 — Capital pagado: {1:NM:=1574.7544324299865:1.5747544324299865}</p><p>Periodo 6 — Saldo final: {1:NM:=0:0.00001}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Interés = saldo inicial × i; capital pagado = pago − interés; saldo final = saldo inicial − capital pagado.</p><table><tr><th>Periodo</th><th>Saldo inicial</th><th>Interés</th><th>Pago</th><th>Capital pagado</th><th>Saldo final</th></tr><tr><td>1</td><td>7700.0</td><td>693.0</td><td>1716.4823</td><td>1023.4823</td><td>6676.5177</td></tr><tr><td>2</td><td>6676.5177</td><td>600.8866</td><td>1716.4823</td><td>1115.5957</td><td>5560.9219</td></tr><tr><td>3</td><td>5560.9219</td><td>500.483</td><td>1716.4823</td><td>1215.9994</td><td>4344.9226</td></tr><tr><td>4</td><td>4344.9226</td><td>391.043</td><td>1716.4823</td><td>1325.4393</td><td>3019.4833</td></tr><tr><td>5</td><td>3019.4833</td><td>271.7535</td><td>1716.4823</td><td>1444.7288</td><td>1574.7544</td></tr><tr><td>6</td><td>1574.7544</td><td>141.7279</td><td>1716.4823</td><td>1574.7544</td><td>0.0</td></tr></table><p>Periodo 1 — Saldo inicial: 7700.0</p><p>Periodo 1 — Interés: 693.0</p><p>Periodo 1 — Pago: 1716.4823313486854</p><p>Periodo 1 — Capital pagado: 1023.4823313486854</p><p>Periodo 1 — Saldo final: 6676.517668651315</p><p>Periodo 2 — Saldo inicial: 6676.517668651315</p><p>Periodo 2 — Interés: 600.8865901786183</p><p>Periodo 2 — Pago: 1716.4823313486854</p><p>Periodo 2 — Capital pagado: 1115.595741170067</p><p>Periodo 2 — Saldo final: 5560.921927481248</p><p>Periodo 3 — Saldo inicial: 5560.921927481248</p><p>Periodo 3 — Interés: 500.48297347331226</p><p>Periodo 3 — Pago: 1716.4823313486854</p><p>Periodo 3 — Capital pagado: 1215.999357875373</p><p>Periodo 3 — Saldo final: 4344.922569605875</p><p>Periodo 4 — Saldo inicial: 4344.922569605875</p><p>Periodo 4 — Interés: 391.04303126452874</p><p>Periodo 4 — Pago: 1716.4823313486854</p><p>Periodo 4 — Capital pagado: 1325.4393000841567</p><p>Periodo 4 — Saldo final: 3019.4832695217183</p><p>Periodo 5 — Saldo inicial: 3019.4832695217183</p><p>Periodo 5 — Interés: 271.75349425695464</p><p>Periodo 5 — Pago: 1716.4823313486854</p><p>Periodo 5 — Capital pagado: 1444.7288370917308</p><p>Periodo 5 — Saldo final: 1574.7544324299874</p><p>Periodo 6 — Saldo inicial: 1574.7544324299874</p><p>Periodo 6 — Interés: 141.72789891869886</p><p>Periodo 6 — Pago: 1716.4823313486854</p><p>Periodo 6 — Capital pagado: 1574.7544324299865</p><p>Periodo 6 — Saldo final: 0.0</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>amortization</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Matemáticas/EDO</text></category></question>
+<question type="cloze">
+<name><text>EDO separable implícita [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva \(y'=\frac{6 x + 4}{4 y - 5}\), con \(y(5)=1\). Escriba la solución como G(x,y)=0, normalizada con G(-1,0)=1. Evalúe G(-2,-4).</p><p>G en el punto indicado: {1:NM:=1.4747474747474747:0.0014747474747474748}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Separando e integrando: \(G(x,y)=- \frac{x^{2}}{33} - \frac{4 x}{99} + \frac{2 y^{2}}{99} - \frac{5 y}{99} + \frac{98}{99}\).</p><p>G en el punto indicado: 1.4747474747474747</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>separable-implicit</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>EDO separable implícita [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva \(y'=\frac{- 10 x - 4}{5 - 6 y}\), con \(y(1)=-5\). Escriba la solución como G(x,y)=0, normalizada con G(4,-5)=1. Evalúe G(-1,2).</p><p>G en el punto indicado: {1:NM:=1.0344827586206897:0.0010344827586206897}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Separando e integrando: \(G(x,y)=\frac{5 x^{2}}{87} + \frac{4 x}{87} - \frac{y^{2}}{29} + \frac{5 y}{87} + \frac{91}{87}\).</p><p>G en el punto indicado: 1.0344827586206897</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>separable-implicit</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>EDO separable implícita [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva \(y'=\frac{- 10 x - 5}{10 y + 1}\), con \(y(-4)=-4\). Escriba la solución como G(x,y)=0, normalizada con G(3,-1)=1. Evalúe G(4,0).</p><p>G en el punto indicado: {1:NM:=0.5:0.0005}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Separando e integrando: \(G(x,y)=- \frac{5 x^{2}}{72} - \frac{5 x}{72} - \frac{5 y^{2}}{72} - \frac{y}{72} + \frac{17}{9}\).</p><p>G en el punto indicado: 0.5</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>separable-implicit</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>EDO separable exponencial [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva \(y'=(-1x+(-2))y\), con \(y(-1)=8\). Evalúe en x=1.2.</p><p>y en el punto indicado: {1:NM:=0.07882236848949806:7.882236848949806e-05}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Separe dy/y e integre: \(y=8 e^{- \frac{x^{2}}{2} - 2 x - \frac{3}{2}}\).</p><p>y en el punto indicado: 0.07882236848949806</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>exponential-growth</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>EDO separable exponencial [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva \(y'=(-2x+(-2))y\), con \(y(0)=6\). Evalúe en x=1.0.</p><p>y en el punto indicado: {1:NM:=0.29872241020718365:0.00029872241020718367}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Separe dy/y e integre: \(y=6 e^{- x^{2} - 2 x}\).</p><p>y en el punto indicado: 0.29872241020718365</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>exponential-growth</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>EDO separable exponencial [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva \(y'=(2x+(-2))y\), con \(y(1)=3\). Evalúe en x=-1.8.</p><p>y en el punto indicado: {1:NM:=7620.614501480484:7.6206145014804845}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Separe dy/y e integre: \(y=3 e^{x^{2} - 2 x + 1}\).</p><p>y en el punto indicado: 7620.614501480484</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>exponential-growth</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Curva logística [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva \(y'=0.001y(127−y)\), con \(y(0)=\frac{127}{4}\). Evalúe en x=0.7.</p><p>y en el punto indicado: {1:NM:=33.913592333557965:0.033913592333557965}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>La solución logística es \(y=\frac{127}{1 + 3 e^{- \frac{127 x}{1000}}}\).</p><p>y en el punto indicado: 33.913592333557965</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>logistic</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Curva logística [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva \(y'=0.003y(42−y)\), con \(y(0)=\frac{42}{13}\). Evalúe en x=1.7.</p><p>y en el punto indicado: {1:NM:=3.9302867528659626:0.003930286752865963}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>La solución logística es \(y=\frac{42}{1 + 12 e^{- \frac{63 x}{500}}}\).</p><p>y en el punto indicado: 3.9302867528659626</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>logistic</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Curva logística [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva \(y'=0.002y(146−y)\), con \(y(0)=\frac{146}{13}\). Evalúe en x=2.9.</p><p>y en el punto indicado: {1:NM:=23.757536936537953:0.023757536936537954}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>La solución logística es \(y=\frac{146}{1 + 12 e^{- \frac{73 x}{250}}}\).</p><p>y en el punto indicado: 23.757536936537953</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>logistic</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>EDO homogénea de segundo orden [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva \(y''+(2)y'+(-1)y=0\), con \(y(0)=2\), \(y'(0)=0\). Evalúe en x=0.9.</p><p>y(0.9): {1:NM:=2.51169658780713:0.0025116965878071297}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Solución: \(y(x)=\frac{\sqrt{2} \left(2 + 2 \sqrt{2}\right) e^{x \left(-1 + \sqrt{2}\right)}}{4} + \left(- \frac{\sqrt{2} \left(2 + 2 \sqrt{2}\right)}{4} + 2\right) e^{x \left(- \sqrt{2} - 1\right)}\).</p><p>y(0.9): 2.51169658780713</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>ode-homogeneous</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>EDO homogénea de segundo orden [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva \(y''+(-4)y'+(-1)y=0\), con \(y(0)=-2\), \(y'(0)=0\). Evalúe en x=1.1.</p><p>y(1.1): {1:NM:=-12.609847734682083:0.012609847734682083}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Solución: \(y(x)=\left(-2 - \frac{\sqrt{5} \left(4 - 2 \sqrt{5}\right)}{10}\right) e^{x \left(2 - \sqrt{5}\right)} + \frac{\sqrt{5} \left(4 - 2 \sqrt{5}\right) e^{x \left(2 + \sqrt{5}\right)}}{10}\).</p><p>y(1.1): -12.609847734682083</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>ode-homogeneous</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>EDO homogénea de segundo orden [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva \(y''+(2)y'+(1)y=0\), con \(y(0)=-1\), \(y'(0)=2\). Evalúe en x=0.7.</p><p>y(0.7): {1:NM:=-0.14897559113742287:0.00014897559113742287}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Solución: \(y(x)=\left(x - 1\right) e^{- x}\).</p><p>y(0.7): -0.14897559113742287</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>ode-homogeneous</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>EDO con fuerza exponencial [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva \(y''+(-2)y'+(4)y=-3e^{-2x}\), con \(y(0)=-2\), \(y'(0)=-2\). Evalúe en x=1.7.</p><p>y(1.7): {1:NM:=8.921402567814928:0.008921402567814929}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Solución: \(y(x)=\left(- \frac{\sqrt{3} \sin{\left(\sqrt{3} x \right)}}{4} - \frac{7 \cos{\left(\sqrt{3} x \right)}}{4}\right) e^{x} - \frac{e^{- 2 x}}{4}\).</p><p>y(1.7): 8.921402567814928</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>ode-exponential</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>EDO con fuerza exponencial [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva \(y''+(-1)y'+(4)y=5e^{-1x}\), con \(y(0)=2\), \(y'(0)=1\). Evalúe en x=1.5.</p><p>y(1.5): {1:NM:=-1.8942866558037714:0.0018942866558037715}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Solución: \(y(x)=\left(\frac{\sqrt{15} \sin{\left(\frac{\sqrt{15} x}{2} \right)}}{6} + \frac{7 \cos{\left(\frac{\sqrt{15} x}{2} \right)}}{6}\right) e^{\frac{x}{2}} + \frac{5 e^{- x}}{6}\).</p><p>y(1.5): -1.8942866558037714</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>ode-exponential</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>EDO con fuerza exponencial [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Resuelva \(y''+(4)y'+(0)y=2e^{3x}\), con \(y(0)=1\), \(y'(0)=-1\). Evalúe en x=1.1.</p><p>y(1.1): {1:NM:=3.1694357088410237:0.0031694357088410236}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Solución: \(y(x)=\frac{2 e^{3 x}}{21} + \frac{7}{12} + \frac{9 e^{- 4 x}}{28}\).</p><p>y(1.1): 3.1694357088410237</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>ode-exponential</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Matemáticas/Cálculo integral</text></category></question>
+<question type="cloze">
+<name><text>Valor promedio: log [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=- \frac{4 \log{\left(- x - 1 \right)}}{5}\) en \([-7,-3]\).</p><p>Valor promedio: {1:NM:=-1.072852490849688:0.001072852490849688}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=\frac{4 x}{5} + \frac{4 \left(- x - 1\right) \log{\left(- x - 1 \right)}}{5} + \frac{4}{5}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: -1.072852490849688</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-log</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: log [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=\frac{3 \log{\left(x + 3 \right)}}{4}\) en \([-1,2]\).</p><p>Valor promedio: {1:NM:=0.9152238002626528:0.0009152238002626529}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=- \frac{3 x}{4} + \frac{3 \left(x + 3\right) \log{\left(x + 3 \right)}}{4} - \frac{9}{4}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: 0.9152238002626528</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-log</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: log [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=- \log{\left(4 - 2 x \right)}\) en \([- \frac{1}{2},\frac{1}{2}]\).</p><p>Valor promedio: {1:NM:=-1.3756763480830865:0.0013756763480830866}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=x + \frac{\left(4 - 2 x\right) \log{\left(4 - 2 x \right)}}{2} - 2\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: -1.3756763480830865</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-log</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: tan [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=\tan{\left(x \right)}\) en \([- \frac{3}{10},\frac{1}{10}]\).</p><p>Valor promedio: {1:NM:=-0.10170825075705678:0.00010170825075705678}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=- \log{\left(\cos{\left(x \right)} \right)}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: -0.10170825075705678</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-tan</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: tan [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=- 4 \tan{\left(x \right)}\) en \([- \frac{1}{5},\frac{1}{5}]\).</p><p>Valor promedio: {1:NM:=0:0.00001}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=4 \log{\left(\cos{\left(x \right)} \right)}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: 0.0</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-tan</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: tan [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=- \frac{\tan{\left(x \right)}}{2}\) en \([- \frac{1}{10},\frac{1}{5}]\).</p><p>Valor promedio: {1:NM:=-0.0252106957152884:2.52106957152884e-05}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=\frac{\log{\left(\cos{\left(x \right)} \right)}}{2}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: -0.0252106957152884</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-tan</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: poly-exp [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=x e^{- 2 x}\) en \([2,6]\).</p><p>Valor promedio: {1:NM:=0.005718644980192352:5.718644980192352e-06}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=\left(- \frac{x}{2} - \frac{1}{4}\right) e^{- 2 x}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: 0.005718644980192352</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-poly-exp</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: poly-exp [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=x^{4} e^{- 3 x}\) en \([1,5]\).</p><p>Valor promedio: {1:NM:=0.020108805020073995:2.0108805020073996e-05}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=\left(- \frac{x^{4}}{3} - \frac{4 x^{3}}{9} - \frac{4 x^{2}}{9} - \frac{8 x}{27} - \frac{8}{81}\right) e^{- 3 x}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: 0.020108805020073995</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-poly-exp</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: poly-exp [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=x^{4} e^{- x}\) en \([3,6]\).</p><p>Valor promedio: {1:NM:=4.241653953657127:0.004241653953657127}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=\left(- x^{4} - 4 x^{3} - 12 x^{2} - 24 x - 24\right) e^{- x}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: 4.241653953657127</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-poly-exp</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: exp-cos [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=e^{- x} \cos{\left(3 x \right)}\) en \([3,5]\).</p><p>Valor promedio: {1:NM:=-0.004432673317279197:4.432673317279197e-06}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=\frac{\left(3 \sin{\left(3 x \right)} - \cos{\left(3 x \right)}\right) e^{- x}}{10}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: -0.004432673317279197</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-exp-cos</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: exp-cos [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=e^{- 3 x} \cos{\left(2 x \right)}\) en \([1,4]\).</p><p>Valor promedio: {1:NM:=-0.003914970761930196:3.914970761930196e-06}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=\frac{\left(2 \sin{\left(2 x \right)} - 3 \cos{\left(2 x \right)}\right) e^{- 3 x}}{13}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: -0.003914970761930196</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-exp-cos</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: exp-cos [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=e^{- 3 x} \cos{\left(2 x \right)}\) en \([2,4]\).</p><p>Valor promedio: {1:NM:=-4.207578366154638e-05:4.207578366154638e-08}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=\frac{\left(2 \sin{\left(2 x \right)} - 3 \cos{\left(2 x \right)}\right) e^{- 3 x}}{13}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: -4.207578366154638e-05</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-exp-cos</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: sin-cos [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=1\) en \([2,3]\).</p><p>Valor promedio: {1:NM:=1.0:0.001}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=x\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: 1.0</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-sin-cos</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: sin-cos [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=\sin^{4}{\left(2 x \right)} \cos^{4}{\left(2 x \right)}\) en \([3,4]\).</p><p>Valor promedio: {1:NM:=0.018570429860123996:1.8570429860123998e-05}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=\frac{3 x}{128} - \frac{\sin^{3}{\left(4 x \right)} \cos{\left(4 x \right)}}{256} - \frac{3 \sin{\left(4 x \right)} \cos{\left(4 x \right)}}{512}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: 0.018570429860123996</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-sin-cos</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: sin-cos [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=\sin^{3}{\left(x \right)} \cos{\left(x \right)}\) en \([1,3]\).</p><p>Valor promedio: {1:NM:=-0.06262142051865514:6.262142051865514e-05}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=\frac{\sin^{4}{\left(x \right)}}{4}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: -0.06262142051865514</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-sin-cos</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: tan-sec [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=\tan^{2}{\left(4 x \right)} \sec^{2}{\left(4 x \right)}\) en \([- \frac{\pi}{16},\frac{\pi}{16}]\).</p><p>Valor promedio: {1:NM:=0.4244131815783876:0.0004244131815783876}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=- \frac{\sin{\left(4 x \right)}}{12 \cos{\left(4 x \right)}} + \frac{\sin{\left(4 x \right)}}{12 \cos^{3}{\left(4 x \right)}}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: 0.4244131815783876</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-tan-sec</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: tan-sec [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=\tan^{4}{\left(4 x \right)} \sec^{3}{\left(4 x \right)}\) en \([- \frac{\pi}{16},\frac{\pi}{16}]\).</p><p>Valor promedio: {1:NM:=0.33272974042155345:0.0003327297404215535}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=\frac{- 3 \sin^{5}{\left(4 x \right)} - 8 \sin^{3}{\left(4 x \right)} + 3 \sin{\left(4 x \right)}}{4 \left(48 \sin^{6}{\left(4 x \right)} - 144 \sin^{4}{\left(4 x \right)} + 144 \sin^{2}{\left(4 x \right)} - 48\right)} - \frac{\log{\left(\sin{\left(4 x \right)} - 1 \right)}}{128} + \frac{\log{\left(\sin{\left(4 x \right)} + 1 \right)}}{128}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: 0.33272974042155345</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-tan-sec</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Valor promedio: tan-sec [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre el valor promedio de \(f(x)=\tan^{2}{\left(2 x \right)} \sec^{4}{\left(2 x \right)}\) en \([- \frac{\pi}{8},\frac{\pi}{8}]\).</p><p>Valor promedio: {1:NM:=0.6790610905254201:0.0006790610905254201}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Una antiderivada es \(F(x)=- \frac{\sin{\left(2 x \right)}}{15 \cos{\left(2 x \right)}} - \frac{\sin{\left(2 x \right)}}{30 \cos^{3}{\left(2 x \right)}} + \frac{\sin{\left(2 x \right)}}{10 \cos^{5}{\left(2 x \right)}}\). El promedio es (F(b)−F(a))/(b−a).</p><p>Valor promedio: 0.6790610905254201</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>average-tan-sec</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Matemáticas/Fracciones parciales</text></category></question>
+<question type="cloze">
+<name><text>Fracciones parciales: distinct [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Determine los coeficientes en \(\frac{7 x^{2} + 70 x + 129}{x^{3} + 14 x^{2} + 31 x - 126}=\frac{A_{0}}{x - 2} + \frac{A_{1}}{x + 7} + \frac{A_{2}}{x + 9}\).</p><p>A_0: {1:NM:=3.0:0.003}</p><p>A_1: {1:NM:=1.0:0.001}</p><p>A_2: {1:NM:=3.0:0.003}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Multiplique por el denominador común e iguale los coeficientes del polinomio; compruebe recombinando las fracciones.</p><p>A_0: 3</p><p>A_1: 1</p><p>A_2: 3</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>partial-distinct</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Fracciones parciales: distinct [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Determine los coeficientes en \(\frac{4 x^{2} - x + 6}{x^{3} + x^{2} - 6 x}=\frac{A_{0}}{x} + \frac{A_{1}}{x + 3} + \frac{A_{2}}{x - 2}\).</p><p>A_0: {1:NM:=-1.0:0.001}</p><p>A_1: {1:NM:=3.0:0.003}</p><p>A_2: {1:NM:=2.0:0.002}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Multiplique por el denominador común e iguale los coeficientes del polinomio; compruebe recombinando las fracciones.</p><p>A_0: -1</p><p>A_1: 3</p><p>A_2: 2</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>partial-distinct</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Fracciones parciales: distinct [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Determine los coeficientes en \(\frac{5 x^{2} - 25 x - 34}{x^{3} - 2 x^{2} - 23 x + 60}=\frac{A_{0}}{x + 5} + \frac{A_{1}}{x - 3} + \frac{A_{2}}{x - 4}\).</p><p>A_0: {1:NM:=3.0:0.003}</p><p>A_1: {1:NM:=8.0:0.008}</p><p>A_2: {1:NM:=-6.0:0.006}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Multiplique por el denominador común e iguale los coeficientes del polinomio; compruebe recombinando las fracciones.</p><p>A_0: 3</p><p>A_1: 8</p><p>A_2: -6</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>partial-distinct</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Fracciones parciales: repeated [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Determine los coeficientes en \(\frac{3 x^{2} - 5 x - 8}{x^{3} - 6 x^{2} + 12 x - 8}=\frac{A_{0}}{x - 2} + \frac{A_{1}}{\left(x - 2\right)^{2}} + \frac{A_{2}}{\left(x - 2\right)^{3}}\).</p><p>A_0: {1:NM:=3.0:0.003}</p><p>A_1: {1:NM:=7.0:0.007}</p><p>A_2: {1:NM:=-6.0:0.006}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Multiplique por el denominador común e iguale los coeficientes del polinomio; compruebe recombinando las fracciones.</p><p>A_0: 3</p><p>A_1: 7</p><p>A_2: -6</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>partial-repeated</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Fracciones parciales: repeated [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Determine los coeficientes en \(\frac{- 2 x^{2} - 14 x - 27}{x^{3} + 6 x^{2} + 12 x + 8}=\frac{A_{0}}{x + 2} + \frac{A_{1}}{\left(x + 2\right)^{2}} + \frac{A_{2}}{\left(x + 2\right)^{3}}\).</p><p>A_0: {1:NM:=-2.0:0.002}</p><p>A_1: {1:NM:=-6.0:0.006}</p><p>A_2: {1:NM:=-7.0:0.007}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Multiplique por el denominador común e iguale los coeficientes del polinomio; compruebe recombinando las fracciones.</p><p>A_0: -2</p><p>A_1: -6</p><p>A_2: -7</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>partial-repeated</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Fracciones parciales: repeated [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Determine los coeficientes en \(\frac{2 x^{2} - 13 x + 16}{x^{3} - 9 x^{2} + 27 x - 27}=\frac{A_{0}}{x - 3} + \frac{A_{1}}{\left(x - 3\right)^{2}} + \frac{A_{2}}{\left(x - 3\right)^{3}}\).</p><p>A_0: {1:NM:=2.0:0.002}</p><p>A_1: {1:NM:=-1.0:0.001}</p><p>A_2: {1:NM:=-5.0:0.005}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Multiplique por el denominador común e iguale los coeficientes del polinomio; compruebe recombinando las fracciones.</p><p>A_0: 2</p><p>A_1: -1</p><p>A_2: -5</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>partial-repeated</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Fracciones parciales: quadratic [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Determine los coeficientes en \(\frac{- 5 x^{2} - 10 x + 57}{x^{3} + 5 x^{2} - 24 x + 108}=\frac{A_{0}}{x + 9} + \frac{A_{1} x + A_{2}}{\left(x - 2\right)^{2} + 8}\).</p><p>A_0: {1:NM:=-2.0:0.002}</p><p>A_1: {1:NM:=-3.0:0.003}</p><p>A_2: {1:NM:=9.0:0.009000000000000001}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Multiplique por el denominador común e iguale los coeficientes del polinomio; compruebe recombinando las fracciones.</p><p>A_0: -2</p><p>A_1: -3</p><p>A_2: 9</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>partial-quadratic</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Fracciones parciales: quadratic [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Determine los coeficientes en \(\frac{4 x^{2} + 95 x - 66}{x^{3} - x^{2} - 62 x + 252}=\frac{A_{0}}{x + 9} + \frac{A_{1} x + A_{2}}{\left(x - 5\right)^{2} + 3}\).</p><p>A_0: {1:NM:=-3.0:0.003}</p><p>A_1: {1:NM:=7.0:0.007}</p><p>A_2: {1:NM:=2.0:0.002}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Multiplique por el denominador común e iguale los coeficientes del polinomio; compruebe recombinando las fracciones.</p><p>A_0: -3</p><p>A_1: 7</p><p>A_2: 2</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>partial-quadratic</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Fracciones parciales: quadratic [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Determine los coeficientes en \(\frac{- 8 x^{2} - 6 x - 34}{x^{3} - 3 x^{2} - x - 45}=\frac{A_{0}}{x - 5} + \frac{A_{1} x + A_{2}}{\left(x + 1\right)^{2} + 8}\).</p><p>A_0: {1:NM:=-6.0:0.006}</p><p>A_1: {1:NM:=-2.0:0.002}</p><p>A_2: {1:NM:=-4.0:0.004}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Multiplique por el denominador común e iguale los coeficientes del polinomio; compruebe recombinando las fracciones.</p><p>A_0: -6</p><p>A_1: -2</p><p>A_2: -4</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>partial-quadratic</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Matemáticas/Laplace</text></category></question>
+<question type="cloze">
+<name><text>Laplace inversa: poly-exp [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre la transformada inversa de Laplace de \(F(s)=\frac{2}{\left(s + 1\right)^{2}}\) y evalúe f(2.0).</p><p>f en el punto indicado: {1:NM:=0.5413411329464508:0.0005413411329464508}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Usando el desplazamiento en s: \(f(x)=2 x e^{- x}\).</p><p>f en el punto indicado: 0.5413411329464508</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>laplace-poly-exp</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Laplace inversa: poly-exp [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre la transformada inversa de Laplace de \(F(s)=\frac{24}{\left(s - 2\right)^{5}}\) y evalúe f(0.4).</p><p>f en el punto indicado: {1:NM:=0.056973847769407185:5.6973847769407184e-05}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Usando el desplazamiento en s: \(f(x)=x^{4} e^{2 x}\).</p><p>f en el punto indicado: 0.056973847769407185</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>laplace-poly-exp</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Laplace inversa: poly-exp [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre la transformada inversa de Laplace de \(F(s)=\frac{8}{\left(s + 1\right)^{3}}\) y evalúe f(0.6).</p><p>f en el punto indicado: {1:NM:=0.7902887559753979:0.0007902887559753979}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Usando el desplazamiento en s: \(f(x)=4 x^{2} e^{- x}\).</p><p>f en el punto indicado: 0.7902887559753979</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>laplace-poly-exp</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Laplace inversa: damped-trig [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre la transformada inversa de Laplace de \(F(s)=\frac{3 s + 5}{\left(s + 1\right)^{2} + 1}\) y evalúe f(0.8).</p><p>f en el punto indicado: {1:NM:=1.5838092504675638:0.0015838092504675638}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Usando el desplazamiento en s: \(f(x)=\left(2 \sin{\left(x \right)} + 3 \cos{\left(x \right)}\right) e^{- x}\).</p><p>f en el punto indicado: 1.5838092504675638</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>laplace-damped-trig</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Laplace inversa: damped-trig [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre la transformada inversa de Laplace de \(F(s)=\frac{2 s}{\left(s - 2\right)^{2} + 4}\) y evalúe f(1.1).</p><p>f en el punto indicado: {1:NM:=3.9709208621083656:0.003970920862108366}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Usando el desplazamiento en s: \(f(x)=\left(2 \sin{\left(2 x \right)} + 2 \cos{\left(2 x \right)}\right) e^{2 x}\).</p><p>f en el punto indicado: 3.9709208621083656</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>laplace-damped-trig</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Laplace inversa: damped-trig [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Encuentre la transformada inversa de Laplace de \(F(s)=\frac{5 s - 14}{\left(s - 2\right)^{2} + 16}\) y evalúe f(1.8).</p><p>f en el punto indicado: {1:NM:=82.27607761529129:0.0822760776152913}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Usando el desplazamiento en s: \(f(x)=\left(- \sin{\left(4 x \right)} + 5 \cos{\left(4 x \right)}\right) e^{2 x}\).</p><p>f en el punto indicado: 82.27607761529129</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>laplace-damped-trig</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Estadística/Hipótesis</text></category></question>
+<question type="cloze">
+<name><text>Prueba Z: cola izquierda [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Para una población normal con desviación estándar conocida σ=18, pruebe H₀: μ=131 frente a H₁: μ &lt; 131. Tiene n=60, media muestral=132.5094 y α=0.1. Responda 'rechaza' o 'no se rechaza'.</p><p>Z: {1:NM:=0.6495423403072748:0.0006495423403072748}</p><p>Valor p: {1:NM:=0.7420060557808482:0.0007420060557808483}</p><p>Decisión sobre H₀: {1:SHORTANSWER:=no se rechaza}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Z = (media−μ₀)/(σ/√n). Use la cola izquierda de la distribución normal. Rechace H₀ si p≤α; de otro modo, no se rechaza.</p><p>Z: 0.6495423403072748</p><p>Valor p: 0.7420060557808482</p><p>Decisión sobre H₀: no se rechaza</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>normal-left</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Prueba Z: cola izquierda [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Para una población normal con desviación estándar conocida σ=19, pruebe H₀: μ=60 frente a H₁: μ &lt; 60. Tiene n=169, media muestral=62.956 y α=0.05. Responda 'rechaza' o 'no se rechaza'.</p><p>Z: {1:NM:=2.022526315789476:0.002022526315789476}</p><p>Valor p: {1:NM:=0.9784389961166535:0.0009784389961166534}</p><p>Decisión sobre H₀: {1:SHORTANSWER:=no se rechaza}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Z = (media−μ₀)/(σ/√n). Use la cola izquierda de la distribución normal. Rechace H₀ si p≤α; de otro modo, no se rechaza.</p><p>Z: 2.022526315789476</p><p>Valor p: 0.9784389961166535</p><p>Decisión sobre H₀: no se rechaza</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>normal-left</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Prueba Z: cola izquierda [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Para una población normal con desviación estándar conocida σ=27, pruebe H₀: μ=122 frente a H₁: μ &lt; 122. Tiene n=44, media muestral=122.4392 y α=0.1. Responda 'rechaza' o 'no se rechaza'.</p><p>Z: {1:NM:=0.10790085984622891:0.0001079008598462289}</p><p>Valor p: {1:NM:=0.542962832476533:0.000542962832476533}</p><p>Decisión sobre H₀: {1:SHORTANSWER:=no se rechaza}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Z = (media−μ₀)/(σ/√n). Use la cola izquierda de la distribución normal. Rechace H₀ si p≤α; de otro modo, no se rechaza.</p><p>Z: 0.10790085984622891</p><p>Valor p: 0.542962832476533</p><p>Decisión sobre H₀: no se rechaza</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>normal-left</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Prueba Z: cola derecha [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Para una población normal con desviación estándar conocida σ=8, pruebe H₀: μ=180 frente a H₁: μ &gt; 180. Tiene n=40, media muestral=178.4114 y α=0.05. Responda 'rechaza' o 'no se rechaza'.</p><p>Z: {1:NM:=-1.2558985727358827:0.0012558985727358827}</p><p>Valor p: {1:NM:=0.8954236269423722:0.0008954236269423723}</p><p>Decisión sobre H₀: {1:SHORTANSWER:=no se rechaza}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Z = (media−μ₀)/(σ/√n). Use la cola derecha de la distribución normal. Rechace H₀ si p≤α; de otro modo, no se rechaza.</p><p>Z: -1.2558985727358827</p><p>Valor p: 0.8954236269423722</p><p>Decisión sobre H₀: no se rechaza</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>normal-right</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Prueba Z: cola derecha [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Para una población normal con desviación estándar conocida σ=14, pruebe H₀: μ=159 frente a H₁: μ &gt; 159. Tiene n=85, media muestral=159.6434 y α=0.01. Responda 'rechaza' o 'no se rechaza'.</p><p>Z: {1:NM:=0.42370392170159804:0.00042370392170159807}</p><p>Valor p: {1:NM:=0.3358908773735498:0.0003358908773735498}</p><p>Decisión sobre H₀: {1:SHORTANSWER:=no se rechaza}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Z = (media−μ₀)/(σ/√n). Use la cola derecha de la distribución normal. Rechace H₀ si p≤α; de otro modo, no se rechaza.</p><p>Z: 0.42370392170159804</p><p>Valor p: 0.3358908773735498</p><p>Decisión sobre H₀: no se rechaza</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>normal-right</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Prueba Z: cola derecha [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Para una población normal con desviación estándar conocida σ=20, pruebe H₀: μ=51 frente a H₁: μ &gt; 51. Tiene n=64, media muestral=52.0631 y α=0.05. Responda 'rechaza' o 'no se rechaza'.</p><p>Z: {1:NM:=0.42523999999999945:0.00042523999999999947}</p><p>Valor p: {1:NM:=0.3353308637835166:0.0003353308637835166}</p><p>Decisión sobre H₀: {1:SHORTANSWER:=no se rechaza}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Z = (media−μ₀)/(σ/√n). Use la cola derecha de la distribución normal. Rechace H₀ si p≤α; de otro modo, no se rechaza.</p><p>Z: 0.42523999999999945</p><p>Valor p: 0.3353308637835166</p><p>Decisión sobre H₀: no se rechaza</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>normal-right</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Estadística/Independencia</text></category></question>
+<question type="cloze">
+<name><text>Independencia chi-cuadrado [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Pruebe si grupo y materia son independientes con α=0.1. Use la prueba chi-cuadrado sin corrección de continuidad. Responda 'rechaza' o 'no se rechaza'.</p><table><tr><th>Matemáticas</th><th>Artes</th><th>Comercio</th></tr><tr><td>34</td><td>33</td><td>27</td></tr><tr><td>33</td><td>34</td><td>33</td></tr></table><p>χ²: {1:NM:=0.44470911400444535:0.00044470911400444537}</p><p>Valor p: {1:NM:=0.8006314445199001:0.0008006314445199002}</p><p>Decisión sobre H₀: {1:SHORTANSWER:=no se rechaza}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Eᵢⱼ = total fila × total columna / total. χ² = Σ(O−E)²/E. Grados de libertad = (2−1)(3−1)=2. Use la cola derecha de χ²₂.</p><p>χ²: 0.44470911400444535</p><p>Valor p: 0.8006314445199001</p><p>Decisión sobre H₀: no se rechaza</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>chi-square</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Independencia chi-cuadrado [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Pruebe si grupo y materia son independientes con α=0.05. Use la prueba chi-cuadrado sin corrección de continuidad. Responda 'rechaza' o 'no se rechaza'.</p><table><tr><th>Matemáticas</th><th>Artes</th><th>Comercio</th></tr><tr><td>24</td><td>39</td><td>30</td></tr><tr><td>26</td><td>33</td><td>25</td></tr></table><p>χ²: {1:NM:=0.5784138039379977:0.0005784138039379977}</p><p>Valor p: {1:NM:=0.7488572493334781:0.0007488572493334781}</p><p>Decisión sobre H₀: {1:SHORTANSWER:=no se rechaza}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Eᵢⱼ = total fila × total columna / total. χ² = Σ(O−E)²/E. Grados de libertad = (2−1)(3−1)=2. Use la cola derecha de χ²₂.</p><p>χ²: 0.5784138039379977</p><p>Valor p: 0.7488572493334781</p><p>Decisión sobre H₀: no se rechaza</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>chi-square</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Independencia chi-cuadrado [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Pruebe si grupo y materia son independientes con α=0.1. Use la prueba chi-cuadrado sin corrección de continuidad. Responda 'rechaza' o 'no se rechaza'.</p><table><tr><th>Matemáticas</th><th>Artes</th><th>Comercio</th></tr><tr><td>25</td><td>29</td><td>33</td></tr><tr><td>36</td><td>34</td><td>27</td></tr></table><p>χ²: {1:NM:=2.444173013433997:0.0024441730134339974}</p><p>Valor p: {1:NM:=0.29461480939472284:0.00029461480939472286}</p><p>Decisión sobre H₀: {1:SHORTANSWER:=no se rechaza}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Eᵢⱼ = total fila × total columna / total. χ² = Σ(O−E)²/E. Grados de libertad = (2−1)(3−1)=2. Use la cola derecha de χ²₂.</p><p>χ²: 2.444173013433997</p><p>Valor p: 0.29461480939472284</p><p>Decisión sobre H₀: no se rechaza</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>chi-square</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Independencia con asociación [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Pruebe si grupo y materia son independientes con α=0.01. Use la prueba chi-cuadrado sin corrección de continuidad. Responda 'rechaza' o 'no se rechaza'.</p><table><tr><th>Matemáticas</th><th>Artes</th><th>Comercio</th></tr><tr><td>40</td><td>34</td><td>52</td></tr><tr><td>27</td><td>63</td><td>43</td></tr></table><p>χ²: {1:NM:=11.864600160329605:0.011864600160329605}</p><p>Valor p: {1:NM:=0.00265237429387211:2.6523742938721102e-06}</p><p>Decisión sobre H₀: {1:SHORTANSWER:=rechaza}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Eᵢⱼ = total fila × total columna / total. χ² = Σ(O−E)²/E. Grados de libertad = (2−1)(3−1)=2. Use la cola derecha de χ²₂.</p><p>χ²: 11.864600160329605</p><p>Valor p: 0.00265237429387211</p><p>Decisión sobre H₀: rechaza</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>chi-square-biased</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Independencia con asociación [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Pruebe si grupo y materia son independientes con α=0.1. Use la prueba chi-cuadrado sin corrección de continuidad. Responda 'rechaza' o 'no se rechaza'.</p><table><tr><th>Matemáticas</th><th>Artes</th><th>Comercio</th></tr><tr><td>49</td><td>26</td><td>47</td></tr><tr><td>26</td><td>44</td><td>49</td></tr></table><p>χ²: {1:NM:=11.688038161986105:0.011688038161986105}</p><p>Valor p: {1:NM:=0.0028971752135461565:2.8971752135461564e-06}</p><p>Decisión sobre H₀: {1:SHORTANSWER:=rechaza}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Eᵢⱼ = total fila × total columna / total. χ² = Σ(O−E)²/E. Grados de libertad = (2−1)(3−1)=2. Use la cola derecha de χ²₂.</p><p>χ²: 11.688038161986105</p><p>Valor p: 0.0028971752135461565</p><p>Decisión sobre H₀: rechaza</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>chi-square-biased</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Independencia con asociación [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Pruebe si grupo y materia son independientes con α=0.1. Use la prueba chi-cuadrado sin corrección de continuidad. Responda 'rechaza' o 'no se rechaza'.</p><table><tr><th>Matemáticas</th><th>Artes</th><th>Comercio</th></tr><tr><td>54</td><td>40</td><td>44</td></tr><tr><td>34</td><td>58</td><td>44</td></tr></table><p>χ²: {1:NM:=7.837396025603917:0.007837396025603918}</p><p>Valor p: {1:NM:=0.019866944420044344:1.9866944420044345e-05}</p><p>Decisión sobre H₀: {1:SHORTANSWER:=rechaza}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Eᵢⱼ = total fila × total columna / total. χ² = Σ(O−E)²/E. Grados de libertad = (2−1)(3−1)=2. Use la cola derecha de χ²₂.</p><p>χ²: 7.837396025603917</p><p>Valor p: 0.019866944420044344</p><p>Decisión sobre H₀: rechaza</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>chi-square-biased</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Estadística/Probabilidad</text></category></question>
+<question type="cloze">
+<name><text>Momentos de distribución conjunta [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>P(X=x,Y=y)=c(5x²+3y²+8xy+7x+7y+1), para x entero en [1,3] y y entero en [2,6]; cero fuera de estos intervalos. Calcule la normalización y los momentos.</p><p>c: {1:NM:=0.0003616636528028933:3.616636528028933e-07}</p><p>E(X): {1:NM:=2.213381555153707:0.0022133815551537072}</p><p>E(Y): {1:NM:=4.509945750452079:0.004509945750452079}</p><p>E(XY): {1:NM:=9.93128390596745:0.00993128390596745}</p><p>E(X²): {1:NM:=5.526220614828209:0.005526220614828209}</p><p>E(Y²): {1:NM:=22.125135623869802:0.022125135623869804}</p><p>Var(X): {1:NM:=0.6271627061335671:0.0006271627061335671}</p><p>Var(Y): {1:NM:=1.78552495184903:0.00178552495184903}</p><p>Cov(X,Y): {1:NM:=-0.05094683282702603:5.094683282702603e-05}</p><p>σX: {1:NM:=0.7919360492701207:0.0007919360492701208}</p><p>σY: {1:NM:=1.3362353654386752:0.0013362353654386753}</p><p>ρ: {1:NM:=-0.048144215706778896:4.81442157067789e-05}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>La suma de pesos es 2765.0. Normalice para sumar uno, calcule E(h)=Σh(x,y)p(x,y), y use Var(X)=E(X²)−E(X)² y ρ=Cov(X,Y)/(σXσY).</p><p>c: 0.0003616636528028933</p><p>E(X): 2.213381555153707</p><p>E(Y): 4.509945750452079</p><p>E(XY): 9.93128390596745</p><p>E(X²): 5.526220614828209</p><p>E(Y²): 22.125135623869802</p><p>Var(X): 0.6271627061335671</p><p>Var(Y): 1.78552495184903</p><p>Cov(X,Y): -0.05094683282702603</p><p>σX: 0.7919360492701207</p><p>σY: 1.3362353654386752</p><p>ρ: -0.048144215706778896</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>discrete-moments</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Momentos de distribución conjunta [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>P(X=x,Y=y)=c(0x²+8y²+7xy+7x+4y+3), para x entero en [3,5] y y entero en [2,6]; cero fuera de estos intervalos. Calcule la normalización y los momentos.</p><p>c: {1:NM:=0.00022002200220022002:2.2002200220022002e-07}</p><p>E(X): {1:NM:=4.077007700770077:0.004077007700770077}</p><p>E(Y): {1:NM:=4.633663366336633:0.0046336633663366334}</p><p>E(XY): {1:NM:=18.873487348734873:0.018873487348734872}</p><p>E(X²): {1:NM:=17.282728272827285:0.017282728272827286}</p><p>E(Y²): {1:NM:=23.143234323432342:0.023143234323432342}</p><p>Var(X): {1:NM:=0.6607364806887729:0.000660736480688773}</p><p>Var(Y): {1:NM:=1.6723981309021991:0.001672398130902199}</p><p>Cov(X,Y): {1:NM:=-0.017993878595780416:1.7993878595780417e-05}</p><p>σX: {1:NM:=0.8128569866149721:0.000812856986614972}</p><p>σY: {1:NM:=1.2932123301694116:0.0012932123301694117}</p><p>ρ: {1:NM:=-0.017117518516337096:1.7117518516337098e-05}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>La suma de pesos es 4545.0. Normalice para sumar uno, calcule E(h)=Σh(x,y)p(x,y), y use Var(X)=E(X²)−E(X)² y ρ=Cov(X,Y)/(σXσY).</p><p>c: 0.00022002200220022002</p><p>E(X): 4.077007700770077</p><p>E(Y): 4.633663366336633</p><p>E(XY): 18.873487348734873</p><p>E(X²): 17.282728272827285</p><p>E(Y²): 23.143234323432342</p><p>Var(X): 0.6607364806887729</p><p>Var(Y): 1.6723981309021991</p><p>Cov(X,Y): -0.017993878595780416</p><p>σX: 0.8128569866149721</p><p>σY: 1.2932123301694116</p><p>ρ: -0.017117518516337096</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>discrete-moments</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Momentos de distribución conjunta [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>P(X=x,Y=y)=c(2x²+8y²+8xy+1x+6y+2), para x entero en [2,6] y y entero en [2,6]; cero fuera de estos intervalos. Calcule la normalización y los momentos.</p><p>c: {1:NM:=0.00011834319526627219:1.1834319526627219e-07}</p><p>E(X): {1:NM:=4.289940828402367:0.004289940828402367}</p><p>E(Y): {1:NM:=4.603550295857988:0.004603550295857988}</p><p>E(XY): {1:NM:=19.668639053254438:0.019668639053254437}</p><p>E(X²): {1:NM:=20.336094674556215:0.020336094674556215}</p><p>E(Y²): {1:NM:=22.89467455621302:0.02289467455621302}</p><p>Var(X): {1:NM:=1.9325023633626273:0.0019325023633626273}</p><p>Var(Y): {1:NM:=1.7019992297188475:0.0017019992297188475}</p><p>Cov(X,Y): {1:NM:=-0.08031931655054098:8.031931655054098e-05}</p><p>σX: {1:NM:=1.390144727487979:0.001390144727487979}</p><p>σY: {1:NM:=1.3046069253682688:0.0013046069253682688}</p><p>ρ: {1:NM:=-0.044287412560079696:4.42874125600797e-05}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>La suma de pesos es 8450.0. Normalice para sumar uno, calcule E(h)=Σh(x,y)p(x,y), y use Var(X)=E(X²)−E(X)² y ρ=Cov(X,Y)/(σXσY).</p><p>c: 0.00011834319526627219</p><p>E(X): 4.289940828402367</p><p>E(Y): 4.603550295857988</p><p>E(XY): 19.668639053254438</p><p>E(X²): 20.336094674556215</p><p>E(Y²): 22.89467455621302</p><p>Var(X): 1.9325023633626273</p><p>Var(Y): 1.7019992297188475</p><p>Cov(X,Y): -0.08031931655054098</p><p>σX: 1.390144727487979</p><p>σY: 1.3046069253682688</p><p>ρ: -0.044287412560079696</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>discrete-moments</text></tag>
+</tags>
+</question>
+<question type="category"><category><text>$course$/Estadística/Correlación</text></category></question>
+<question type="cloze">
+<name><text>Matriz de correlación [001]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Calcule las correlaciones de Pearson entre las columnas de la tabla.</p><table><tr><th>X₁</th><th>X₂</th><th>X₃</th></tr><tr><td>5</td><td>59</td><td>41</td></tr><tr><td>7</td><td>16</td><td>12</td></tr><tr><td>43</td><td>57</td><td>82</td></tr><tr><td>33</td><td>33</td><td>24</td></tr><tr><td>79</td><td>50</td><td>61</td></tr><tr><td>66</td><td>72</td><td>70</td></tr><tr><td>52</td><td>83</td><td>81</td></tr><tr><td>55</td><td>64</td><td>78</td></tr></table><p>r12: {1:NM:=0.5158500910777314:0.0005158500910777314}</p><p>r13: {1:NM:=0.687986662755168:0.0006879866627551679}</p><p>r23: {1:NM:=0.8646567699329195:0.0008646567699329195}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Centre cada columna y divida la suma de productos por la raíz del producto de las sumas de cuadrados. La matriz es simétrica con diagonal igual a uno.</p><p>r12: 0.5158500910777314</p><p>r13: 0.687986662755168</p><p>r23: 0.8646567699329195</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>correlation</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Matriz de correlación [002]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Calcule las correlaciones de Pearson entre las columnas de la tabla.</p><table><tr><th>X₁</th><th>X₂</th><th>X₃</th></tr><tr><td>4</td><td>9</td><td>22</td></tr><tr><td>13</td><td>68</td><td>62</td></tr><tr><td>38</td><td>49</td><td>95</td></tr><tr><td>61</td><td>46</td><td>51</td></tr><tr><td>72</td><td>79</td><td>14</td></tr><tr><td>43</td><td>96</td><td>67</td></tr><tr><td>38</td><td>24</td><td>36</td></tr><tr><td>90</td><td>68</td><td>39</td></tr></table><p>r12: {1:NM:=0.47147025608622234:0.00047147025608622236}</p><p>r13: {1:NM:=-0.17726642116951133:0.00017726642116951133}</p><p>r23: {1:NM:=0.24340238120607172:0.0002434023812060717}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Centre cada columna y divida la suma de productos por la raíz del producto de las sumas de cuadrados. La matriz es simétrica con diagonal igual a uno.</p><p>r12: 0.47147025608622234</p><p>r13: -0.17726642116951133</p><p>r23: 0.24340238120607172</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>correlation</text></tag>
+</tags>
+</question>
+<question type="cloze">
+<name><text>Matriz de correlación [003]</text></name>
+<questiontext format="html">
+<text>
+<![CDATA[
+
+        
+        <p>Calcule las correlaciones de Pearson entre las columnas de la tabla.</p><table><tr><th>X₁</th><th>X₂</th><th>X₃</th></tr><tr><td>65</td><td>98</td><td>26</td></tr><tr><td>91</td><td>82</td><td>76</td></tr><tr><td>75</td><td>67</td><td>33</td></tr><tr><td>12</td><td>90</td><td>75</td></tr><tr><td>83</td><td>65</td><td>98</td></tr><tr><td>63</td><td>98</td><td>63</td></tr><tr><td>22</td><td>94</td><td>31</td></tr><tr><td>55</td><td>55</td><td>47</td></tr></table><p>r12: {1:NM:=-0.3674624604548009:0.0003674624604548009}</p><p>r13: {1:NM:=0.23521349558156684:0.00023521349558156684}</p><p>r23: {1:NM:=-0.21120421862073552:0.00021120421862073552}</p>
+        
+]]>
+</text></questiontext>
+
+<generalfeedback format="html">
+<text>
+<![CDATA[
+<p>Centre cada columna y divida la suma de productos por la raíz del producto de las sumas de cuadrados. La matriz es simétrica con diagonal igual a uno.</p><p>r12: -0.3674624604548009</p><p>r13: 0.23521349558156684</p><p>r23: -0.21120421862073552</p>
+]]>
+</text></generalfeedback>
+
+<penalty>0.5</penalty><hidden>0</hidden>
+<tags>
+<tag><text>correlation</text></tag>
+</tags>
+</question>
+</quiz>
