@@ -40,8 +40,10 @@ The full example produces 40 questions with topic categories. Each bundle includ
 
 The preview contains teacher answers. XML and preview use the same saved questions;
 export does not resample. Local checks validate supported syntax and XML structure,
-not educational suitability or mathematical truth. A successful live Moodle import
-requires the [manual checklist](docs/moodle-import-checklist.md).
+not educational suitability or mathematical truth. CI also imports a generated bank
+into real Moodle instances (4.5 LTS and 5.0–5.2) and checks Moodle's Cloze grader.
+The [manual checklist](docs/moodle-import-checklist.md) covers the web-interface path
+and remains useful for checking a specific Moodle installation.
 
 ## Python interface
 

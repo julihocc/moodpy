@@ -16,7 +16,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Moodle category/tag export, matching teacher preview, source/version/hash manifest,
   regeneration instructions, and reproducible ZIP bundles with overwrite protection.
 - Deterministic regressions, installed-wheel CI across Python 3.8–3.14, and publishing
-  gates for tests and bank smoke checks. Live Moodle import remains a manual check.
+  gates for tests, bank smoke checks, and Moodle's own importer/grader on 4.5 LTS and
+  Moodle 5.0–5.2. Manual import checks still cover the Moodle web interface.
 
 ### Fixed
 

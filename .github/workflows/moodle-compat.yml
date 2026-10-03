@@ -1,0 +1,119 @@
+name: Moodle import compatibility
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  moodle-import:
+    name: Moodle ${{ matrix.version }} Moodle XML import and grading
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - version: "4.5 LTS"
+            branch: MOODLE_405_STABLE
+          - version: "5.0"
+            branch: MOODLE_500_STABLE
+          - version: "5.1"
+            branch: MOODLE_501_STABLE
+          - version: "5.2"
+            branch: MOODLE_502_STABLE
+    env:
+      MOODLE_DOCKER_WWWROOT: ${{ github.workspace }}/moodle
+      MOODLE_DOCKER_DB: pgsql
+      MOODLE_DOCKER_DB_VERSION: "15"
+      MOODLE_DOCKER_PHP_VERSION: "8.3"
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Generate the reviewed recipe bundle
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install .
+          python examples/agent_workflow/author_bank.py \
+            --seed 42 --samples 2 --output "$RUNNER_TEMP/moodpy-bank"
+
+      - name: Check out Moodle ${{ matrix.version }}
+        uses: actions/checkout@v4
+        with:
+          repository: moodle/moodle
+          ref: ${{ matrix.branch }}
+          path: moodle
+          fetch-depth: 1
+
+      - name: Check out Moodle's Docker test environment
+        uses: actions/checkout@v4
+        with:
+          repository: moodlehq/moodle-docker
+          ref: main
+          path: moodle-docker
+          fetch-depth: 1
+
+      - name: Prepare Moodle fixture and test plugin
+        run: |
+          cp moodle-docker/config.docker-template.php moodle/config.php
+          if [ -d moodle/public ]; then
+            plugin_root=moodle/public/local/moodpycompat
+          else
+            plugin_root=moodle/local/moodpycompat
+          fi
+          mkdir -p "$plugin_root/tests/fixtures"
+          cp -R .github/moodle/local_moodpycompat/. "$plugin_root/"
+          cp "$RUNNER_TEMP/moodpy-bank/bank.xml" "$plugin_root/tests/fixtures/bank.xml"
+          cp "$RUNNER_TEMP/moodpy-bank/manifest.json" "$plugin_root/tests/fixtures/manifest.json"
+
+      - name: Install Moodle PHPUnit dependencies
+        run: |
+          docker run --rm \
+            --volume "$MOODLE_DOCKER_WWWROOT:/app" \
+            --workdir /app \
+            composer:2 install --no-interaction --prefer-dist --no-progress \
+              --ignore-platform-reqs
+
+      - name: Start the real Moodle and database services
+        working-directory: moodle-docker
+        run: |
+          ./bin/moodle-docker-compose up -d
+          ./bin/moodle-docker-wait-for-db
+
+      - name: Import the bank and grade Cloze answers with Moodle
+        working-directory: moodle-docker
+        run: |
+          ./bin/moodle-docker-compose exec -T -w /var/www/html webserver sh -ec '
+            if [ -d public ]; then publicprefix=public/; else publicprefix=; fi
+            php "${publicprefix}admin/cli/install_database.php" \
+              --agree-license --fullname="MoodPy compatibility" \
+              --shortname="moodpycompat" --summary="Disposable CI test site" \
+              --adminpass="test" --adminemail="admin@example.com"
+            php "${publicprefix}admin/tool/phpunit/cli/init.php"
+            vendor/bin/phpunit \
+              --log-junit=moodpy-moodle-compat-junit.xml \
+              "${publicprefix}local/moodpycompat/tests/import_test.php"
+          '
+
+      - name: Upload Moodle import report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: moodle-${{ matrix.version }}-import-report
+          path: moodle/moodpy-moodle-compat-junit.xml
+          if-no-files-found: ignore
+
+      - name: Stop Moodle services
+        if: always()
+        working-directory: moodle-docker
+        run: ./bin/moodle-docker-compose down -v
