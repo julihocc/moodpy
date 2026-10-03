@@ -65,20 +65,29 @@ final class import_test extends \advanced_testcase {
         $records = $DB->get_records_list('question', 'id', $questionids);
         $this->assertCount($expectedcount, $records);
 
-        $categorynames = [];
         $expectedcategorycounts = [];
-        $expectedtags = [];
+        $families = [];
+        $snapshots = [];
         foreach ($manifest['families'] as $family) {
-            $path = explode('/', $family['category']);
-            $categoryname = end($path);
-            $categorynames[] = $categoryname;
-            $expectedcategorycounts[$categoryname] = ($expectedcategorycounts[$categoryname] ?? 0)
+            $families[$family['id']] = $family;
+            $expectedcategorycounts[$family['category']] = ($expectedcategorycounts[$family['category']] ?? 0)
                 + $family['count'];
-            $expectedtags = array_merge($expectedtags, $family['tags']);
+        }
+        foreach ($manifest['questions'] as $snapshot) {
+            $family = $families[$snapshot['family_id']];
+            $name = sprintf('%s [%03d]', $family['title'], $snapshot['variant']);
+            $snapshots[$name] = $snapshot;
+        }
+        $xml = simplexml_load_file($fixture . '/bank.xml');
+        $this->assertNotFalse($xml);
+        $feedback = [];
+        foreach ($xml->question as $xmlquestion) {
+            if ((string) $xmlquestion['type'] === 'cloze') {
+                $feedback[(string) $xmlquestion->name->text] = trim((string) $xmlquestion->generalfeedback->text);
+            }
         }
         ksort($expectedcategorycounts);
         $actualcategorycounts = [];
-        $actualtags = [];
         $sawnumerical = false;
         $sawshortanswer = false;
         $sawtolerance = false;
@@ -87,17 +96,32 @@ final class import_test extends \advanced_testcase {
         foreach ($questionids as $questionid) {
             $record = $records[$questionid];
             $this->assertSame('multianswer', $record->qtype);
+            $this->assertArrayHasKey($record->name, $snapshots, 'Moodle changed or duplicated a question name.');
+            $snapshot = $snapshots[$record->name];
+            unset($snapshots[$record->name]);
+            $family = $families[$snapshot['family_id']];
             $this->assertNotEmpty($record->generalfeedback, 'Imported teacher feedback must be present.');
+            $this->assertSame($feedback[$record->name], trim($record->generalfeedback), 'Moodle changed the exported feedback.');
 
-            $questioncategory = $DB->get_record(
-                'question_categories',
-                ['id' => $record->category],
-                '*',
+            // Since Moodle 4.0, categories belong to bank entries, not to question rows.
+            $questioncategory = $DB->get_record_sql(
+                'SELECT qc.*
+                   FROM {question_categories} qc
+                   JOIN {question_bank_entries} qbe ON qbe.questioncategoryid = qc.id
+                   JOIN {question_versions} qv ON qv.questionbankentryid = qbe.id
+                  WHERE qv.questionid = :questionid',
+                ['questionid' => $questionid],
                 MUST_EXIST
             );
-            $this->assertContains($questioncategory->name, $categorynames);
-            $actualcategorycounts[$questioncategory->name] =
-                ($actualcategorycounts[$questioncategory->name] ?? 0) + 1;
+            $this->assertSame((int) $modulecontext->id, (int) $questioncategory->contextid);
+            $path = [];
+            while ((int) $questioncategory->parent !== 0) {
+                array_unshift($path, $questioncategory->name);
+                $questioncategory = $DB->get_record('question_categories', ['id' => $questioncategory->parent], '*', MUST_EXIST);
+            }
+            $categorypath = implode('/', $path);
+            $this->assertSame($family['category'], $categorypath);
+            $actualcategorycounts[$categorypath] = ($actualcategorycounts[$categorypath] ?? 0) + 1;
 
             $tags = $DB->get_fieldset_sql(
                 'SELECT t.rawname
@@ -108,11 +132,13 @@ final class import_test extends \advanced_testcase {
                     AND ti.itemid = :itemid',
                 ['component' => 'core_question', 'itemtype' => 'question', 'itemid' => $questionid]
             );
-            $actualtags = array_merge($actualtags, $tags);
+            foreach ($family['tags'] as $tag) {
+                $this->assertContains($tag, $tags, 'Moodle did not import this question\'s tag.');
+            }
 
             $question = \question_bank::load_question($questionid);
             $this->assertInstanceOf(\qtype_multianswer_question::class, $question);
-            $this->assertNotEmpty($question->subquestions, 'Moodle must load each embedded answer field.');
+            $this->assertCount(1, $question->subquestions, 'Each verified recipe exports one answer field.');
 
             foreach ($question->subquestions as $subquestion) {
                 $type = $subquestion->qtype->name();
@@ -121,10 +147,32 @@ final class import_test extends \advanced_testcase {
                 $sawshortanswer = $sawshortanswer || $type === 'shortanswer';
             }
 
-            $correct = $question->get_correct_response();
-            $this->assertNotEmpty($correct);
+            // Compute expected responses independently from sampled inputs. Asking
+            // Moodle to grade its own stored answer alone could hide recipe errors.
+            $parameters = $snapshot['parameters'];
+            switch ($snapshot['family_id']) {
+                case 'addition':
+                    $expectedanswer = $parameters['a'] + $parameters['b'];
+                    break;
+                case 'linear':
+                    $this->assertNotEquals(0, $parameters['a']);
+                    $expectedanswer = ($parameters['c'] - $parameters['b']) / $parameters['a'];
+                    break;
+                case 'compound':
+                    $expectedanswer = round($parameters['P'] * (1 + $parameters['rate_percent'] / 100) ** $parameters['years'], 2);
+                    break;
+                case 'sign':
+                    $expectedanswer = $parameters['n'] > 0 ? 'positive' : ($parameters['n'] < 0 ? 'negative' : 'zero');
+                    break;
+                default:
+                    $this->fail('Add an independent grading expectation for family ' . $snapshot['family_id']);
+            }
+            $correct = [];
+            foreach ($question->subquestions as $index => $subquestion) {
+                $correct['sub' . $index . '_answer'] = (string) $expectedanswer;
+            }
             [$fraction] = $question->grade_response($correct);
-            $this->assertEqualsWithDelta(1.0, (float) $fraction, 1.0e-9, 'Moodle rejected its stored correct response.');
+            $this->assertEqualsWithDelta(1.0, (float) $fraction, 1.0e-9, 'Moodle rejected the independently calculated answer for ' . $record->name);
 
             $wrong = array_fill_keys(array_keys($correct), 'moodpy definitely incorrect');
             [$wrongfraction] = $question->grade_response($wrong);
@@ -132,7 +180,7 @@ final class import_test extends \advanced_testcase {
 
             foreach ($question->subquestions as $index => $subquestion) {
                 if ($subquestion instanceof \qtype_shortanswer_question) {
-                    $shortanswer = $subquestion->get_correct_response()['answer'] ?? '';
+                    $shortanswer = (string) $expectedanswer;
                     if ($shortanswer !== '' && strtolower($shortanswer) === $shortanswer
                             && strtoupper($shortanswer) !== $shortanswer) {
                         $uppercase = $correct;
@@ -152,6 +200,11 @@ final class import_test extends \advanced_testcase {
                     continue;
                 }
                 foreach ($subquestion->answers as $answer) {
+                    if ($answer->fraction >= 1.0) {
+                        $expectedtolerance = $snapshot['family_id'] === 'compound' ? abs($expectedanswer) * 0.001 : 0.0;
+                        $this->assertEqualsWithDelta((float) $expectedanswer, (float) $answer->answer, 1.0e-7);
+                        $this->assertEqualsWithDelta($expectedtolerance, (float) $answer->tolerance, 1.0e-7);
+                    }
                     if ($answer->fraction < 1.0 || $answer->tolerance <= 0) {
                         continue;
                     }
@@ -167,6 +220,10 @@ final class import_test extends \advanced_testcase {
                         'Moodle did not apply the exported numerical tolerance.'
                     );
                     $sawtolerance = true;
+                    $outside = $correct;
+                    $outside['sub' . $index . '_answer'] = (string) ($expectedanswer + $answer->tolerance * 2);
+                    [$outsidefraction] = $question->grade_response($outside);
+                    $this->assertEqualsWithDelta(0.0, (float) $outsidefraction, 1.0e-9, 'Moodle accepted an answer outside the declared tolerance.');
                     break 2;
                 }
             }
@@ -174,9 +231,7 @@ final class import_test extends \advanced_testcase {
 
         ksort($actualcategorycounts);
         $this->assertSame($expectedcategorycounts, $actualcategorycounts, 'Moodle imported questions into the wrong topic categories.');
-        foreach (array_unique($expectedtags) as $tag) {
-            $this->assertContains($tag, $actualtags, 'Moodle did not import the MoodPy question tag.');
-        }
+        $this->assertEmpty($snapshots, 'Moodle missed a manifest question.');
         $this->assertTrue($sawnumerical, 'The fixture must exercise Moodle numerical Cloze fields.');
         $this->assertTrue($sawshortanswer, 'The fixture must exercise Moodle short-answer Cloze fields.');
         $this->assertTrue($sawtolerance, 'The fixture must exercise Moodle numerical tolerance grading.');

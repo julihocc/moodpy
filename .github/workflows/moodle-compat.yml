@@ -5,6 +5,7 @@ on:
     branches: [main]
   pull_request:
     branches: [main]
+  workflow_dispatch:
   workflow_call:
 
 permissions:
@@ -30,7 +31,7 @@ jobs:
     env:
       MOODLE_DOCKER_WWWROOT: ${{ github.workspace }}/moodle
       MOODLE_DOCKER_DB: pgsql
-      MOODLE_DOCKER_DB_VERSION: "15"
+      MOODLE_DOCKER_DB_VERSION: "16"
       MOODLE_DOCKER_PHP_VERSION: "8.3"
 
     steps:
@@ -75,6 +76,9 @@ jobs:
           cp -R .github/moodle/local_moodpycompat/. "$plugin_root/"
           cp "$RUNNER_TEMP/moodpy-bank/bank.xml" "$plugin_root/tests/fixtures/bank.xml"
           cp "$RUNNER_TEMP/moodpy-bank/manifest.json" "$plugin_root/tests/fixtures/manifest.json"
+          git -C moodle rev-parse HEAD > moodle/moodpy-moodle-compat-revision.txt
+          git -C moodle-docker rev-parse HEAD >> moodle/moodpy-moodle-compat-revision.txt
+          cp "$RUNNER_TEMP/moodpy-bank/manifest.json" moodle/moodpy-moodle-compat-manifest.json
 
       - name: Install Moodle PHPUnit dependencies
         run: |
@@ -95,6 +99,12 @@ jobs:
         run: |
           ./bin/moodle-docker-compose exec -T -w /var/www/html webserver sh -ec '
             if [ -d public ]; then publicprefix=public/; else publicprefix=; fi
+            php -l "${publicprefix}local/moodpycompat/tests/import_test.php"
+            php -r '\''define("MOODLE_INTERNAL", true);
+              require (is_dir("public") ? "public/" : "") . "version.php";
+              echo json_encode(["release" => $release, "branch" => $branch,
+                "version" => $version, "php" => PHP_VERSION], JSON_PRETTY_PRINT);'\'' \
+              > moodpy-moodle-compat-runtime.json
             php "${publicprefix}admin/cli/install_database.php" \
               --agree-license --fullname="MoodPy compatibility" \
               --shortname="moodpycompat" --summary="Disposable CI test site" \
@@ -116,7 +126,11 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: moodle-${{ matrix.version }}-import-report
-          path: moodle/moodpy-moodle-compat-junit.xml
+          path: |
+            moodle/moodpy-moodle-compat-junit.xml
+            moodle/moodpy-moodle-compat-runtime.json
+            moodle/moodpy-moodle-compat-revision.txt
+            moodle/moodpy-moodle-compat-manifest.json
           if-no-files-found: ignore
 
       - name: Stop Moodle services
