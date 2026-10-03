@@ -5,7 +5,11 @@ disposable Moodle sites for 4.5 LTS and 5.0–5.2, import the representative ban
 Moodle's `qformat_xml` importer, and check stored question categories, tags,
 feedback, answer fields, numerical tolerance, and correct/incorrect grading against
 answers calculated independently from the recipe inputs. It checks full category
-paths and values inside and outside numerical tolerances. This is
+paths and values inside and outside numerical tolerances. Each version imports the
+four core MoodPy recipes and all 31 migrated generator families, including questions
+with multiple numerical and short-answer fields. Grading expectations come from
+independent mathematical calculations, with the manifest hash checked to prevent
+mixing fixtures. This is
 server-side integration coverage; it does not exercise the browser import form or
 prove compatibility with every Moodle theme, plugin, database, or site setting.
 

@@ -12,18 +12,28 @@ require_once($CFG->dirroot . '/question/format/xml/format.php');
 /** Import and grade an actual MoodPy bundle using Moodle's own code. */
 final class import_test extends \advanced_testcase {
     public function test_bundle_imports_and_grades_in_moodle(): void {
+        $this->assert_bank_imports_and_grades(__DIR__ . '/fixtures/core');
+    }
+
+    public function test_migrated_topics_import_and_grade_in_moodle(): void {
+        $this->assert_bank_imports_and_grades(__DIR__ . '/fixtures/migrated');
+    }
+
+    private function assert_bank_imports_and_grades(string $fixture): void {
         global $DB;
 
         $this->resetAfterTest();
         $this->setAdminUser();
 
-        $fixture = __DIR__ . '/fixtures';
         $manifest = json_decode(
             file_get_contents($fixture . '/manifest.json'),
             true,
             512,
             JSON_THROW_ON_ERROR
         );
+        $expectations = json_decode(file_get_contents($fixture . '/expectations.json'), true, 512, JSON_THROW_ON_ERROR);
+        $this->assertSame('moodpy-moodle-expectations-v1', $expectations['format']);
+        $this->assertSame(hash_file('sha256', $fixture . '/manifest.json'), $expectations['manifest_sha256']);
         $expectedcount = count($manifest['questions']);
         $this->assertGreaterThan(0, $expectedcount, 'The MoodPy fixture must contain questions.');
 
@@ -138,7 +148,8 @@ final class import_test extends \advanced_testcase {
 
             $question = \question_bank::load_question($questionid);
             $this->assertInstanceOf(\qtype_multianswer_question::class, $question);
-            $this->assertCount(1, $question->subquestions, 'Each verified recipe exports one answer field.');
+            $fields = $expectations['questions'][$snapshot['id']];
+            $this->assertCount(count($fields), $question->subquestions, 'Moodle changed the expected answer field count.');
 
             foreach ($question->subquestions as $subquestion) {
                 $type = $subquestion->qtype->name();
@@ -147,29 +158,14 @@ final class import_test extends \advanced_testcase {
                 $sawshortanswer = $sawshortanswer || $type === 'shortanswer';
             }
 
-            // Compute expected responses independently from sampled inputs. Asking
-            // Moodle to grade its own stored answer alone could hide recipe errors.
-            $parameters = $snapshot['parameters'];
-            switch ($snapshot['family_id']) {
-                case 'addition':
-                    $expectedanswer = $parameters['a'] + $parameters['b'];
-                    break;
-                case 'linear':
-                    $this->assertNotEquals(0, $parameters['a']);
-                    $expectedanswer = ($parameters['c'] - $parameters['b']) / $parameters['a'];
-                    break;
-                case 'compound':
-                    $expectedanswer = round($parameters['P'] * (1 + $parameters['rate_percent'] / 100) ** $parameters['years'], 2);
-                    break;
-                case 'sign':
-                    $expectedanswer = $parameters['n'] > 0 ? 'positive' : ($parameters['n'] < 0 ? 'negative' : 'zero');
-                    break;
-                default:
-                    $this->fail('Add an independent grading expectation for family ' . $snapshot['family_id']);
-            }
+            // These values are independently calculated from the sampled inputs
+            // by generate_expectations.py, never extracted from XML answer fields.
             $correct = [];
+            $position = 0;
             foreach ($question->subquestions as $index => $subquestion) {
-                $correct['sub' . $index . '_answer'] = (string) $expectedanswer;
+                $this->assertSame($fields[$position]['kind'], $subquestion->qtype->name());
+                $correct['sub' . $index . '_answer'] = (string) $fields[$position]['answer'];
+                $position++;
             }
             [$fraction] = $question->grade_response($correct);
             $this->assertEqualsWithDelta(1.0, (float) $fraction, 1.0e-9, 'Moodle rejected the independently calculated answer for ' . $record->name);
@@ -178,7 +174,11 @@ final class import_test extends \advanced_testcase {
             [$wrongfraction] = $question->grade_response($wrong);
             $this->assertLessThan(1.0, (float) $wrongfraction, 'Moodle awarded full credit for an incorrect response.');
 
+            $position = 0;
             foreach ($question->subquestions as $index => $subquestion) {
+                $expectedanswer = $fields[$position]['answer'];
+                $expectedtolerance = $fields[$position]['tolerance'];
+                $position++;
                 if ($subquestion instanceof \qtype_shortanswer_question) {
                     $shortanswer = (string) $expectedanswer;
                     if ($shortanswer !== '' && strtolower($shortanswer) === $shortanswer
@@ -201,16 +201,16 @@ final class import_test extends \advanced_testcase {
                 }
                 foreach ($subquestion->answers as $answer) {
                     if ($answer->fraction >= 1.0) {
-                        $expectedtolerance = $snapshot['family_id'] === 'compound' ? abs($expectedanswer) * 0.001 : 0.0;
-                        $this->assertEqualsWithDelta((float) $expectedanswer, (float) $answer->answer, 1.0e-7);
-                        $this->assertEqualsWithDelta($expectedtolerance, (float) $answer->tolerance, 1.0e-7);
+                        $delta = max(1.0e-7, abs((float) $expectedanswer) * 2.0e-8);
+                        $this->assertEqualsWithDelta((float) $expectedanswer, (float) $answer->answer, $delta);
+                        $this->assertEqualsWithDelta((float) $expectedtolerance, (float) $answer->tolerance, max(1.0e-9, $delta * 0.001));
                     }
                     if ($answer->fraction < 1.0 || $answer->tolerance <= 0) {
                         continue;
                     }
                     $within = $correct;
                     $within['sub' . $index . '_answer'] = (string) (
-                        (float) $answer->answer + $answer->tolerance / 2
+                        (float) $expectedanswer + $answer->tolerance / 2
                     );
                     [$withinfraction] = $question->grade_response($within);
                     $this->assertEqualsWithDelta(
@@ -223,8 +223,10 @@ final class import_test extends \advanced_testcase {
                     $outside = $correct;
                     $outside['sub' . $index . '_answer'] = (string) ($expectedanswer + $answer->tolerance * 2);
                     [$outsidefraction] = $question->grade_response($outside);
-                    $this->assertEqualsWithDelta(0.0, (float) $outsidefraction, 1.0e-9, 'Moodle accepted an answer outside the declared tolerance.');
-                    break 2;
+                    $this->assertLessThan(1.0, (float) $outsidefraction, 'Moodle awarded full credit outside the declared tolerance.');
+                    [$subfraction] = $subquestion->grade_response(['answer' => $outside['sub' . $index . '_answer']]);
+                    $this->assertEqualsWithDelta(0.0, (float) $subfraction, 1.0e-9, 'Moodle accepted an embedded answer outside its tolerance.');
+                    break;
                 }
             }
         }

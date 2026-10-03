@@ -43,10 +43,16 @@ jobs:
 
       - name: Generate the reviewed recipe bundle
         run: |
+          git submodule update --init -- generators
           python -m pip install --upgrade pip
-          python -m pip install .
+          python -m pip install . ./generators
           python examples/agent_workflow/author_bank.py \
             --seed 42 --samples 2 --output "$RUNNER_TEMP/moodpy-bank"
+          python -m moodpy_generators \
+            --seed 42 --count 3 --output "$RUNNER_TEMP/migrated-bank"
+          python .github/moodle/generate_expectations.py --bank "$RUNNER_TEMP/moodpy-bank"
+          python .github/moodle/generate_expectations.py --bank "$RUNNER_TEMP/migrated-bank" \
+            --generator-tests generators/tests
 
       - name: Check out Moodle ${{ matrix.version }}
         uses: actions/checkout@v4
@@ -72,13 +78,14 @@ jobs:
           else
             plugin_root=moodle/local/moodpycompat
           fi
-          mkdir -p "$plugin_root/tests/fixtures"
+          mkdir -p "$plugin_root/tests/fixtures/core" "$plugin_root/tests/fixtures/migrated"
           cp -R .github/moodle/local_moodpycompat/. "$plugin_root/"
-          cp "$RUNNER_TEMP/moodpy-bank/bank.xml" "$plugin_root/tests/fixtures/bank.xml"
-          cp "$RUNNER_TEMP/moodpy-bank/manifest.json" "$plugin_root/tests/fixtures/manifest.json"
+          cp "$RUNNER_TEMP/moodpy-bank/"{bank.xml,manifest.json,expectations.json} "$plugin_root/tests/fixtures/core/"
+          cp "$RUNNER_TEMP/migrated-bank/"{bank.xml,manifest.json,expectations.json} "$plugin_root/tests/fixtures/migrated/"
           git -C moodle rev-parse HEAD > moodle/moodpy-moodle-compat-revision.txt
           git -C moodle-docker rev-parse HEAD >> moodle/moodpy-moodle-compat-revision.txt
           cp "$RUNNER_TEMP/moodpy-bank/manifest.json" moodle/moodpy-moodle-compat-manifest.json
+          cp "$RUNNER_TEMP/migrated-bank/manifest.json" moodle/moodpy-moodle-compat-migrated-manifest.json
 
       - name: Install Moodle PHPUnit dependencies
         run: |
@@ -131,6 +138,7 @@ jobs:
             moodle/moodpy-moodle-compat-runtime.json
             moodle/moodpy-moodle-compat-revision.txt
             moodle/moodpy-moodle-compat-manifest.json
+            moodle/moodpy-moodle-compat-migrated-manifest.json
           if-no-files-found: ignore
 
       - name: Stop Moodle services
