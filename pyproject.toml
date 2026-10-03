@@ -105,6 +105,10 @@ extend-exclude = '''
   | \.venv
   | build
   | dist
+  | examples/legacy
+  | scripts/legacy
+  | generators
+  | library
 )/
 '''
 

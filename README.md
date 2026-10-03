@@ -5,7 +5,8 @@ the learning goals, review representative questions together, then generate
 randomized variants with reusable Python sources.
 
 Start with [AGENTS.md](AGENTS.md), [the authoring guide](docs/authoring-guide.md),
-and [verified recipes](docs/verified-recipes.md).
+and [verified recipes](docs/verified-recipes.md). The [documentation index](docs/README.md)
+also links to development guidance and recorded Moodle test results.
 
 ## Install
 
@@ -95,14 +96,25 @@ quiz-activity configuration are outside this milestone.
 
 ## Repository and verification
 
-src/moodpy/ contains the library and verified recipes. examples/agent_workflow/
-contains the portable template. tests/ covers legacy behavior and the new workflow.
-Other examples and the generators/ and library/ submodules are legacy references
-requiring independent verification; they are not a catalog of working recipes.
+| Location | Contents |
+|---|---|
+| src/moodpy/ | Library and four verified core recipes |
+| examples/agent_workflow/ | Portable authoring template and quiz brief |
+| tests/ | Core behavior, generation, export, and regeneration regressions |
+| docs/ | Current guides and actual Moodle test evidence |
+| scripts/ | Maintained environment checker |
+| generators/ | Optional package with 31 tested families and archived notebooks |
+| library/ | Legacy references requiring verification |
+| artifacts/ | Ignored local banks and generated output |
+
+Historical examples, plans, and scripts are preserved in examples/legacy/,
+docs/archive/, and scripts/legacy/. Their commands and paths may be obsolete.
+See the [development guide](docs/development.md) for setup, wheel checks, and builds.
 
 ```bash
 pytest
 python -m unittest tests.test_bank
+python scripts/check_environment.py
 ```
 
 CI tests Python 3.8–3.14 using an installed wheel, then runs a bank smoke check.

@@ -10,7 +10,7 @@ Give the agent access to this repository or install its matching package version
 
 ```bash
 python -m pip install -e '.[dev]'
-python -c "import moodpy; print(moodpy.__version__)"
+python scripts/check_environment.py
 ```
 
 Python 3.8 or newer is supported. Dependencies must be available in the workspace;

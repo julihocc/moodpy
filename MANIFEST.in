@@ -1,11 +1,13 @@
-# Include additional files in the package distribution
-include README.md
-include LICENSE
-include CHANGELOG.md
-include REFACTORING_PLAN.md
-recursive-include src/moodpy *.py
-recursive-include examples *.py *.ipynb *.md
-recursive-include docs *.rst *.py *.md
+include README.md LICENSE CHANGELOG.md AGENTS.md CLAUDE.md
+recursive-include src/moodpy *.py py.typed
+recursive-include examples/agent_workflow *.py *.md
+include examples/README.md
+recursive-include docs *.md *.json *.xml *.txt
+prune docs/archive
+include scripts/README.md scripts/check_environment.py
+recursive-include tests *.py
+recursive-include tests/fixtures *.json *.xml
+recursive-include .github/moodle *.py *.php
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
 recursive-exclude * .DS_Store

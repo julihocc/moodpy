@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Current documentation index, architecture and development guides, and an installed
+  environment checker covering dependencies, version agreement, and core recipes.
+- Historical root plans, retired scripts, and unverified examples moved to labeled
+  archives with contents preserved. Source releases retain the supported workflow
+  and tests while excluding those archives; local outputs belong in artifacts/.
+
 - Reorganized generator submodule: all 87 original notebooks retained in a hashed,
   topic-based archive; 31 migrated Python recipe families, source regeneration CLI,
   independent mathematical tests, and installed-wheel CI across Python 3.8–3.14.

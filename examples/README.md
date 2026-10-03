@@ -10,7 +10,7 @@ Run after installing the matching repository package:
 python examples/agent_workflow/author_bank.py --seed 42 --samples 2 --output artifacts/sample
 ```
 
-The other example scripts are historical references requiring verification before
+The scripts in [legacy/](legacy/README.md) are historical references requiring verification before
 reuse. Some retain Sage syntax, Python 2 constructs, missing dependencies, or
 migration TODOs. Their existence does not certify generation or mathematical correctness.
 Use the verified catalog when an agent needs a dependable starting point.

@@ -3,7 +3,8 @@
 These factories are shipped in moodpy.recipes and exercised by mathematical and
 export regressions in tests/test_bank.py. Run them through the portable CLI at
 examples/agent_workflow/author_bank.py. Verification covers local generation,
-solutions, and XML structure; it does not imply a live Moodle import.
+solutions, and XML structure. Separately, [recorded Moodle runs](moodle-compat-results/2026-10-03/README.md)
+verified the actual importer and grader on Moodle 4.5 and 5.0–5.2.
 
 | Factory | Objective | Answer policy | Default category |
 |---|---|---|---|
@@ -17,7 +18,7 @@ learner. Adapt the wording, objectives, bounds, counts, and tolerance with the e
 
 ## Legacy references
 
-Other scripts in examples/ and archived notebooks in generators/ or library/ require
+Scripts in examples/legacy/ and archived notebooks in generators/ or library/ require
 independent verification before reuse. Some contain Sage syntax, missing dependencies,
 old Moodle APIs, or migration TODOs. Several do not parse as Python. Their presence
 is not a claim that they run or produce correct questions.
@@ -37,4 +38,5 @@ The separate [generator package](../generators/README.md) adds 31 mathematically
 tested families from the teaching notebooks. Its [catalog](../generators/CATALOG.md)
 maps every original notebook to a replacement, scratch reference, or unfinished
 template. Install this MoodPy checkout and the generator package before use.
-These local tests do not establish successful live Moodle imports for those families.
+The recorded Moodle compatibility runs also cover all 31 migrated families.
+Python-only checks and successful live Moodle imports remain distinct evidence.

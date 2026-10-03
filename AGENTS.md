@@ -19,13 +19,14 @@ bundle. Start with [the authoring guide](docs/authoring-guide.md).
 
 The verified catalog is the supported starting point. The [generator catalog](generators/CATALOG.md)
 lists migrated recipes with mathematical tests; read generators/README.md for setup.
-Other examples, archived generator notebooks, and library/ are legacy references
+Examples in examples/legacy/, archived generator notebooks, and library/ are legacy references
 requiring independent verification. Do not
 execute arbitrary legacy scripts or use txt2arr() on untrusted input. Recipes are
 trusted executable Python, not a sandboxed data format.
 
 ## Maintaining the package
 
+- Read [the development guide](docs/development.md) and [architecture](docs/architecture.md).
 - Preserve existing public interfaces. Keep library tests independent of submodules.
 - Leave existing local changes and submodule contents untouched unless specifically requested.
 - Core reliability checks: python -m unittest tests.test_bank; full suite: pytest.
@@ -35,8 +36,10 @@ trusted executable Python, not a sandboxed data format.
 - Verify the built wheel with MOODPY_TEST_INSTALLED=1 so repository source imports
   cannot hide missing packaged modules.
 - Record changes under Unreleased. Keep pyproject.toml and runtime versions aligned.
-- Do not publish, upload to Moodle, or run the obsolete create_github_issues.sh
+- Do not publish, upload to Moodle, or run scripts/legacy/create_github_issues.sh
   as a side effect of authoring or testing.
 
-README.md and the authoring guide describe current usage. Historical migration
-plans and status documents are background, not executable instructions.
+README.md and [the documentation index](docs/README.md) describe the current layout.
+Keep generated outputs in artifacts/. Historical migration plans and status
+documents in docs/archive/, examples/legacy/, and scripts/legacy/ are background,
+not executable instructions. Preserve archival source content when reorganizing it.

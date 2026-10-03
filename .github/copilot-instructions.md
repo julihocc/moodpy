@@ -10,4 +10,7 @@ Preview and XML must use the same snapshots. Preserve legacy interfaces and exis
 submodule changes. Report local checks separately from a live Moodle import.
 
 Install with python -m pip install -e '.[dev]' for maintenance. Run pytest and verify
-the built wheel. Do not rely on historical example-count, coverage, or release claims.
+the built wheel using [the development guide](../docs/development.md).
+Current navigation is in [docs/README.md](../docs/README.md). Keep generated outputs
+in artifacts/. Do not treat docs/archive/, examples/legacy/, or scripts/legacy/
+as current instructions or rely on their example-count, coverage, or release claims.
