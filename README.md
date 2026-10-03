@@ -1,312 +1,101 @@
-# MoodPy - Parametric Exercise Generator for Moodle
+# MoodPy
 
-Generate randomized mathematical and financial exercises for Moodle LMS with parametric variables and automatic XML export.
+Create parametric Moodle question banks with an educator and an agent. Agree on
+the learning goals, review representative questions together, then generate
+randomized variants with reusable Python sources.
 
-## What is MoodPy?
+Start with [AGENTS.md](AGENTS.md), [the authoring guide](docs/authoring-guide.md),
+and [verified recipes](docs/verified-recipes.md).
 
-MoodPy is a Python library that helps educators create **personalized, randomized quizzes** for Moodle. Instead of manually writing hundreds of similar questions, you define a question template with variable parameters, and MoodPy generates unlimited unique versions automatically.
+## Install
 
-### Example Use Case
-
-**Without MoodPy:** Write 20 different compound interest problems manually
-**With MoodPy:** Define one template with variables (principal, rate, time), generate 20 unique problems in seconds
-
-## Features
-
-✅ **Parametric Exercise Generation** - Define variables with random number generators  
-✅ **Parameter Validation** - Set mathematical constraints (e.g., "interest rate > 5%")  
-✅ **Moodle XML Export** - Direct import into Moodle cloze questions  
-✅ **Financial Math Support** - Pre-built generators for NPV, IRR, cash flows  
-✅ **Batch Processing** - Generate hundreds of questions in one operation  
-✅ **Spanish Language Support** - Full UTF-8 support for Spanish mathematical content  
-
-## Quick Start
-
-### Installation
+From a matching repository checkout, using Python 3.8 or newer:
 
 ```bash
-# Clone the repository
-git clone https://github.com/julihocc/moodpy.git
-cd moodpy
-
-# Install dependencies
-pip install numpy matplotlib tabulate
+python -m pip install -e '.[dev]'
 ```
 
-### Basic Example — Pattern A (string template)
+Dependencies are NumPy, matplotlib, tabulate, and SciPy. The agent needs workspace
+access and Python execution. Git submodules and an OpenAI API key are not required
+for the supported authoring workflow.
 
-```python
-from moodpy import Generator, Cloze
-import numpy as np
+## Generate a reviewed question-bank bundle
 
-gen = Generator()
-gen.lambdas = {
-    "a": lambda k: np.random.randint(1, 10),
-    "b": lambda k: np.random.randint(2, 8),
-}
-gen.derived = {
-    "answer": lambda d: int(d["a"] + d["b"]),
-}
-# Requirements must be lambda functions (not strings)
-gen.requirements = [
-    lambda: gen.parameters["a"] != gen.parameters["b"],
-]
-
-# Initial reload so set_exercise() can render a preview
-gen.reload_parameters()
-gen.calculate_derived()
-
-# Template is re-substituted fresh for each question in get_exercises()
-gen.set_exercise("<p>Calculate: {d[a]} + {d[b]} = ?</p><p>Answer: {d[answer]}</p>")
-
-cloze = Cloze()
-cloze.set_info("MATHEMATICS", "ALG101", "addition")
-cloze.set_generator(gen)
-cloze.get_exercises(cuantos=10)  # 10 unique questions → XML file
-```
-
-This creates `MATHEMATICS_ALG101_addition/` with an XML file ready to import into Moodle.
-
-### When answers need formatting — Pattern B (exercise_fn)
-
-Use `exercise_fn` when the answer must be formatted with `NM()` (Moodle numerical
-answer syntax). The function is called each iteration with freshly generated parameters.
-
-```python
-from moodpy import Generator, Cloze
-from moodpy.tools import NM
-import numpy as np
-
-gen = Generator()
-gen.lambdas = {
-    "a": lambda k: np.random.randint(2, 13),
-    "b": lambda k: np.random.randint(2, 13),
-}
-gen.requirements = [lambda: gen.parameters["a"] != gen.parameters["b"]]
-
-def build_exercise(gen):
-    a, b = gen.parameters["a"], gen.parameters["b"]
-    gen.set_exercise(f"<p>Calculate: {a} × {b} = {NM(a * b, entero=True)}</p>")
-    gen.set_feedback(f"<p>{a} × {b} = {a * b}</p>")
-
-cloze = Cloze()
-cloze.set_info("MATH", "102", "multiplication")
-cloze.set_generator(gen)
-cloze.get_exercises(cuantos=10, exercise_fn=build_exercise)
-```
-
-## Core Concepts
-
-### 1. Generators
-
-A **Generator** defines how to create a single exercise with randomized parameters.
-
-```python
-gen = Generator()
-gen.lambdas = {
-    "x": lambda k: np.random.randint(1, 100),      # Random integer 1-99
-    "y": lambda k: np.random.choice([2, 3, 5, 7]), # Pick from list
-    "z": lambda k: np.random.normal(50, 10),       # Normal distribution
-}
-```
-
-### 2. Parameter Validation
-
-Use the `requirements` list to ensure generated parameters meet mathematical constraints:
-
-```python
-gen.requirements = [
-    lambda: gen.parameters["x"] < gen.parameters["y"],  # x must be less than y
-    lambda: (gen.parameters["x"] + gen.parameters["y"]) % 10 != 0,  # sum not divisible by 10
-]
-gen.reload_parameters()
-gen.test_parameters()  # Validates up to 10,000 times
-```
-
-### 3. Cloze Wrapper
-
-The **Cloze** class handles batch generation and Moodle XML export:
-
-```python
-cloze = Cloze()
-cloze.set_info(materia="Math", clave="CALC", tema="Derivatives")
-cloze.set_generator(gen)
-cloze.get_exercises(cuantos=50)  # Generate 50 questions
-```
-
-Output structure:
-```
-MATH_CALC_DERIVATIVES/
-├── MATH_CALC_DERIVATIVES_20260630122345.xml  (Moodle-ready XML)
-└── [more XML files as you generate batches]
-```
-
-### 4. Numerical Answers
-
-Use `tools.NM()` to format numerical answers with tolerance for Moodle:
-
-```python
-from moodpy.tools import NM
-
-answer = NM(42.5, error=0.001)      # Value ±0.1% tolerance → {1:NM:=42.5:0.0425}
-answer = NM(100, entero=True)       # Integer answer        → {1:NM:=100}
-```
-
-> Use `NM()` inside an `exercise_fn`, not directly in a template string —
-> Moodle's `{1:NM:=...}` syntax conflicts with Python's `.format()` placeholders.
-
-## Financial Mathematics
-
-MoodPy includes specialized generators for financial math problems:
-
-```python
-from moodpy.matfin import get_frec, gen_rates, gen_flux, VPN, tab_flux_vertical, TIR
-
-# Generate frequency (annual, semi-annual, quarterly, etc.)
-frec = get_frec()  # Returns: {'f': 2, 'frecuencia': 'semestralmente', ...}
-
-# Generate interest rate
-rates = gen_rates(r_mean=8, f=frec['f'])  # 8% mean annual rate
-
-# Generate cash flow
-flux = gen_flux(f=frec['f'], N_mean=5, j=rates['j'])
-
-# Calculate financial metrics
-npv = VPN(flux['F'], rates['j'])
-irr = TIR(flux['F'])
-
-# Generate HTML table for exercise
-table = tab_flux_vertical(flux['F'], f=frec['f'], fmt="html")
-```
-
-## File Organization
-
-MoodPy automatically organizes output by subject and topic:
-
-```
-PROJECT_CODE_TOPIC/
-├── PROJECT_CODE_TOPIC_YYYYMMDDHHMMSS.xml      (XML for Moodle)
-├── PROJECT_CODE_TOPIC_YYYYMMDDHHMMSS.xml
-└── TESTING-PROJECT_CODE_TOPIC_YYYYMMDDHHMMSS.txt  (Debug output)
-```
-
-Naming convention:
-- **Folder**: `{SUBJECT}_{CODE}_{TOPIC}` (uppercase/lowercase)
-- **Files**: Include timestamp to avoid overwrites
-- **Encoding**: UTF-8 for Spanish characters (ñ, á, é, etc.)
-
-## Module Reference
-
-| Module | Purpose |
-|--------|---------|
-| `generator.py` | `Generator` class - core parametric exercise engine |
-| `cloze.py` | `Cloze` class - batch generation and Moodle XML export |
-| `tools.py` | Utility functions (random numbers, Moodle formatting) |
-| `matfin.py` | Financial mathematics generators (rates, cash flows, NPV, IRR) |
-| `graphics.py` | Image handling utilities (matplotlib integration) |
-
-### Submodules
-
-- **moodpy-generators**: Domain-specific exercise generators
-- **moodpy-library**: Shared reusable components
-
-## Advanced Usage
-
-### Testing Without XML Export
-
-Generate and inspect exercises without creating XML files:
-
-```python
-cloze.testing(n=5)  # Creates TESTING-*.txt with parameters
-```
-
-### Custom Random Distributions
-
-Define complex parameter distributions:
-
-```python
-from moodpy.tools import round_normal, int_normal
-
-gen.lambdas = {
-    # Integer from bounded normal distribution
-    "amount": lambda k: int_normal(m=50000, s=10000, size=1, a=10000, b=100000)[0],
-    
-    # Rounded decimal from bounded normal distribution
-    "rate": lambda k: round_normal(m=0.08, s=0.02, size=1, a=0.05, b=0.12, d=4)[0],
-}
-```
-
-### Formatted Output with Feedback
-
-Add explanations and solutions:
-
-```python
-gen.set_feedback("""
-Solution: Using the compound interest formula...
-Answer: ${d[answer]:.2f}
-""")
-
-xml = gen.statement()  # Includes feedback section
-```
-
-## Limitations & Known Issues
-
-- Parameter validation timeout: 10,000 iterations max (increase with `max_steps=`)
-- `exercise_fn` is required when `NM()` answers appear in exercise text (see Pattern B above)
-
-## Importing into Moodle
-
-1. Generate questions with MoodPy
-2. In Moodle:
-   - Course → Import content → Import course
-   - Select the XML file from `{SUBJECT}_{CODE}_{TOPIC}/`
-   - Questions appear as Cloze-type (fill-in-the-blank)
-
-## Dependencies
-
-- `numpy` - Numerical operations and random number generation
-- `matplotlib` - Plotting utilities
-- `tabulate` - HTML/text table generation
+The portable template contains arithmetic, algebra, compound-interest, and
+short-answer families. Copy it and its brief into your authoring folder, adapt
+them to the educator's decisions, and review sample questions before bulk generation.
 
 ```bash
-pip install numpy matplotlib tabulate
+python examples/agent_workflow/author_bank.py --seed 42 --samples 2 --output artifacts/sample
+python examples/agent_workflow/author_bank.py --seed 42 --output artifacts/full-bank
 ```
 
-## Project Structure
+The full example produces 40 questions with topic categories. Each bundle includes:
 
+- bank.xml for Moodle question-bank import.
+- preview.html with blanks and expandable teacher solutions.
+- manifest.json with counts, seed, versions, sampled parameters, validation, and source hashes.
+- sources/ with the Python recipe and brief.md.
+- README.md with regeneration and import instructions, plus bundle.zip for delivery.
+
+The preview contains teacher answers. XML and preview use the same saved questions;
+export does not resample. Local checks validate supported syntax and XML structure,
+not educational suitability or mathematical truth. A successful live Moodle import
+requires the [manual checklist](docs/moodle-import-checklist.md).
+
+## Python interface
+
+```python
+from moodpy import build_bank
+from moodpy.recipes import arithmetic_family, linear_equations_family
+
+bank = build_bank(
+    [arithmetic_family(10), linear_equations_family(10)],
+    title="Algebra practice",
+    seed=42,
+)
+print(bank.validate())
 ```
-moodpy/
-├── pyproject.toml             # Package metadata
-├── src/moodpy/                # Core package
-│   ├── generator.py           # Generator class
-│   ├── cloze.py               # Moodle XML export
-│   ├── tools.py               # Utilities (NM, round_normal, txt2arr, …)
-│   ├── matfin.py              # Financial math
-│   └── graphics.py            # fig2str, tagImg, encodePlot
-├── examples/                  # 60+ working examples by domain
-├── tests/                     # pytest suite (78 tests)
-├── generators/                # Submodule: exercise generator library
-├── library/                   # Submodule: question bank archive
-└── .github/workflows/         # Automated PyPI publishing
+
+Supply your own QuestionFamily(id, title, category, count, generator_factory,
+exercise_fn, tags=()). The factory receives a NumPy RNG and returns a Generator.
+The callback sets the exercise and feedback from its current parameters. Use NM()
+and STxt() for supported Cloze fields and template=False for fully rendered text.
+
+Export with bank.export_bundle(output_dir, source_files=[recipe_path, brief_path]).
+Sources must include a Python recipe and brief.md. Existing bundles require explicit
+overwrite=True; unrelated files are preserved. Independent family seeds preserve
+sample prefixes when other counts change. Identical reproduction requires unchanged
+sources, dependency versions, and use of the injected RNG.
+
+See the authoring guide for the full API, CLI regeneration contract, constraints,
+tolerances, literal mathematical braces, and failure handling.
+
+## Existing library users
+
+Generator, Cloze, NM, STxt, tools, matfin, and graphics remain available. Legacy
+Cloze batches and previews now enforce requirements and refresh feedback templates.
+Requirements must be callables or booleans; string requirements raise an error.
+Missing template values also raise errors instead of silently exporting unresolved text.
+
+The new bank API supports numerical and short-answer Cloze fields emitted by NM()
+and STxt(). Other question types, connected tools, automated Moodle uploads, and
+quiz-activity configuration are outside this milestone.
+
+## Repository and verification
+
+src/moodpy/ contains the library and verified recipes. examples/agent_workflow/
+contains the portable template. tests/ covers legacy behavior and the new workflow.
+Other examples and the generators/ and library/ submodules are legacy references
+requiring independent verification; they are not a catalog of working recipes.
+
+```bash
+pytest
+python -m unittest tests.test_bank
 ```
 
-## Contributing
+CI tests Python 3.8–3.14 using an installed wheel, then runs a bank smoke check.
+Publishing requires those checks. Do not initialize submodules just to run core tests.
 
-This project is organized with Git submodules for modularity:
-- Core exercises: Add to `generators/` submodule
-- Shared code: Add to `library/` submodule
-- Core framework: Modify main files
-
-## License
-
-*See repository for license information.*
-
-## Getting Help
-
-- **Architecture Guide**: See `.github/copilot-instructions.md`
-- **Code Examples**: Check the examples above
-- **Domain Patterns**: Review `matfin.py` for financial math patterns
-
----
-
-**Made for Spanish educational institutions. Full UTF-8 support for mathematical notation and Spanish language content.**
+MoodPy uses the MIT license. Contributions should preserve the public API, update
+canonical guidance, and include regressions for changes to generation or export.

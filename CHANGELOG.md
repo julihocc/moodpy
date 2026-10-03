@@ -7,6 +7,28 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Agent entry point, collaborative authoring guide, verified recipes, and a portable
+  seed/output CLI template with a saved quiz brief.
+- Typed QuestionFamily/build_bank/QuestionBank API with independent family RNGs,
+  immutable rendered snapshots, bounded duplicate handling, and contextual validation.
+- Moodle category/tag export, matching teacher preview, source/version/hash manifest,
+  regeneration instructions, and reproducible ZIP bundles with overwrite protection.
+- Deterministic regressions, installed-wheel CI across Python 3.8–3.14, and publishing
+  gates for tests and bank smoke checks. Live Moodle import remains a manual check.
+
+### Fixed
+
+- Legacy batch/preview generation now enforces constraints and refreshes feedback.
+- Literal rendering support for mathematical braces; missing template values and
+  string requirements now raise errors. Generators recover after validation exhaustion.
+- XML name escaping and CDATA terminators; finite numerical answers/tolerances,
+  percentage conversion, and reserved-character escaping in short answers.
+- Runtime version aligned with package metadata at 3.0.1. License metadata remains
+  compatible with the build backends available to Python 3.8/3.9.
+
+
 ## [3.0.1] - 2026-09-20
 
 Post-3.0.0 bug fixes (landed 2026-06-30; released as 3.0.1).

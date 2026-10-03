@@ -1,5 +1,9 @@
 # MoodPy Development Guide
 
+Current bank authoring is documented in [the authoring guide](docs/authoring-guide.md).
+The design notes below include historical examples and migration context;
+use the canonical guide and verified catalog for current agent workflows.
+
 Complete guide for setting up development environment, contributing code, running tests, and publishing releases.
 
 ---

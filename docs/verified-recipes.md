@@ -1,0 +1,32 @@
+# Verified recipe catalog
+
+These factories are shipped in moodpy.recipes and exercised by mathematical and
+export regressions in tests/test_bank.py. Run them through the portable CLI at
+examples/agent_workflow/author_bank.py. Verification covers local generation,
+solutions, and XML structure; it does not imply a live Moodle import.
+
+| Factory | Objective | Answer policy | Default category |
+|---|---|---|---|
+| arithmetic_family(count=10) | Add distinct integers from 1–99 | Exact integer | Mathematics/Arithmetic |
+| linear_equations_family(count=10) | Solve ax+b=c with a and x nonzero | Exact integer | Mathematics/Algebra |
+| compound_interest_family(count=10) | Calculate annual compound growth | Cents, 0.1% relative tolerance | Finance/Compound interest |
+| short_answer_family(count=10) | Classify an integer by sign | Case-insensitive positive/negative/zero | Mathematics/Short answer |
+
+Use these as starting points, not an automatically suitable assessment for every
+learner. Adapt the wording, objectives, bounds, counts, and tolerance with the educator.
+
+## Legacy references
+
+All other scripts in examples/ and notebooks in generators/ or library/ require
+independent verification before reuse. Some contain Sage syntax, missing dependencies,
+old Moodle APIs, or migration TODOs. Several do not parse as Python. Their presence
+is not a claim that they run or produce correct questions.
+
+The historical arithmetic, linear-equation, and compound-interest demos can be used
+for comparison, but the catalog above defines the supported agent workflow.
+Advanced financial helpers are not certified by this milestone; the compound-interest
+recipe calculates its formula directly. Do not reuse txt2arr() with untrusted input.
+
+Do not initialize or modify submodules merely to author a question bank. Keep
+independently reviewed adaptations as new Python recipes and record their sources
+and educational assumptions in the quiz brief.
