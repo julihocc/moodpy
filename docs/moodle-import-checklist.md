@@ -1,5 +1,12 @@
 # Manual Moodle import check
 
+Automated compatibility coverage in `.github/workflows/moodle-compat.yml` creates
+disposable Moodle sites for 4.5 LTS and 5.0–5.2, imports the representative bank with
+Moodle's `qformat_xml` importer, and checks stored question categories, tags,
+feedback, answer fields, numerical tolerance, and correct/incorrect grading. This is
+server-side integration coverage; it does not exercise the browser import form or
+prove compatibility with every Moodle theme, plugin, database, or site setting.
+
 Record the Moodle version, date, tester, bank seed, source hashes, and outcome.
 This checklist is a live check performed by the educator or an authorized tester.
 Do not mark it complete merely because local XML validation passed.
@@ -20,4 +27,5 @@ Do not mark it complete merely because local XML validation passed.
 
 Reference: [Moodle XML format](https://docs.moodle.org/405/en/Moodle_XML_format).
 
-Result: **Not performed** until the tester records the actual outcome.
+Result: **Not performed** until the tester records the actual outcome. Automated CI
+results confirm only the covered Moodle branches and import path.

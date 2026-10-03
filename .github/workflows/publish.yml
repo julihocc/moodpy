@@ -9,8 +9,11 @@ jobs:
   tests:
     uses: ./.github/workflows/test.yml
 
+  moodle-compat:
+    uses: ./.github/workflows/moodle-compat.yml
+
   build:
-    needs: tests
+    needs: [tests, moodle-compat]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
