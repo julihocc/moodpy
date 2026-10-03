@@ -108,11 +108,13 @@ jobs:
             if [ -d public ]; then publicprefix=public/; else publicprefix=; fi
             php -l "${publicprefix}local/moodpycompat/tests/import_test.php"
             php -r '\''define("MOODLE_INTERNAL", true);
+              define("MATURITY_ALPHA", 50); define("MATURITY_BETA", 100);
+              define("MATURITY_RC", 150); define("MATURITY_STABLE", 200);
               require (is_dir("public") ? "public/" : "") . "version.php";
               echo json_encode(["release" => $release, "branch" => $branch,
                 "version" => $version, "php" => PHP_VERSION], JSON_PRETTY_PRINT);'\'' \
               > moodpy-moodle-compat-runtime.json
-            php "${publicprefix}admin/cli/install_database.php" \
+            php admin/cli/install_database.php \
               --agree-license --fullname="MoodPy compatibility" \
               --shortname="moodpycompat" --summary="Disposable CI test site" \
               --adminpass="test" --adminemail="admin@example.com"

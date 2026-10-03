@@ -26,6 +26,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Deterministic regressions, installed-wheel CI across Python 3.8–3.14, and publishing
   gates for tests, bank smoke checks, and Moodle's own importer/grader on 4.5 LTS and
   Moodle 5.0–5.2. Manual import checks still cover the Moodle web interface.
+- Local Moodle compatibility runner using disposable Docker containers and named
+  volumes, including Windows Docker Desktop support without WSL bind mounts.
 
 ### Fixed
 
@@ -41,6 +43,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   tags, feedback preservation, and grading outside numerical tolerances. Compatibility
   reports retain exact tested revisions and runtime versions; runs can be started manually.
   The Docker matrix uses PostgreSQL 16 to meet Moodle 5.2's minimum requirement.
+- Moodle test setup creates question categories through its test generator,
+  initializes maturity constants before recording versions, and uses the database
+  installer outside `public/` on newer versions. Local database readiness checks
+  wait for TCP connections rather than PostgreSQL's temporary initialization socket.
 
 
 ## [3.0.1] - 2026-09-20

@@ -42,7 +42,9 @@ final class import_test extends \advanced_testcase {
         // genuine module-level question bank context in each of them.
         $quiz = $this->getDataGenerator()->create_module('quiz', ['course' => $course->id]);
         $modulecontext = \context_module::instance($quiz->cmid);
-        $category = \question_get_default_category($modulecontext->id, true);
+        $category = $this->getDataGenerator()->get_plugin_generator('core_question')->create_question_category([
+            'contextid' => $modulecontext->id,
+        ]);
 
         $format = new \qformat_xml();
         $format->setContexts([
@@ -56,7 +58,7 @@ final class import_test extends \advanced_testcase {
         $format->setMatchgrades('error');
         $format->setCatfromfile(true);
         // Match the documented import workflow: read categories from the file,
-        // while keeping them in the selected course question bank context.
+        // while keeping them in the selected question bank context.
         $format->setContextfromfile(false);
         $format->setStoponerror(true);
         $format->set_display_progress(false);
