@@ -119,13 +119,7 @@ jobs:
               --shortname="moodpycompat" --summary="Disposable CI test site" \
               --adminpass="test" --adminemail="admin@example.com"
             php "${publicprefix}admin/tool/phpunit/cli/init.php"
-            if [ -f phpunit.xml ]; then
-              phpunitconfig=phpunit.xml
-            else
-              phpunitconfig=public/phpunit.xml
-            fi
             vendor/bin/phpunit \
-              --configuration="$phpunitconfig" \
               --log-junit=moodpy-moodle-compat-junit.xml \
               "${publicprefix}local/moodpycompat/tests/import_test.php"
           '
