@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-MoodPy v3.0.0 - Python library for generating parametric Moodle cloze questions
+MoodPy - Python library for generating parametric Moodle cloze questions
 
 This library provides tools for creating parametric exercises with mathematical
 and financial content that can be exported to Moodle XML format.
@@ -30,82 +30,105 @@ from .generator import Generator
 from .cloze import Cloze
 from . import tools
 from . import matfin
+from .bank import (
+    QuestionFamily,
+    QuestionBank,
+    ValidationReport,
+    BundlePaths,
+    GeneratedQuestion,
+    BankValidationError,
+    build_bank,
+)
 
 # Import commonly used functions
 from .tools import NM, STxt
 
-__version__ = "3.0.0"
+__version__ = "3.0.1"
 __author__ = "Julio Cesar Hernandez Ochoa"
 __email__ = "julihocc@gmail.com"
 __license__ = "MIT"
 
 # Version info tuple for programmatic access
-VERSION = (3, 0, 0)
+VERSION = (3, 0, 1)
 
 # Optional imports with graceful degradation
 try:
     from . import graphics
+
     _HAS_GRAPHICS = True
 except ImportError as e:
     graphics = None
     _HAS_GRAPHICS = False
     import warnings
+
     warnings.warn(
         f"Graphics module could not be imported: {e}. "
         "Install matplotlib for full graphics support.",
-        ImportWarning
+        ImportWarning,
     )
 
 # Public API
 __all__ = [
-    'Generator',
-    'Cloze', 
-    'tools',
-    'matfin',
-    'graphics',
-    '__version__',
-    'VERSION',
-    'pretty',
-    'quick',
-    'NM',
-    'STxt'
+    "Generator",
+    "Cloze",
+    "tools",
+    "matfin",
+    "graphics",
+    "__version__",
+    "VERSION",
+    "pretty",
+    "quick",
+    "NM",
+    "STxt",
+    "QuestionFamily",
+    "QuestionBank",
+    "ValidationReport",
+    "BundlePaths",
+    "GeneratedQuestion",
+    "BankValidationError",
+    "build_bank",
 ]
+
 
 def get_version():
     """Return the version string."""
     return __version__
 
+
 def has_graphics():
     """Check if graphics module is available."""
     return _HAS_GRAPHICS
 
+
 def pretty(arg1, arg2=""):
     """
     Format exercise and feedback as Moodle question components.
-    
+
     Args:
         arg1 (str): Exercise text
         arg2 (str): Feedback text (optional)
-    
+
     Returns:
         str: Formatted question text and feedback
     """
     from .generator import questiontext, feedback, cdata
+
     s1 = questiontext(cdata(arg1))
     s2 = feedback(cdata(arg2)) if arg2 else ""
     return f"{s1}\n{s2}"
 
+
 def quick(generador, donde, ready, impr=0, cabecera=""):
     """
     Quick test function for generators.
-    
+
     Args:
         generador: Generator function
         donde: Output location (not used in test mode)
         ready: Number of questions to generate
         impr: Print mode (0 for silent, 1 for verbose)
         cabecera: Header text
-    
+
     Returns:
         None: Prints output directly
     """

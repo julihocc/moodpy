@@ -160,6 +160,13 @@ Thumbs.db
 *.json
 *.xml
 
+# Agent-authored example metadata and validation fixtures are source material.
+!docs/**/*.json
+!examples/agent_workflow/**/*.json
+!tests/fixtures/**/*.json
+!tests/fixtures/**/*.xml
+/artifacts/
+
 # Generated MoodPy exercise / testing output
 TESTING-*.txt
 *_*/TESTING-*.txt
