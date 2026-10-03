@@ -1,11 +1,39 @@
 # Manual Moodle import check
 
-Automated compatibility coverage in `.github/workflows/moodle-compat.yml` creates
-disposable Moodle sites for 4.5 LTS and 5.0–5.2, imports the representative bank with
-Moodle's `qformat_xml` importer, and checks stored question categories, tags,
-feedback, answer fields, numerical tolerance, and correct/incorrect grading. This is
+The compatibility workflow in `.github/workflows/moodle-compat.yml` is configured to create
+disposable Moodle sites for 4.5 LTS and 5.0–5.2, import the representative bank with
+Moodle's `qformat_xml` importer, and check stored question categories, tags,
+feedback, answer fields, numerical tolerance, and correct/incorrect grading against
+answers calculated independently from the recipe inputs. It checks full category
+paths and values inside and outside numerical tolerances. This is
 server-side integration coverage; it does not exercise the browser import form or
 prove compatibility with every Moodle theme, plugin, database, or site setting.
+
+No existing Moodle installation or educator credentials are needed. After committing
+and pushing the workflow to GitHub, open **Actions → Moodle import compatibility →
+Run workflow**. It also runs for pull requests and pushes to main. With an authenticated
+GitHub CLI, the equivalent commands are:
+
+```bash
+gh workflow run moodle-compat.yml --ref main
+gh run list --workflow moodle-compat.yml
+gh run view RUN_ID --log-failed
+gh run download RUN_ID
+```
+
+The four version jobs run independently. A version is verified only when its
+**Import the bank and grade Cloze answers with Moodle** step passes. A setup failure
+does not establish an import failure or a successful compatibility check. Download
+the reports to retain the PHPUnit result, exact Moodle/PHP version, Moodle and Docker
+repository commits, and bank manifest. Stable branches advance, so record the exact
+commit tested rather than claiming that all historical patch releases passed.
+
+The workflow currently has no recorded successful Moodle run in this repository.
+Local Python tests and XML parsing do not change that status. Publishing requires
+all four compatibility jobs to succeed.
+
+The matrix uses PHP 8.3 and PostgreSQL 16, meeting the
+[Moodle 5.2 server requirements](https://moodledev.io/general/releases/5.2#server-requirements).
 
 Record the Moodle version, date, tester, bank seed, source hashes, and outcome.
 This checklist is a live check performed by the educator or an authorized tester.

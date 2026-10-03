@@ -28,6 +28,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   percentage conversion, and reserved-character escaping in short answers.
 - Runtime version aligned with package metadata at 3.0.1. License metadata remains
   compatible with the build backends available to Python 3.8/3.9.
+- Moodle integration checks use versioned question-bank category records, calculate
+  expected recipe answers independently, and verify full category paths, per-question
+  tags, feedback preservation, and grading outside numerical tolerances. Compatibility
+  reports retain exact tested revisions and runtime versions; runs can be started manually.
+  The Docker matrix uses PostgreSQL 16 to meet Moodle 5.2's minimum requirement.
 
 
 ## [3.0.1] - 2026-09-20
